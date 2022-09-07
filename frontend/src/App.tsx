@@ -1,30 +1,54 @@
-import { useState } from "react";
-import "./App.css";
+
+
 import Button from 'react-bootstrap/Button'
+import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/productPage/ProductPage";
+import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
+import { Container, Navbar } from "react-bootstrap";
+import { LinkContainer } from 'react-router-bootstrap';
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
+
 
   return (
-    <div className="App">
-      <div>
-        <img src="images/logo-teknoza.png" alt="Logo" height="50" />
-      </div>
-      <h1>Teknomarkt for Informatiker</h1>
+    <BrowserRouter>
+      <div className="App">
+        <div className="d-flex flex-column site-container">
+          <header>
+            <Link to="/"></Link>
+            <Navbar bg="light" variant="light" className='navbar' >
+              <Container>
+                <LinkContainer to="/">
+                  <Navbar.Brand>
+                    <div className="d-flex flex-column">
+                      <img src="images/logo-teknoza.png" alt="Logo" height="50" className='logoImage'/>
+                      <b>Electronics for everyone</b>
+                    </div>
+                  </Navbar.Brand>
+                </LinkContainer>
+              </Container>
+            </Navbar>
 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <Button variant="warning">bootstrap testing button</Button>{' '}
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+          </header>
+
+          <main>
+            <Routes>
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/product/:slug" element={<ProductPage />} />
+
+              <Route path="/" element={<Navigate to="/home" replace />} />
+
+
+            </Routes>
+          </main>
+
+
+
+          {/* <Button variant="warning">bootstrap testing button</Button>{' '} */}
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    </BrowserRouter>
   );
 }
 
