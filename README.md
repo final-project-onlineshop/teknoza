@@ -1,3 +1,4 @@
+![logo](./frontend/public/images/logo-teknoza.png)
 # TEKNOZA - Electronics for everyone
 
 Welcome to Teknoza. This repository is a Final Project for our bootcamp at Digital Career Institute, Germany. We want to create an Open source e-commerce website using MERN stack (MongoDB, ExpressJS, React and Node.JS).
