@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "module": "esnext",
+        "outDir": "build"
+    }
+}

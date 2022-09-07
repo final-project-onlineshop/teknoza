@@ -1,0 +1,7 @@
+{
+    "watch": [
+        ""
+    ],
+    "ext": "ts",
+    "exec": "./node_modules/.bin/ts-node-esm index.ts"
+}
