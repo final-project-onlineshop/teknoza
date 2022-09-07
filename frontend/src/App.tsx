@@ -7,12 +7,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <img
-          src="public/images/logo-teknoza.png"
-          alt="Logo"
-          width="140"
-          height="50"
-        />
+        <img src="images/logo-teknoza.png" alt="Logo" width="140" height="50" />
       </div>
       <h1>Teknomarkt for Informatiker</h1>
       <div className="card">
