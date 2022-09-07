@@ -8,7 +8,37 @@ Welcome to Teknoza. This repository is a Final Project for our bootcamp at Digit
 
 ## Mockups
 
-![mockups](./docs/mockups.png)
+### Homepage
+
+![mockups](./docs/teknoza-mockup/homepage.png)
+
+### Product Details Page
+
+![mockups](./docs/teknoza-mockup/product-details-page.png)
+
+### Login Page
+
+![mockups](./docs/teknoza-mockup/login-page.png)
+
+### Register Page
+
+![mockups](./docs/teknoza-mockup/register-page.png)
+
+### Payment Page
+
+![mockups](./docs/teknoza-mockup/payment-page.png)
+
+### Customer Details Page
+
+![mockups](./docs/teknoza-mockup/customer-details-page.png)
+
+### Shipping Adress Page
+
+![mockups](./docs/teknoza-mockup/shipping-adress-page.png)
+
+### Shopping Cart Page
+
+![mockups](./docs/teknoza-mockup/shopping-cart-page.png)
 
 ## Demo Website
 
