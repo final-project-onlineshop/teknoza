@@ -1,0 +1,75 @@
+const data = {
+  products: [
+    {
+      name: "HP Curved Monitor",
+      slug: "hp-curved-monitor",
+      category: "Monitors",
+
+      price: 150,
+      countInStock: 10,
+      brand: "HP",
+      rating: 3.5,
+      numReviews: 43,
+      description: "Eye-friendly Monitor",
+    },
+    {
+      name: "Microsoft Wireless Keyboard",
+      slug: "microsoft-wireless-keyboard",
+      category: "Keyboards",
+
+      price: 30,
+      countInStock: 20,
+      brand: "Microsoft",
+      rating: 2.1,
+      numReviews: 7,
+      description: "Keyboard without cable",
+    },
+    {
+      name: "Thinkpad Laptop",
+      slug: "thinkpad-laptop",
+      category: "Laptops",
+
+      price: 750,
+      countInStock: 1,
+      brand: "Lenovo",
+      rating: 2.4,
+      numReviews: 1,
+      description: "Lenovo's powerfull solution",
+    },
+    {
+      name: "Sony Headset",
+      slug: "sony-headset",
+      category: "Headsets",
+      price: 50,
+      countInStock: 10,
+      brand: "Sony",
+      rating: 4.8,
+      numReviews: 33,
+      description: "Listen your heart",
+    },
+    {
+      name: "Everest Mouse",
+      slug: "everest-mouse",
+      category: "Mouses",
+      price: 10,
+      countInStock: 50,
+      brand: "Everest",
+      rating: 3.4,
+      numReviews: 21,
+      description: "Small usefull mouse",
+    },
+    {
+      name: "Epson Printer",
+      slug: "epson-printer",
+      category: "Printers",
+      price: 70,
+      countInStock: 7,
+      brand: "Epson",
+      rating: 2.1,
+      numReviews: 8,
+      description: "Prints your dream",
+    },
+  ],
+};
+
+export default data;
