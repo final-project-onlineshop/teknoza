@@ -1,14 +1,24 @@
 import './homePage.scss'
-import data from '../data.js';
+
 import { Link } from 'react-router-dom';
 import { Card, Container, Stack } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const HomePage = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const dataFromApi = await axios.get('http://localhost:3048/api/products');
+            setProducts(dataFromApi.data);
+        };
+        fetchData();
+    }, [])
     return (
         <div className='homePage'>
             <h1>Featured Products</h1>
             <div className="products">
-                {data.products.map((product) => {
+                {products.map((product) => {
 
                     return (
 
