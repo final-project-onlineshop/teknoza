@@ -1,7 +1,7 @@
 
 
 import Button from 'react-bootstrap/Button'
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/homePage/HomePage";
 import ProductPage from "./pages/productPage/ProductPage";
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
 import { Container, Navbar } from "react-bootstrap";
