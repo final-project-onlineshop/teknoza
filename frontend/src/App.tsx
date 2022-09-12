@@ -1,6 +1,4 @@
-
-
-import Button from 'react-bootstrap/Button'
+import Button from "react-bootstrap/Button";
 import HomePage from "./pages/homePage/HomePage";
 import ProductPage from "./pages/productPage/ProductPage";
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
@@ -10,8 +8,6 @@ import "./App.scss";
 import Header from './components/header/Header';
 
 function App() {
-
-
   return (
     <BrowserRouter>
       <div className="App">
