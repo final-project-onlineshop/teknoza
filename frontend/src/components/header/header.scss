@@ -1,5 +1,6 @@
 .header-navbar {
   background-color: orange;
+  padding-top: 5px !important;
   .navbar-brand {
     background-color: white;
     border-radius: 10px;
@@ -33,6 +34,24 @@
     }
     .registerLogin {
       display: flex;
+    }
+  }
+}
+.sub-nav-frame {
+  background-color: #dfdfdf;
+  .sub-nav {
+    background-color: #dfdfdf;
+    padding: 0 30px;
+    i {
+      color: blue;
+    }
+
+    a {
+      color: black;
+    }
+    .fa-bullhorn {
+      color: red;
+      font-size: 20px;
     }
   }
 }

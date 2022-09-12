@@ -19,6 +19,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/home" element={<HomePage />} />
+            <Route path="/home/:productFilter" element={<HomePage />} />
             <Route path="/product/:slug" element={<ProductPage />} />
 
             <Route path="/" element={<Navigate to="/home" replace />} />
