@@ -32,7 +32,7 @@ function App() {
             </Navbar>
           </header>
 
-          <main>
+          <main className="mt-3">
             <Container>
               <Routes>
                 <Route path="/home" element={<HomePage />} />
