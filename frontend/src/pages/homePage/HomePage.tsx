@@ -1,9 +1,11 @@
 import './homePage.scss'
 
-import { Link } from 'react-router-dom';
-import { Card, Container, Stack } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col'
+import Product from '../../components/Product'
+
 
 const HomePage = () => {
     const [products, setProducts] = useState([]);
@@ -14,29 +16,21 @@ const HomePage = () => {
         };
         fetchData();
     }, [])
+
+
     return (
         <div className='homePage'>
             <h1>Featured Products</h1>
             <div className="products">
-                {products.map((product) => {
 
-                    return (
-
-                        <Card key={product.slug} style={{ width: "18rem" }}>
-                            <Link to={`/product/${product.slug}`}>
-                                <Card.Img variant="top" src={`/images/products/${product.slug}.jpg`} />
-                            </Link>
-                            <Card.Body>
-                                <Link to={`/product/${product.slug}`}><Card.Title>{product.name}</Card.Title></Link>
-
-                                <p><strong>{`${product.price} €`}</strong></p>
-                                <button>Add to cart</button>
-
-                            </Card.Body>
-                        </Card>
-
-                    )
-                })}
+                <Row>
+                    {products.map((product) => {
+                        return (
+                            <Col key={product.slug} sm={6} md={4} lg={3} className='mb-3' >
+                                <Product product={product}></Product>
+                            </Col>
+                        )})}
+                </Row>
             </div>
         </div>
     )

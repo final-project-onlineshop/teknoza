@@ -1,6 +1,13 @@
-.homePage{
-.products{
-    display: flex;
-    column-gap: 10px ;
-}
+.homePage {
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+       
+
+        .rating span{
+            color: #edba1a;
+        }
+    }
 }
