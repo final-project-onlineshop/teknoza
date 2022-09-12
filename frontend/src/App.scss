@@ -1,9 +1,25 @@
 .App {
-  .navbar {
-    background-color: orange !important;
-    .logoImage {
-      background-color: white;
-      border-radius: 15px;
+
+  .site-container {
+    min-height: 100vh;
+
+    header {
+
+      .navbar {
+        background-color: #e78b42 !important;
+
+        .logoImage {
+          background-color: white;
+          border-radius: 15px;
+        }
+      }
     }
+
+
+    main {
+      flex: 1;
+    }
+
+    
   }
 }
