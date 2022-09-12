@@ -2,14 +2,17 @@ import Button from "react-bootstrap/Button";
 import HomePage from "./pages/homePage/HomePage";
 import ProductPage from "./pages/productPage/ProductPage";
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
-import { Container, Navbar } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { LinkContainer } from 'react-router-bootstrap';
 import "./App.scss";
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+
         <div className="d-flex flex-column site-container">
           <header>
             <Link to="/"></Link>
@@ -45,8 +48,15 @@ function App() {
             <div className="text-center">All rights reserved</div>
           </footer>
         </div>
-      </div>
-    </BrowserRouter>
+
+
+        {/* <Button variant="warning">bootstrap testing button</Button>{' '} */}
+
+      <footer>
+        <Footer />
+      </footer>
+
+    </BrowserRouter >
   );
 }
 
