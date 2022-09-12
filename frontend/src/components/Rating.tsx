@@ -30,9 +30,9 @@ const Rating = (props) => {
         <span>
           <i
             className={
-              rating >= 5
+              rating >= 3
                 ? "fas fa-star"
-                : rating >= 4.5
+                : rating >= 2.5
                 ? "fas fa-start-half-alt"
                 : "far fa-star"
             }
@@ -41,9 +41,20 @@ const Rating = (props) => {
         <span>
           <i
             className={
-              rating >= 1
+              rating >= 4
                 ? "fas fa-star"
-                : rating >= 0.5
+                : rating >= 3.5
+                ? "fas fa-start-half-alt"
+                : "far fa-star"
+            }
+          />
+        </span>
+        <span>
+          <i
+            className={
+              rating >= 5
+                ? "fas fa-star"
+                : rating >= 4.5
                 ? "fas fa-start-half-alt"
                 : "far fa-star"
             }
