@@ -6,6 +6,7 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from 'react-router-bootstrap';
 import "./App.scss";
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
 
         {/* <Button variant="warning">bootstrap testing button</Button>{' '} */}
       </div>
+      <footer>
+        <Footer />
+      </footer>
 
     </BrowserRouter >
   );
