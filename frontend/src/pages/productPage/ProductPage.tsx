@@ -24,7 +24,7 @@ const ProductPage = () => {
     const fetchData = async () => {
 
       const dataFromApi = await axios.get(
-        `http://localhost:3048/api/products/slug/${slug}`
+        `http://localhost:3048/api/products/${slug}`
       );
 
       setProduct(dataFromApi.data);
