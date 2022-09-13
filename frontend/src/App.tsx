@@ -1,9 +1,8 @@
-import Button from "react-bootstrap/Button";
+
 import HomePage from "./pages/homePage/HomePage";
 import ProductPage from "./pages/productPage/ProductPage";
-import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Container, } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -14,24 +13,7 @@ function App() {
       <div className="App">
         <div className="d-flex flex-column site-container">
           <header>
-            <Link to="/"></Link>
-            <Navbar bg="light" variant="light" className="navbar">
-              <Container>
-                <LinkContainer to="/">
-                  <Navbar.Brand>
-                    <div className="d-flex flex-column">
-                      <img
-                        src="images/logo-teknoza.png"
-                        alt="Logo"
-                        height="50"
-                        className="logoImage"
-                      />
-                      <b>Electronics for everyone</b>
-                    </div>
-                  </Navbar.Brand>
-                </LinkContainer>
-              </Container>
-            </Navbar>
+            <Header />
           </header>
 
           <main className="mt-3">
@@ -44,15 +26,13 @@ function App() {
             </Container>
           </main>
           <footer>
-            <div className="text-center">All rights reserved</div>
+            <Footer />
           </footer>
         </div>
 
-        {/* <Button variant="warning">bootstrap testing button</Button>{' '} */}
 
-        <footer>
-          <Footer />
-        </footer>
+
+
       </div>
     </BrowserRouter>
   );
