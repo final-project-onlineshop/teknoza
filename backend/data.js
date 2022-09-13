@@ -71,7 +71,7 @@ const data = {
       category: "Keyboards",
       image: "/images/keyboard1.jpg",
       price: 30,
-      countInStock: 20,
+      countInStock: 0,
       brand: "Microsoft",
       bewertungen: [
         { userId: 1, bewertung: 4 },
