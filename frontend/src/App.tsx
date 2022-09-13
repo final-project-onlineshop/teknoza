@@ -6,6 +6,7 @@ import { Container, } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import CartPage from "./pages/cartPage/CartPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Container>
               <Routes>
                 <Route path="/home" element={<HomePage />} />
+                <Route path="/cart" element={<CartPage />} />
                 <Route path="/product/:slug" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
               </Routes>

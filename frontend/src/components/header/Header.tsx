@@ -21,7 +21,7 @@ const Header = () => {
                     <Navbar.Collapse id="main-navbar-nav">
 
                         <Nav className="ms-auto">
-                            <Nav.Link href="/shopping-cart">Shopping Cart <i className="fa-solid fa-cart-shopping"></i></Nav.Link>
+                            <Nav.Link href="/cart">Shopping Cart <i className="fa-solid fa-cart-shopping"></i></Nav.Link>
 
                             <Nav.Link href="/register">Register</Nav.Link>
 
