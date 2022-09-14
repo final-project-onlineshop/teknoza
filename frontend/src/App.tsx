@@ -6,6 +6,7 @@ import { Container, } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import RegisterPage from "./pages/registerPage/RegisterPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Container>
               <Routes>
                 <Route path="/home" element={<HomePage />} />
+                <Route path="/register" element={<RegisterPage />} />
                 <Route path="/product/:slug" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
               </Routes>
