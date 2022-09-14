@@ -3,10 +3,12 @@
     display: flex;
     column-gap: 20px;
     .products-in-cart {
-      flex-grow: 1;
+      flex-grow: 5;
     }
     .cart-details-box {
+      flex-grow: 2;
       display: flex;
+      height: fit-content;
       flex-direction: column;
       align-items: center;
       row-gap: 10px;
