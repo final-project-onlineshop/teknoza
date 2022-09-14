@@ -1,12 +1,15 @@
-
 import HomePage from "./pages/homePage/HomePage";
 import ProductPage from "./pages/productPage/ProductPage";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Container, } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+
+import ShippingPage from "./pages/shippingPage/ShippingPage";
+
 import LoginPage from "./pages/loginPage/LoginPage";
+
 
 function App() {
   return (
@@ -21,7 +24,11 @@ function App() {
             <Container>
               <Routes>
                 <Route path="/home" element={<HomePage />} />
+
+                <Route path="/shipping" element={<ShippingPage />} />
+
                 <Route path="/login" element={<LoginPage />} />
+
                 <Route path="/product/:slug" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
               </Routes>
@@ -31,10 +38,6 @@ function App() {
             <Footer />
           </footer>
         </div>
-
-
-
-
       </div>
     </BrowserRouter>
   );
