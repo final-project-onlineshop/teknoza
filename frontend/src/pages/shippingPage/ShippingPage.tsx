@@ -1,11 +1,11 @@
 import { Button, Container, Form } from "react-bootstrap";
+import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
 import "./shippingPage.scss";
 
 const ShippingPage = () => {
   return (
     <Container className="shipping-page">
-      {/* TODO: add here checkout steps and delete test text */}
-      <h1>(!! Checkout steps will be here !!)</h1>
+   <CheckoutSteps step1 step2/>
       <Form className="shipping-form">
         <h1>Shipping Adress</h1>
         <Form.Group className="mb-3" controlId="formFullName">
