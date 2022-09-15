@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import ShippingPage from "./pages/shippingPage/ShippingPage";
 
 import LoginPage from "./pages/loginPage/LoginPage";
+import PaymentPage from "./pages/paymentPage/PaymentPage";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/shipping" element={<ShippingPage />} />
 
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/payment" element={<PaymentPage />} />
 
                 <Route path="/product/:slug" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
