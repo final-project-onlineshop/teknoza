@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import RegisterPage from "./pages/registerPage/RegisterPage";
 
 import ShippingPage from "./pages/shippingPage/ShippingPage";
 
@@ -25,6 +26,9 @@ function App() {
             <Container>
               <Routes>
                 <Route path="/home" element={<HomePage />} />
+
+                <Route path="/register" element={<RegisterPage />} />
+
 
                 <Route path="/shipping" element={<ShippingPage />} />
 
