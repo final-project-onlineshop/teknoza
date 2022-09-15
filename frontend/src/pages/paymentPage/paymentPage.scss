@@ -1,0 +1,13 @@
+.payment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .payment-form {
+    h1 {
+      margin-bottom: 20px;
+    }
+    .continue-button {
+      margin-top: 20px;
+    }
+  }
+}
