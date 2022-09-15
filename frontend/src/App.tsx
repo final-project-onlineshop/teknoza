@@ -14,7 +14,7 @@ import ShippingPage from "./pages/shippingPage/ShippingPage";
 
 import LoginPage from "./pages/loginPage/LoginPage";
 import PaymentPage from "./pages/paymentPage/PaymentPage";
-
+import PlaceOrderPage from "./pages/placeOrderPage/PlaceOrderPage";
 
 function App() {
   return (
@@ -32,14 +32,13 @@ function App() {
 
                 <Route path="/cart" element={<CartPage />} />
 
-
                 <Route path="/register" element={<RegisterPage />} />
-
 
                 <Route path="/shipping" element={<ShippingPage />} />
 
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/payment" element={<PaymentPage />} />
+                <Route path="/placeOrder" element={<PlaceOrderPage />} />
 
                 <Route path="/product/:slug" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
