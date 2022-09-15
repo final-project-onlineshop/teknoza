@@ -33,7 +33,12 @@ const Header = () => {
                     </div>
                     <Navbar.Collapse id="main-navbar-nav">
 
+
+                        <Nav className="ms-auto">
+                            <Nav.Link href="/cart">Shopping Cart <i className="fa-solid fa-cart-shopping"></i></Nav.Link>
+
                         <Nav className="ms-auto nav-links">
+
 
 
                             <Nav.Link as={NavLink} to="/shopping-cart">Shopping Cart <i className="fa-solid fa-cart-shopping"></i></Nav.Link>
