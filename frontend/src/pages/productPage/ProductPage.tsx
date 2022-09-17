@@ -1,6 +1,6 @@
 import "./productPage.scss";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import {
   Badge,
@@ -13,6 +13,7 @@ import {
 } from "react-bootstrap";
 import Rating from "../../components/Rating";
 import { Helmet } from "react-helmet-async";
+import { Store } from "../../Store";
 
 const ProductPage = () => {
   const params = useParams();
@@ -28,11 +29,22 @@ const ProductPage = () => {
       );
 
       setProduct(dataFromApi.data);
-      console.log(dataFromApi);
+      // console.log(dataFromApi);
     };
 
     fetchData();
   }, [slug]);
+
+  const {state, dispatch: ctxDispatch} = useContext(Store);
+
+  const addToCartHandler = () => {
+    ctxDispatch({
+      type:'CART_ADD_ITEM', 
+      payload:{...product, quantity:1},
+  });
+
+  console.log(cart.cartItems.length);
+  };
 
   return (
     <div className="ProductPage">
@@ -87,7 +99,7 @@ const ProductPage = () => {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button variant="primary">Add to Cart</Button>
+                      <Button onClick={addToCartHandler} variant="primary">Add to Cart</Button>
                     </div>
                   </ListGroup.Item>
                 )}
