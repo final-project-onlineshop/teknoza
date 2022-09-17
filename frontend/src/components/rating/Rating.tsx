@@ -1,4 +1,5 @@
 import React from "react";
+import './rating.scss'
 
 const Rating = (props) => {
   const { rating, numReviews } = props;

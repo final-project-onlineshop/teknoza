@@ -1,0 +1,30 @@
+.Product {
+
+
+    .product-card {
+        height: 25rem;
+        
+
+        .card-link {
+            height: 18rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .card-img {
+                max-height: 13rem;
+
+
+            }
+        }
+
+        .btn-primary{
+            background-color: #eda66e;
+            border: solid 1px black;
+            color: black;
+            float: right;
+        }
+    
+
+    }
+}

@@ -11,7 +11,7 @@ import {
   ListGroupItem,
   Row,
 } from "react-bootstrap";
-import Rating from "../../components/Rating";
+import Rating from "../../components/rating/Rating";
 import { Helmet } from "react-helmet-async";
 
 const ProductPage = () => {
