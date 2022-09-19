@@ -12,6 +12,7 @@ import { config } from "./config.js";
 
 //data schema is ready to use in models ordner..
 // we are using as database Mongodb-online.. there is a link for database in .env doc..
+//datamodel is now updated..
 
 const port = config.PORT || 3484;
 
