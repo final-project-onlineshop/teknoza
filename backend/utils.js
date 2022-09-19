@@ -13,7 +13,7 @@ export const generateToken = (user) => {
     },
     config.JWT_SECRET,
     {
-      expiresIn: "30d",
+      expiresIn: config.JWT_EXPIRES_IN,
     }
   );
 };
