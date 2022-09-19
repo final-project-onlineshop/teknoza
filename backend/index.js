@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 
-// import userRouter from "./routes/userRoutes.js";
+import userRouter from "./routes/userRoutes.js";
 
 import productRouter from "./routes/productRoutes.js";
 
@@ -24,7 +24,7 @@ app.use(cors());
 
 //test
 app.use("/api/products", productRouter);
-// app.use("/api/users", userRouter);
+app.use("/api/users", userRouter);
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "/frontend/build")));
