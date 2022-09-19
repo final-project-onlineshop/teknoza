@@ -4,7 +4,7 @@
 GET {{API_URL}}/api/products
 
 ### PRODUCTID ROUTE
-GET {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+GET {{API_URL}}/api/products/undefined
 
 ### CATEGORIES ROUTE
 GET {{API_URL}}/api/products/categories
@@ -51,7 +51,7 @@ Content-type:application/json
 
 {
     
-    
+
   
 }
 
