@@ -21,7 +21,7 @@ Content-type:application/json
 
 {
     "email":"ömer@example.com",
-    "password":"123456"
+    "password": "123456"
 }
 
 ### CATEGORIES ROUTE

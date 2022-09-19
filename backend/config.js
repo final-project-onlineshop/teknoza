@@ -6,5 +6,7 @@ console.log("Loaded Env Config:", env);
 export const config = {
   MONGODB_URI: process.env.MONGODB_URI,
   PORT: process.env.PORT,
-  SAFE_ORIGIN_CODE: process.env.SAFE_ORIGIN_CODE,
+  JWT_SECRET: process.env.JWT_SECRET,
+  MAILGUN_API_KEY: process.env.MAILGUN_API_KEY,
+  MAILGUN_DOMIAN: process.env.MAILGUN_DOMIAN,
 };
