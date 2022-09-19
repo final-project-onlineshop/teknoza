@@ -1,7 +1,13 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+<<<<<<< HEAD
 
 import { NavLink } from "react-router-dom";
 
+=======
+import { LinkContainer } from "react-router-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+
+>>>>>>> main
 import "./header.scss";
 
 const Header = () => {
@@ -9,10 +15,14 @@ const Header = () => {
     <header>
       <Navbar expand="lg" className="header-navbar">
         <Container>
+<<<<<<< HEAD
 
           <Navbar.Brand href="/home">
           <Navbar.Brand to="/" as={NavLink}>
 
+=======
+          <Navbar.Brand to="/" as={NavLink}>
+>>>>>>> main
             <div className="navbar-brand">
               <img
                 src="/images/logo-teknoza.png"
@@ -31,6 +41,7 @@ const Header = () => {
               placeholder="Search..."
               className="searchInput"
             />
+<<<<<<< HEAD
           </div>
           <Navbar.Toggle aria-controls="main-navbar-nav" />
           <Navbar.Collapse id="main-navbar-nav">
@@ -42,6 +53,23 @@ const Header = () => {
               <Nav.Link href="/register">Register</Nav.Link>
 
               <Nav.Link href="/register">Login</Nav.Link>
+=======
+            <Navbar.Toggle aria-controls="main-navbar-nav" />
+          </div>
+          <Navbar.Collapse id="main-navbar-nav">
+            <Nav className="ms-auto nav-links">
+              <Nav.Link as={NavLink} to="/shopping-cart">
+                Shopping Cart <i className="fa-solid fa-cart-shopping"></i>
+              </Nav.Link>
+
+              <Nav.Link as={NavLink} to="/register">
+                Register
+              </Nav.Link>
+
+              <Nav.Link as={NavLink} to="/login">
+                Login
+              </Nav.Link>
+>>>>>>> main
 
               <NavDropdown
                 title={<i className="fa-solid fa-user"></i>}
@@ -54,7 +82,11 @@ const Header = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
+<<<<<<< HEAD
           </Container>
+=======
+        </Container>
+>>>>>>> main
       </Navbar>
       <div className="sub-nav-frame">
         <Container>
