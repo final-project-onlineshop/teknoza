@@ -1,21 +1,21 @@
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 // import mg from "mailgun-js";
-import { config } from "./config.js";
+// import { config } from "./config.js";
 
-export const generateToken = (user) => {
-  return jwt.sign(
-    {
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-    },
-    config.SAFE_ORIGIN_CODE,
-    {
-      expiresIn: "30d",
-    }
-  );
-};
+// export const generateToken = (user) => {
+//   return jwt.sign(
+//     {
+//       _id: user._id,
+//       name: user.name,
+//       email: user.email,
+//       isAdmin: user.isAdmin,
+//     },
+//     config.SAFE_ORIGIN_CODE,
+//     {
+//       expiresIn: "30d",
+//     }
+//   );
+// };
 
 export const isAuth = true;
 export const isAdmin = true;

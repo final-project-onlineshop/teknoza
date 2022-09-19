@@ -12,5 +12,52 @@ GET {{API_URL}}/api/products/categories
 ### CATEGORIES ROUTE
 GET {{API_URL}}/api/products/categories
 
+### CATEGORIES ROUTE
+POST {{API_URL}}/api/products
+Content-type:application/json
+
+{
+    
+    "name": "LG Curved Monitor",
+    "slug": "lg-curved-monitor",
+    "category": "Monitors",
+    "image": "/images/monitor1.jpg",
+    "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
+    "price": 150,
+    "countInStock": 10,
+    "brand": "HP",
+    "rating": 3.5,
+    "numReviews": 43,
+    "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
+    "description": "Eye-friendly Full HD Monitor"
+  
+}
+
+### CATEGORIES ROUTE
+PUT {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+Content-type:application/json
+
+{
+    
+    "name": "LG Curved Monitor",
+    "slug": "lg-curved-monitor",
+    "category": "Monitors",
+    "image": "/images/monitor1.jpg",
+    "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
+    "price": 150,
+    "countInStock": 10,
+    "brand": "HP",
+    "rating": 3.5,
+    "numReviews": 43,
+    "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
+    "description": "Eye-friendly Full HD Monitor"
+  
+}
+
+### CATEGORIES ROUTE
+DELETE {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+
+
+
 
 
