@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+
+import { NavLink } from "react-router-dom";
+
 import Badge from 'react-bootstrap/Badge'
-import { LinkContainer } from "react-router-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+
 import CartPage from "../../pages/cartPage/CartPage";
 import { Store } from "../../Store";
 
@@ -19,7 +21,10 @@ const Header = () => {
     <header>
       <Navbar expand="lg" className="header-navbar">
         <Container>
+
+          <Navbar.Brand href="/home">
           <Navbar.Brand to="/" as={NavLink}>
+
             <div className="navbar-brand">
               <img
                 src="/images/logo-teknoza.png"
@@ -38,7 +43,9 @@ const Header = () => {
               placeholder="Search..."
               className="searchInput"
             />
-            <Navbar.Toggle aria-controls="main-navbar-nav" />
+
+
+          <Navbar.Toggle aria-controls="main-navbar-nav" />
           </div>
           <Navbar.Collapse id="main-navbar-nav">
             <Nav className="me-auto ms-auto nav-links">
@@ -71,6 +78,7 @@ const Header = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
+
         </Container>
       </Navbar>
       <div className="sub-nav-frame">

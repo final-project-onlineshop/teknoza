@@ -1,57 +1,63 @@
-.header-navbar {
-  background-color: orange;
-  padding-top: 5px !important;
-  .navbar-brand {
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 5px;
-  }
-  .search-box {
-    background-color: white;
-    padding: 5px 5px;
-    border-radius: 10px;
-    i {
-      color: orange !important;
-      font-weight: 700;
-      background-color: white;
-      font-size: 24px;
-    }
-    input {
-      border: 0;
-      outline: none;
-    }
-  }
-  #main-navbar-nav {
-    a {
-      color: blue;
-    }
-    i {
-      color: white;
-    }
-    .registerLogin {
-      display: flex;
-    }
-  }
-}
-.sub-nav-frame {
-  background-color: #dfdfdf;
-  .sub-nav {
-    background-color: #dfdfdf;
-    padding: 0 30px;
-    i {
-      color: blue;
-    }
+header {
+  .header-navbar {
 
-    a {
-      color: black;
+    background-color: #e78b42;
+
+    div.navbar-brand {
+
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+      font-size: .8rem;
+      letter-spacing: 4px;
+
     }
-    .fa-bullhorn {
-      color: red;
-      font-size: 20px;
+    .search-box {
+      background-color: white;
+      padding: 5px 5px;
+      border-radius: 10px;
+      i {
+        color: #e78b42;
+        font-weight: 700;
+        background-color: white;
+        font-size: 24px;
+      }
+      input {
+        border: 0;
+        outline: none;
+      }
+    }
+    #main-navbar-nav {
+      a {
+        color: #0049bf;
+      }
+      i {
+        color: white;
+      }
+      .registerLogin {
+        display: flex;
+      }
+    }
+  }
+  .sub-nav-frame {
+    background-color: #dfdfdf;
+    .sub-nav {
+      background-color: #dfdfdf;
+      padding: 0 30px;
+      i {
+        color: #0049bf;
+      }
+      a {
+        color: black;
+      }
+      .fa-bullhorn {
+        color: red;
+        font-size: 20px;
+      }
     }
   }
 }
