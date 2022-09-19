@@ -1,5 +1,7 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
+import { NavLink } from "react-router-dom";
+
 import "./header.scss";
 
 const Header = () => {
@@ -7,7 +9,10 @@ const Header = () => {
     <header>
       <Navbar expand="lg" className="header-navbar">
         <Container>
+
           <Navbar.Brand href="/home">
+          <Navbar.Brand to="/" as={NavLink}>
+
             <div className="navbar-brand">
               <img
                 src="/images/logo-teknoza.png"
@@ -18,6 +23,7 @@ const Header = () => {
               <b>Electronics for everyone</b>
             </div>
           </Navbar.Brand>
+
           <div className="search-box">
             <i className="fa-solid fa-magnifying-glass"></i>
             <input
@@ -48,7 +54,7 @@ const Header = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-        </Container>
+          </Container>
       </Navbar>
       <div className="sub-nav-frame">
         <Container>
