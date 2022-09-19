@@ -10,6 +10,9 @@ import productRouter from "./routes/productRoutes.js";
 import "./db-connect.js";
 import { config } from "./config.js";
 
+//data schema is ready to use in models ordner..
+// we are using as database Mongodb-online.. there is a link for database in .env doc..
+
 const port = config.PORT || 3484;
 
 const app = express();
