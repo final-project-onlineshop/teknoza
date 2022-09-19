@@ -1,4 +1,16 @@
 @API_URL = http://localhost:3484
 
-### HOME ROUTE
+### PRODUCTS ROUTE
 GET {{API_URL}}/api/products
+
+### PRODUCTID ROUTE
+GET {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+
+### CATEGORIES ROUTE
+GET {{API_URL}}/api/products/categories
+
+### CATEGORIES ROUTE
+GET {{API_URL}}/api/products/categories
+
+
+

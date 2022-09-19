@@ -1,7 +1,7 @@
 import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
-// import { isAuth, isAdmin } from "../utils.js";
+import { isAuth, isAdmin } from "../utils.js";
 
 const productRouter = express.Router();
 
@@ -12,8 +12,8 @@ productRouter.get("/", async (req, res) => {
 
 productRouter.post(
   "/",
-  // isAuth,
-  // isAdmin,
+  isAuth,
+  isAdmin,
   expressAsyncHandler(async (req, res) => {
     const newProduct = new Product({
       name: "sample name " + Date.now(),
@@ -34,8 +34,8 @@ productRouter.post(
 
 productRouter.put(
   "/:id",
-  // isAuth,
-  // isAdmin,
+  isAuth,
+  isAdmin,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
     const product = await Product.findById(productId);
@@ -59,8 +59,8 @@ productRouter.put(
 
 productRouter.delete(
   "/:id",
-  // isAuth,
-  // isAdmin,
+  isAuth,
+  isAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (product) {
@@ -74,7 +74,7 @@ productRouter.delete(
 
 productRouter.post(
   "/:id/reviews",
-  // isAuth,
+  isAuth,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
     const product = await Product.findById(productId);
@@ -112,8 +112,8 @@ const PAGE_SIZE = 3;
 
 productRouter.get(
   "/admin",
-  // isAuth,
-  // isAdmin,
+  isAuth,
+  isAdmin,
   expressAsyncHandler(async (req, res) => {
     const { query } = req;
     const page = query.page || 1;
