@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
-import mg from "mailgun-js";
+// import mg from "mailgun-js";
+import { createTransport } from "nodemailer";
 import { config } from "./config.js";
 
 export const generateToken = (user) => {
@@ -44,11 +45,13 @@ export const isAdmin = (req, res, next) => {
   }
 };
 
-export const mailgun = () =>
-  mg({
-    apiKey: config.MAILGUN_API_KEY,
-    domain: config.MAILGUN_DOMIAN,
-  });
+export const mailgun = createTransport({
+  service: "gmail",
+  auth: {
+    user: config.MAILER_ACCOUNT_NAME,
+    pass: config.MAILER_ACCOUNT_PASSWORD,
+  },
+});
 
 export const payOrderEmailTemplate = (order) => {
   return `<h1>Thanks for shopping with us</h1>

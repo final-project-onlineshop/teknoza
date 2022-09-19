@@ -24,6 +24,17 @@ Content-type:application/json
     "password": "123456"
 }
 
+### SIGNUP ROUTE
+POST {{API_URL}}/api/users/signup
+Content-type:application/json
+
+{
+    "email":"eee@example.com",
+    "password": "123456",
+    "name":"aaa",
+    "isAdmin":false,
+}
+
 ### CATEGORIES ROUTE
 POST {{API_URL}}/api/products
 Content-type:application/json

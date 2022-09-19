@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 
-import session from "express-session";
+// import session from "express-session";
 import cookieParser from "cookie-parser";
 
 import userRouter from "./routes/userRoutes.js";
@@ -19,13 +19,19 @@ import { config } from "./config.js";
 
 const port = config.PORT || 3484;
 
+// declare module "express-session" {
+//   export const SessionData {
+//     user: { [key: string]: any };
+//   }
+// }
+
 const app = express();
 
 app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_BASE_URL,
+    origin: config.FRONTEND_BASE_URL,
     methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
     credentials: true,
   })
@@ -34,6 +40,19 @@ app.use(
 app.set("trust proxy", 1);
 
 app.use(cookieParser());
+
+// app.use(
+//   session({
+//     resave: true,
+//     saveUninitialized: true,
+//     secret: config.SESSION_SECRET,
+//     cookie: {
+//       httpOnly: true,
+//       sameSite: config.NODE_ENV === "production" ? "none" : "lax",
+//       secure: config.NODE_ENV === "production",
+//     },
+//   })
+// );
 
 app.use(express.urlencoded({ extended: true }));
 // app.use(cors());
