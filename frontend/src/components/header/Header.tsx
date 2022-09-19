@@ -23,7 +23,6 @@ const Header = () => {
         <Container>
 
           <Navbar.Brand href="/home">
-          <Navbar.Brand to="/" as={NavLink}>
 
             <div className="navbar-brand">
               <img
