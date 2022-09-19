@@ -1,28 +1,30 @@
+import { useContext } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-<<<<<<< HEAD
 
 import { NavLink } from "react-router-dom";
 
-=======
-import { LinkContainer } from "react-router-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import Badge from 'react-bootstrap/Badge'
 
->>>>>>> main
+import CartPage from "../../pages/cartPage/CartPage";
+import { Store } from "../../Store";
+
 import "./header.scss";
 
 const Header = () => {
+
+  const { state } = useContext(Store);
+  const { cart } = state;
+  
+  
+
   return (
     <header>
       <Navbar expand="lg" className="header-navbar">
         <Container>
-<<<<<<< HEAD
 
           <Navbar.Brand href="/home">
           <Navbar.Brand to="/" as={NavLink}>
 
-=======
-          <Navbar.Brand to="/" as={NavLink}>
->>>>>>> main
             <div className="navbar-brand">
               <img
                 src="/images/logo-teknoza.png"
@@ -41,25 +43,20 @@ const Header = () => {
               placeholder="Search..."
               className="searchInput"
             />
-<<<<<<< HEAD
-          </div>
+
+
           <Navbar.Toggle aria-controls="main-navbar-nav" />
-          <Navbar.Collapse id="main-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="/shopping-cart">
-                Shopping Cart <i className="fa-solid fa-cart-shopping"></i>
-              </Nav.Link>
-
-              <Nav.Link href="/register">Register</Nav.Link>
-
-              <Nav.Link href="/register">Login</Nav.Link>
-=======
-            <Navbar.Toggle aria-controls="main-navbar-nav" />
           </div>
           <Navbar.Collapse id="main-navbar-nav">
-            <Nav className="ms-auto nav-links">
+            <Nav className="me-auto ms-auto nav-links">
               <Nav.Link as={NavLink} to="/shopping-cart">
-                Shopping Cart <i className="fa-solid fa-cart-shopping"></i>
+                Shopping Cart 
+                <i className="fa-solid fa-cart-shopping"></i>
+                {cart.cartItems.length > 0 && (
+                  <Badge pill bg='danger'>
+                    {cart.cartItems.length}
+                  </Badge>
+                )}
               </Nav.Link>
 
               <Nav.Link as={NavLink} to="/register">
@@ -69,7 +66,6 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/login">
                 Login
               </Nav.Link>
->>>>>>> main
 
               <NavDropdown
                 title={<i className="fa-solid fa-user"></i>}
@@ -82,11 +78,8 @@ const Header = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-<<<<<<< HEAD
-          </Container>
-=======
+
         </Container>
->>>>>>> main
       </Navbar>
       <div className="sub-nav-frame">
         <Container>
