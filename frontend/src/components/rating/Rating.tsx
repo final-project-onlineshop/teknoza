@@ -1,7 +1,7 @@
 import React from "react";
-import './rating.scss'
+import "./rating.scss";
 
-const Rating = (props) => {
+const Rating = (props: any) => {
   const { rating, numReviews } = props;
   return (
     <div>
@@ -12,8 +12,8 @@ const Rating = (props) => {
               rating >= 1
                 ? "fas fa-star"
                 : rating >= 0.5
-                  ? "fa-solid fa-star-half-stroke"
-                  : "fa-regular fa-star"
+                ? "fa-solid fa-star-half-stroke"
+                : "fa-regular fa-star"
             }
           />
         </span>
@@ -23,8 +23,8 @@ const Rating = (props) => {
               rating >= 2
                 ? "fas fa-star"
                 : rating >= 1.5
-                  ? "fa-solid fa-star-half-stroke"
-                  : "fa-regular fa-star"
+                ? "fa-solid fa-star-half-stroke"
+                : "fa-regular fa-star"
             }
           />
         </span>
@@ -34,8 +34,8 @@ const Rating = (props) => {
               rating >= 3
                 ? "fas fa-star"
                 : rating >= 2.5
-                  ? "fa-solid fa-star-half-stroke"
-                  : "fa-regular fa-star"
+                ? "fa-solid fa-star-half-stroke"
+                : "fa-regular fa-star"
             }
           />
         </span>
@@ -45,8 +45,8 @@ const Rating = (props) => {
               rating >= 4
                 ? "fas fa-star"
                 : rating >= 3.5
-                  ? "fa-solid fa-star-half-stroke"
-                  : "fa-regular fa-star"
+                ? "fa-solid fa-star-half-stroke"
+                : "fa-regular fa-star"
             }
           />
         </span>
@@ -56,8 +56,8 @@ const Rating = (props) => {
               rating >= 5
                 ? "fas fa-star"
                 : rating >= 4.5
-                  ? "fa-solid fa-star-half-stroke"
-                  : "fa-regular fa-star"
+                ? "fa-solid fa-star-half-stroke"
+                : "fa-regular fa-star"
             }
           />
         </span>
