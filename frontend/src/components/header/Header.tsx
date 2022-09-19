@@ -1,10 +1,20 @@
+import { useContext } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import Badge from 'react-bootstrap/Badge'
 import { LinkContainer } from "react-router-bootstrap";
 import { Link, NavLink } from "react-router-dom";
+import CartPage from "../../pages/cartPage/CartPage";
+import { Store } from "../../Store";
 
 import "./header.scss";
 
 const Header = () => {
+
+  const { state } = useContext(Store);
+  const { cart } = state;
+  
+  
+
   return (
     <header>
       <Navbar expand="lg" className="header-navbar">
@@ -31,9 +41,15 @@ const Header = () => {
             <Navbar.Toggle aria-controls="main-navbar-nav" />
           </div>
           <Navbar.Collapse id="main-navbar-nav">
-            <Nav className="ms-auto nav-links">
+            <Nav className="me-auto ms-auto nav-links">
               <Nav.Link as={NavLink} to="/shopping-cart">
-                Shopping Cart <i className="fa-solid fa-cart-shopping"></i>
+                Shopping Cart 
+                <i className="fa-solid fa-cart-shopping"></i>
+                {cart.cartItems.length > 0 && (
+                  <Badge pill bg='danger'>
+                    {cart.cartItems.length}
+                  </Badge>
+                )}
               </Nav.Link>
 
               <Nav.Link as={NavLink} to="/register">
