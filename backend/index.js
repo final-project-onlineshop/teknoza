@@ -1,30 +1,37 @@
 import express from "express";
-import data from './data.js'
-import cors from 'cors'
+// import data from './data.js'
+import cors from "cors";
+import path from "path";
 
+// import userRouter from "./routes/userRoutes.js";
+
+import productRouter from "./routes/productRoutes.js";
+
+import "./db-connect.js";
+import { config } from "./config.js";
+
+const port = config.PORT || 3484;
 
 const app = express();
-const PORT = 3048;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-
 //test
-app.get("/api/products", (req, res) => {
-  res.send(data.products);
+app.use("/api/products", productRouter);
+// app.use("/api/users", userRouter);
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
+
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
 
-app.get("/api/products/:slug", (req, res) => {
-  const product = data.products.find(x => x.slug === req.params.slug);
-  if(product) {
-      res.send(product);
-  } else {
-      res.status(404).send({ message: 'Product Not Found' })    
-  }
-});
-
-
-app.listen(PORT, () => {
-  console.log(`listening on port http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`serve at http://localhost:${port}`);
 });
