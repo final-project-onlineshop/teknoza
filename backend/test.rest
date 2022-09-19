@@ -1,4 +1,64 @@
 @API_URL = http://localhost:3484
 
-### HOME ROUTE
+### PRODUCTS ROUTE
 GET {{API_URL}}/api/products
+
+### PRODUCTID ROUTE
+GET {{API_URL}}/api/products/undefined
+
+### CATEGORIES ROUTE
+GET {{API_URL}}/api/products/categories
+
+### CATEGORIES ROUTE
+GET {{API_URL}}/api/products/hp-curved-monitor
+
+### CATEGORIES ROUTE
+GET {{API_URL}}/api/users/63280ae9ac92d3452f5e1625
+
+### SIGNIN ROUTE
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
+    "email":"ömer@example.com",
+    "password": "123456"
+}
+
+### CATEGORIES ROUTE
+POST {{API_URL}}/api/products
+Content-type:application/json
+
+{
+    
+    "name": "LG Curved Monitor",
+    "slug": "lg-curved-monitor",
+    "category": "Monitors",
+    "image": "/images/monitor1.jpg",
+    "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
+    "price": 150,
+    "countInStock": 10,
+    "brand": "HP",
+    "rating": 3.5,
+    "numReviews": 43,
+    "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
+    "description": "Eye-friendly Full HD Monitor"
+  
+}
+
+### CATEGORIES ROUTE
+PUT {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+Content-type:application/json
+
+{
+    
+
+  
+}
+
+### CATEGORIES ROUTE
+DELETE {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+
+
+
+
+
