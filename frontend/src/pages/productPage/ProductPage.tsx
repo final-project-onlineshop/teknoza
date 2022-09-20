@@ -15,17 +15,17 @@ import Rating from "../../components/rating/Rating";
 import { Helmet } from "react-helmet-async";
 import { Store } from "../../Store";
 
+const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
+
 const ProductPage = () => {
   const params = useParams();
-  const { slug } = params;
+  const productId = params._id;
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-
     const fetchData = async () => {
-
       const dataFromApi = await axios.get(
-        `http://localhost:3048/api/products/${slug}`
+        `${BASE_API_URL}/products/${productId}`
       );
 
       setProduct(dataFromApi.data);
@@ -33,17 +33,17 @@ const ProductPage = () => {
     };
 
     fetchData();
-  }, [slug]);
+  }, [productId]);
 
-  const {state, dispatch: ctxDispatch} = useContext(Store);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
 
   const addToCartHandler = () => {
     ctxDispatch({
-      type:'CART_ADD_ITEM', 
-      payload:{...product, quantity:1},
-  });
+      type: "CART_ADD_ITEM",
+      payload: { ...product, quantity: 1 },
+    });
 
-  console.log(cart.cartItems.length);
+    console.log(cart.cartItems.length);
   };
 
   return (
@@ -99,7 +99,9 @@ const ProductPage = () => {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button onClick={addToCartHandler} variant="primary">Add to Cart</Button>
+                      <Button onClick={addToCartHandler} variant="primary">
+                        Add to Cart
+                      </Button>
                     </div>
                   </ListGroup.Item>
                 )}

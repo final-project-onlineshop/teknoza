@@ -42,7 +42,7 @@ function App() {
                 <Route path="/placeOrder" element={<PlaceOrderPage />} />
                 <Route path="/orderHistory" element={<OrderHistoryPage />} />
 
-                <Route path="/product/:slug" element={<ProductPage />} />
+                <Route path="/product/:_id" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
               </Routes>
             </Container>
