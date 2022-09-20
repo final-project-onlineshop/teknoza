@@ -13,7 +13,7 @@ GET {{API_URL}}/api/products/categories
 GET {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
 
 ### CATEGORIES ROUTE
-GET {{API_URL}}/api/products/hp-curved-monitor
+GET {{API_URL}}/api/products/slug/epson-printer
 
 ### CATEGORIES ROUTE
 GET {{API_URL}}/api/users/63280ae9ac92d3452f5e1625
