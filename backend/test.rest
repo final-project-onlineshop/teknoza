@@ -10,6 +10,9 @@ GET {{API_URL}}/api/products/undefined
 GET {{API_URL}}/api/products/categories
 
 ### CATEGORIES ROUTE
+GET {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+
+### CATEGORIES ROUTE
 GET {{API_URL}}/api/products/hp-curved-monitor
 
 ### CATEGORIES ROUTE
@@ -22,6 +25,17 @@ Content-type:application/json
 {
     "email":"ömer@example.com",
     "password": "123456"
+}
+
+### SIGNUP ROUTE
+POST {{API_URL}}/api/users/signup
+Content-type:application/json
+
+{
+    "email":"eee@example.com",
+    "password": "123456",
+    "name":"aaa",
+    "isAdmin":false,
 }
 
 ### CATEGORIES ROUTE

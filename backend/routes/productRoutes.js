@@ -218,21 +218,30 @@ productRouter.get(
   })
 );
 
+const getProduct = async (req, res) => {
+  const sendProduct = (req, res) => {
+    if (product) {
+      res.send(product);
+    } else {
+      res.status(404).send({ message: "Product Not Found" });
+    }
+  };
+  let product;
+  if (req.params.id) {
+    product = await Product.findOne({ slug: req.params.slug });
+    sendProduct(req, res);
+  } else {
+    product = await Product.findOne({ id: req.params.id });
+    sendProduct(req, res);
+  }
+};
+
 productRouter.get("/:slug", async (req, res) => {
-  const product = await Product.findOne({ slug: req.params.slug });
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: "Product Not Found" });
-  }
+  getProduct(req, res);
 });
+
 productRouter.get("/:id", async (req, res) => {
-  const product = await Product.findById(req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: "Product Not Found" });
-  }
+  getProduct(req, res);
 });
 
 export default productRouter;

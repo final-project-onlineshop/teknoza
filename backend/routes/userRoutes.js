@@ -93,6 +93,7 @@ userRouter.post(
       name: req.body.name,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password),
+      isAdmin: req.body.isAdmin,
     });
     const user = await newUser.save();
     res.send({
