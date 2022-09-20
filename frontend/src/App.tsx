@@ -17,6 +17,7 @@ import PaymentPage from "./pages/paymentPage/PaymentPage";
 import PlaceOrderPage from "./pages/placeOrderPage/PlaceOrderPage";
 import OrderHistoryPage from "./pages/orderHistoryPage/OrderHistoryPage";
 import DashboardPage from "./pages/dashboardPage/DashboardPage";
+import UsersPage from "./pages/usersPage/UsersPage";
 
 import ProductEditPage from "./pages/productEditPage/ProductEditPage";
 
@@ -48,11 +49,15 @@ function App() {
                 <Route path="/placeOrder" element={<PlaceOrderPage />} />
                 <Route path="/orderHistory" element={<OrderHistoryPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
+
+                <Route path="/users" element={<UsersPage />} />
+
                 <Route
                   path="/productEdit/:productId"
                   element={<ProductEditPage />}
                 />
                 <Route path="/orders" element={<OrdersPage />} />
+
 
 
                 <Route path="/product/:_id" element={<ProductPage />} />
