@@ -10,4 +10,5 @@ export const config = {
   MAILGUN_API_KEY: process.env.MAILGUN_API_KEY,
   MAILGUN_DOMIAN: process.env.MAILGUN_DOMIAN,
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
+  FRONTEND_BASE_URL:process.env.FRONTEND_BASE_URL
 };
