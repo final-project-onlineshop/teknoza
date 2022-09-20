@@ -17,6 +17,7 @@ import PaymentPage from "./pages/paymentPage/PaymentPage";
 import PlaceOrderPage from "./pages/placeOrderPage/PlaceOrderPage";
 import OrderHistoryPage from "./pages/orderHistoryPage/OrderHistoryPage";
 import DashboardPage from "./pages/dashboardPage/DashboardPage";
+import ProductEditPage from "./pages/productEditPage/ProductEditPage";
 
 function App() {
   return (
@@ -43,6 +44,10 @@ function App() {
                 <Route path="/placeOrder" element={<PlaceOrderPage />} />
                 <Route path="/orderHistory" element={<OrderHistoryPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
+                <Route
+                  path="/productEdit/:productId"
+                  element={<ProductEditPage />}
+                />
 
                 <Route path="/product/:_id" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
