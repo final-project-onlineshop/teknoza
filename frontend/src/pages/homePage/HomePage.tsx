@@ -35,7 +35,7 @@ const HomePage = () => {
          
             dispatch({ type: 'FETCH_REQUEST' });
             try {
-                const dataFromApi = await axios.get('http://localhost:3048/api/products');
+                const dataFromApi = await axios.get('http://localhost:3484/api/products');
                 dispatch({ type: 'FETCH_SUCCESS', payload: dataFromApi.data })
             } catch (err) {
                 dispatch({ type: 'FETCH_FAIL', payload: err.message })

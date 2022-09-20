@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import { NavLink } from "react-router-dom";
 
-import Badge from 'react-bootstrap/Badge'
+import Badge from "react-bootstrap/Badge";
 
 import CartPage from "../../pages/cartPage/CartPage";
 import { Store } from "../../Store";
@@ -11,19 +11,14 @@ import { Store } from "../../Store";
 import "./header.scss";
 
 const Header = () => {
-
   const { state } = useContext(Store);
   const { cart } = state;
-  
-  
 
   return (
     <header>
       <Navbar expand="lg" className="header-navbar">
         <Container>
-
           <Navbar.Brand href="/home">
-
             <div className="navbar-brand">
               <img
                 src="/images/logo-teknoza.png"
@@ -43,16 +38,15 @@ const Header = () => {
               className="searchInput"
             />
 
-
-          <Navbar.Toggle aria-controls="main-navbar-nav" />
+            <Navbar.Toggle aria-controls="main-navbar-nav" />
           </div>
           <Navbar.Collapse id="main-navbar-nav">
             <Nav className="me-auto ms-auto nav-links">
               <Nav.Link as={NavLink} to="/shopping-cart">
-                Shopping Cart 
+                Shopping Cart
                 <i className="fa-solid fa-cart-shopping"></i>
                 {cart.cartItems.length > 0 && (
-                  <Badge pill bg='danger'>
+                  <Badge pill bg="danger">
                     {cart.cartItems.length}
                   </Badge>
                 )}
@@ -71,13 +65,14 @@ const Header = () => {
                 id="basic-nav-dropdown"
               >
                 <NavDropdown.Item href="#action/3.1">Account</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Orders</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/orderHistory">
+                  Orders
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Login</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-
         </Container>
       </Navbar>
       <div className="sub-nav-frame">
