@@ -46,30 +46,48 @@ const HomePage = () => {
     fetchData();
   }, []);
 
-  return (
-    <Container className="homePage">
-      <h1>Featured Products</h1>
-      {productFilter && <h2>{productFilter}</h2>}
-      {loading ? (
-        <p>LOADING...</p>
-      ) : error ? (
-        <p>ERROR!</p>
-      ) : (
-        <div className="products">
-          <Row>
-            {products.map((product) => {
-              
-              return (
-                <Col key={product._id} sm={6} md={4} lg={3} className="mb-3">
-                  <Product product={product}></Product>
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
-      )}
-    </Container>
-  );
-};
+
+    const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), { products: [], loading: true, error: '' });
+    const params = useParams();
+    const { productFilter } = params;
+    useEffect(() => {
+        const fetchData = async () => {
+         
+            dispatch({ type: 'FETCH_REQUEST' });
+            try {
+                const dataFromApi = await axios.get('http://localhost:3484/api/products');
+                dispatch({ type: 'FETCH_SUCCESS', payload: dataFromApi.data })
+            } catch (err) {
+                dispatch({ type: 'FETCH_FAIL', payload: err.message })
+            }
+        };
+        fetchData();
+    }, [])
+
+
+    return (
+        <Container className='homePage'>
+            <h1>Featured Products</h1>
+            {productFilter && <h2>{productFilter}</h2>}
+            {loading ? <p>LOADING...</p> :
+                error ? <p>ERROR!</p> :
+                    <div className="products">
+
+                        <Row>
+                            {products.map((product) => {
+                                return (
+                                    <Col key={product.slug} sm={6} md={4} lg={3} className='mb-3' >
+                                        <Product product={product}></Product>
+                                    </Col>
+                                )
+                            })}
+                        </Row>
+                    </div>
+            }
+        </Container >
+
+    )
+}
+
 
 export default HomePage;

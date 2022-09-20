@@ -15,6 +15,7 @@ import ShippingPage from "./pages/shippingPage/ShippingPage";
 import LoginPage from "./pages/loginPage/LoginPage";
 import PaymentPage from "./pages/paymentPage/PaymentPage";
 import PlaceOrderPage from "./pages/placeOrderPage/PlaceOrderPage";
+import OrderHistoryPage from "./pages/orderHistoryPage/OrderHistoryPage";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/payment" element={<PaymentPage />} />
                 <Route path="/placeOrder" element={<PlaceOrderPage />} />
+                <Route path="/orderHistory" element={<OrderHistoryPage />} />
 
                 <Route path="/product/:_id" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
