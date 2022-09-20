@@ -71,6 +71,22 @@ const Header = () => {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Login</NavDropdown.Item>
               </NavDropdown>
+              <NavDropdown title="Admin" id="basic-nav-dropdown">
+                <NavDropdown.Item as={NavLink} to="/dashboard">
+                  Dashboard
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={NavLink} to="/products">
+                  Products
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/orders">
+                  Orders
+                </NavDropdown.Item>
+
+                <NavDropdown.Item as={NavLink} to="/users">
+                  Users
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
