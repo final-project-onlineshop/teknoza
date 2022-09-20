@@ -17,7 +17,11 @@ import PaymentPage from "./pages/paymentPage/PaymentPage";
 import PlaceOrderPage from "./pages/placeOrderPage/PlaceOrderPage";
 import OrderHistoryPage from "./pages/orderHistoryPage/OrderHistoryPage";
 import DashboardPage from "./pages/dashboardPage/DashboardPage";
+
 import ProductEditPage from "./pages/productEditPage/ProductEditPage";
+
+import OrdersPage from "./pages/ordersPage/OrdersPage";
+
 
 function App() {
   return (
@@ -48,6 +52,8 @@ function App() {
                   path="/productEdit/:productId"
                   element={<ProductEditPage />}
                 />
+                <Route path="/orders" element={<OrdersPage />} />
+
 
                 <Route path="/product/:_id" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
