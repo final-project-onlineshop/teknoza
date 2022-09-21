@@ -10,7 +10,7 @@ import {
   payOrderEmailTemplate,
 } from "../utils.js";
 
-import config from "../config";
+// import config from "../config.js";
 
 const orderRouter = express.Router();
 
@@ -149,7 +149,7 @@ orderRouter.put(
         .messages()
         .send(
           {
-            from: config.MAILER_ACCOUNT_NAME,
+            from: "Teknoza <tknz.teknoza@gmail.com>",
             to: `${order.user.name} <${order.user.email}>`,
             subject: `New order ${order._id}`,
             html: payOrderEmailTemplate(order),

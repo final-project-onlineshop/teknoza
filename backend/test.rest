@@ -73,11 +73,11 @@ Content-type:application/json
     "category": "Monitors",
     "image": "/images/monitor1.jpg",
     "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
-    "price": 150,
-    "countInStock": 10,
-    "brand": "HP",
-    "rating": 3.5,
-    "numReviews": 43,
+    "price": 120,
+    "countInStock": 14,
+    "brand": "LG",
+    "rating": 4,
+    "numReviews": 44,
     "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
     "description": "Eye-friendly Full HD Monitor"
   
