@@ -45,7 +45,7 @@ export const isAdmin = (req, res, next) => {
   }
 };
 
-export const mailgun = createTransport({
+export const orderMailer = createTransport({
   service: "gmail",
   auth: {
     user: config.MAILER_ACCOUNT_NAME,
