@@ -25,6 +25,7 @@ import UsersPage from "./pages/usersPage/UsersPage";
 import ProductEditPage from "./pages/productEditPage/ProductEditPage";
 
 import OrdersPage from "./pages/ordersPage/OrdersPage";
+import ProfilePage from "./pages/profilePage/ProfilePage";
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
                 <Route path="/products" element={<ProductsPage />} />
 
                 <Route path="/users" element={<UsersPage />} />
-
+                <Route path="/profile" element={<ProfilePage />} />
                 <Route
                   path="/productEdit/:productId"
                   element={<ProductEditPage />}
