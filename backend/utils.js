@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-// import mg from "mailgun-js";
 import { createTransport } from "nodemailer";
 import { config } from "./config.js";
 
