@@ -29,6 +29,24 @@ POST {{API_URL}}/api/users/signin
 Content-type:application/json
 
 {
+    "email":"bkr@example.com",
+    "password": "123456"
+}
+
+### SIGNIN ROUTE
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
+    "email":"svd@example.com",
+    "password": "123456"
+}
+
+### SIGNIN ROUTE
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
     "email":"ömer@example.com",
     "password": "123456"
 }
