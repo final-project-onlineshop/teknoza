@@ -10,6 +10,8 @@ import userRouter from "./routes/userRoutes.js";
 
 import productRouter from "./routes/productRoutes.js";
 
+import seedRouter from "./routes/seedRoutes.js";
+
 import "./db-connect.js";
 import { config } from "./config.js";
 
@@ -58,6 +60,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cors());
 
 //test
+app.use("/api/seed", seedRouter);
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 
