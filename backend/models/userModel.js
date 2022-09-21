@@ -23,11 +23,11 @@ const userSchema = new mongoose.Schema(
         "User groups is very important to reach right field in our app!",
       ],
     },
-    Favorites: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
-      required: true,
-    },
+    // Favorites: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "Product",
+    //   required: true,
+    // },
   },
   {
     timestamps: true,

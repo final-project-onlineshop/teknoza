@@ -21,6 +21,9 @@ GET {{API_URL}}/api/users/63280ae9ac92d3452f5e1625
 ### CATEGORIES ROUTE
 GET {{API_URL}}/api/products/slug/2
 
+### SEED ROUTE
+GET {{API_URL}}/api/seed
+
 ### SIGNIN ROUTE
 POST {{API_URL}}/api/users/signin
 Content-type:application/json
