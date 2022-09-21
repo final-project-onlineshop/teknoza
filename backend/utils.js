@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-// import mg from "mailgun-js";
 import { createTransport } from "nodemailer";
 import { config } from "./config.js";
 
@@ -45,7 +44,7 @@ export const isAdmin = (req, res, next) => {
   }
 };
 
-export const mailgun = createTransport({
+export const orderMailer = createTransport({
   service: "gmail",
   auth: {
     user: config.MAILER_ACCOUNT_NAME,
