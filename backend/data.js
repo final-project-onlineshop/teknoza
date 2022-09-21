@@ -1,88 +1,55 @@
+import bcrypt from "bcryptjs";
+
 const data = {
   users: [
     {
-      _id: 1,
       name: "Sevde",
       email: "svd@example.com",
-      password: "123456",
-      userGroups: [
-        "admin",
-        "user",
-        "stockController",
-        "branchOwner",
-        "wareHouse",
-        "onlineShopController",
-      ],
-      favorites: [215632],
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
     },
     {
-      _id: 2,
       name: "Ömer",
       email: "ömer@example.com",
-      password: "123456",
-      userGroups: [
-        "admin",
-        "user",
-        "stockController",
-        "branchOwner",
-        "wareHouse",
-        "onlineShopController",
-      ],
-      favorites: [215632],
+      password: bcrypt.hashSync("123456"),
+      isAdmin: false,
     },
     {
-      _id: 3,
       name: "Bekir",
       email: "bkr@example.com",
-      password: "123456",
-      userGroups: [
-        "admin",
-        "user",
-        "stockController",
-        "branchOwner",
-        "wareHouse",
-        "onlineShopController",
-      ],
-      favorites: [215632],
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
     },
   ],
   products: [
     {
-      _id: 1,
       name: "HP Curved Monitor",
       slug: "hp-curved-monitor",
       category: "Monitors",
       image: "/images/monitor1.jpg",
+      images: ["/images/monitor1.jpg", "/images/monitor2.jpg"],
       price: 150,
       countInStock: 10,
       brand: "HP",
-      bewertungen: [
-        { userId: 1, bewertung: 4 },
-        { userId: 2, bewertung: 3 },
-      ],
       rating: 3.5,
       numReviews: 43,
+      reviews: [{ name: "Ömer", comment: "sehr cool..", rating: 5 }],
       description: "Eye-friendly Monitor",
     },
     {
-      _id: 2,
       name: "Microsoft Wireless Keyboard",
       slug: "microsoft-wireless-keyboard",
       category: "Keyboards",
       image: "/images/keyboard1.jpg",
       price: 30,
-      countInStock: 0,
+      countInStock: 20,
       brand: "Microsoft",
-      bewertungen: [
-        { userId: 1, bewertung: 4 },
-        { userId: 2, bewertung: 3 },
-      ],
       rating: 2.1,
       numReviews: 7,
       description: "Keyboard without cable",
+      reviews: [{ name: "Ömer", comment: "sehr cool..", rating: 5 }],
     },
     {
-      _id: 3,
       name: "Thinkpad Laptop",
       slug: "thinkpad-laptop",
       category: "Laptops",
@@ -90,16 +57,13 @@ const data = {
       price: 750,
       countInStock: 1,
       brand: "Lenovo",
-      bewertungen: [
-        { userId: 1, bewertung: 4 },
-        { userId: 2, bewertung: 3 },
-      ],
+
       rating: 2.4,
       numReviews: 1,
       description: "Lenovo's powerfull solution",
+      reviews: [{ name: "Ömer", comment: "sehr cool..", rating: 5 }],
     },
     {
-      _id: 4,
       name: "Sony Headset",
       slug: "sony-headset",
       category: "Headsets",
@@ -107,16 +71,13 @@ const data = {
       price: 50,
       countInStock: 10,
       brand: "Sony",
-      bewertungen: [
-        { userId: 1, bewertung: 4 },
-        { userId: 2, bewertung: 3 },
-      ],
+
       rating: 4.8,
       numReviews: 33,
       description: "Listen your heart",
+      reviews: [{ name: "Ömer", comment: "sehr cool..", rating: 5 }],
     },
     {
-      _id: 5,
       name: "Everest Mouse",
       slug: "everest-mouse",
       category: "Mouses",
@@ -124,16 +85,13 @@ const data = {
       price: 10,
       countInStock: 50,
       brand: "Everest",
-      bewertungen: [
-        { userId: 1, bewertung: 4 },
-        { userId: 2, bewertung: 3 },
-      ],
+
       rating: 3.4,
       numReviews: 21,
       description: "Small usefull mouse",
+      reviews: [{ name: "Ömer", comment: "sehr cool..", rating: 5 }],
     },
     {
-      _id: 6,
       name: "Epson Printer",
       slug: "epson-printer",
       category: "Printers",
@@ -141,15 +99,12 @@ const data = {
       price: 70,
       countInStock: 7,
       brand: "Epson",
-      bewertungen: [
-        { userId: 1, bewertung: 4 },
-        { userId: 2, bewertung: 3 },
-      ],
+
       rating: 2.1,
       numReviews: 8,
       description: "Prints your dream",
+      reviews: [{ name: "Ömer", comment: "sehr cool..", rating: 5 }],
     },
   ],
 };
-
 export default data;
