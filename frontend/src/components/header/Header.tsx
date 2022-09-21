@@ -75,6 +75,9 @@ const Header = () => {
                 <NavDropdown.Item as={NavLink} to="/dashboard">
                   Dashboard
                 </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/profile">
+                  Profile
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as={NavLink} to="/products">
                   Products
@@ -85,7 +88,7 @@ const Header = () => {
 
                 <NavDropdown.Item as={NavLink} to="/users">
                   Users
-                </NavDropdown.Item>
+                </NavDropdown.Item>                
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
