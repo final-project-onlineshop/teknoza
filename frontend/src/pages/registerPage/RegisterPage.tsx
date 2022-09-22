@@ -1,10 +1,14 @@
 import { Button, Container, Form } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import "./registerPage.scss";
 
 const RegisterPage = () => {
   return (
     <Container className="register-page">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       
       <Form className="register-form">
       <h1>Register</h1>

@@ -38,7 +38,7 @@ const Header = () => {
           </div>
           <Navbar.Collapse id="main-navbar-nav">
             <Nav className="me-auto ms-auto nav-links">
-              <Nav.Link as={NavLink} to="/shopping-cart">
+              <Nav.Link as={NavLink} to="/cart">
                 Shopping Cart
                 <i className="fa-solid fa-cart-shopping"></i>
                 {cart.cartItems.length > 0 && (
@@ -84,7 +84,7 @@ const Header = () => {
 
                 <NavDropdown.Item as={NavLink} to="/users">
                   Users
-                </NavDropdown.Item>                
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
