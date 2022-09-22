@@ -1,4 +1,5 @@
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
@@ -25,6 +26,9 @@ const productsInCart = [
 const PlaceOrderPage = () => {
   return (
     <Container className="placeOrderPage">
+      <Helmet>
+        <title>Preview Order</title>
+      </Helmet>
       <CheckoutSteps step1 step2 step3 step4 />
       <h1 className="my-3">Preview Order</h1>
       <Row>
@@ -94,9 +98,9 @@ const PlaceOrderPage = () => {
                   </Row>
                 </ListGroup.Item>
               </ListGroup>
-              <ListGroup.Item >
+              <ListGroup.Item>
                 <div className="d-grid">
-                <Button>Place Order</Button>
+                  <Button>Place Order</Button>
                 </div>
               </ListGroup.Item>
             </Card.Body>

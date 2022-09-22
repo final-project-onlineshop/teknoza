@@ -1,10 +1,14 @@
 import { Button, Container, Form } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import "./loginPage.scss";
 
 const LoginPage = () => {
   return (
     <Container className="login-page">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <h1>Login</h1>
       <Form className="login-form">
         <Form.Group className="mb-3" controlId="formEmail">

@@ -1,10 +1,14 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Chart from "react-google-charts";
+import { Helmet } from "react-helmet-async";
 import "./dashboard.scss";
 
 const DashboardPage = () => {
   return (
     <Container className="dashboard-page">
+      <Helmet>
+        <title>Dashboard</title>
+      </Helmet>
       <h1>Dashboard</h1>
       <Row>
         <Col md={4}>
