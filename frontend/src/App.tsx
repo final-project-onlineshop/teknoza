@@ -26,7 +26,7 @@ import ProductEditPage from "./pages/productEditPage/ProductEditPage";
 
 import OrdersPage from "./pages/ordersPage/OrdersPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
-
+import OrderDetailsPage from "./pages/orderDetailsPage/OrderDetailsPage";
 
 function App() {
   return (
@@ -54,6 +54,10 @@ function App() {
                 <Route path="/orderHistory" element={<OrderHistoryPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/products" element={<ProductsPage />} />
+                <Route
+                  path="/order-details/:orderId"
+                  element={<OrderDetailsPage />}
+                />
 
                 <Route path="/users" element={<UsersPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
@@ -62,8 +66,6 @@ function App() {
                   element={<ProductEditPage />}
                 />
                 <Route path="/orders" element={<OrdersPage />} />
-
-
 
                 <Route path="/product/:_id" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />
