@@ -26,7 +26,12 @@ import ProductEditPage from "./pages/productEditPage/ProductEditPage";
 
 import OrdersPage from "./pages/ordersPage/OrdersPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+
+import SearchPage from "./pages/searchPage/SearchPage";
+
+
 import OrderDetailsPage from "./pages/orderDetailsPage/OrderDetailsPage";
+
 
 function App() {
   return (
@@ -43,7 +48,7 @@ function App() {
                 <Route path="/home" element={<HomePage />} />
 
                 <Route path="/cart" element={<CartPage />} />
-
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
                 <Route path="/shipping" element={<ShippingPage />} />
