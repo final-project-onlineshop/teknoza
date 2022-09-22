@@ -10,8 +10,6 @@ import {
   payOrderEmailTemplate,
 } from "../utils.js";
 
-// import config from "../config.js";
-
 const orderRouter = express.Router();
 
 orderRouter.get(
