@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Product from "../../components/product/Product";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -47,6 +48,9 @@ const HomePage = () => {
 
   return (
     <Container className="homePage">
+      <Helmet>
+        <title>Teknoza</title>
+      </Helmet>
       <h1>Featured Products</h1>
       {productFilter && <h2>{productFilter}</h2>}
       {loading ? (

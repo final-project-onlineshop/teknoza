@@ -1,9 +1,13 @@
 import { Button, Container, Table } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import "./productsPage.scss";
 
 const ProductsPage = () => {
   return (
     <Container className="products-page">
+      <Helmet>
+        <title>Products</title>
+      </Helmet>
       <h1>Products</h1>
       <Button className="create-product-button">
         <i className="fa-solid fa-plus "></i> Create Product

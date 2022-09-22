@@ -48,6 +48,9 @@ const ProductPage = () => {
 
   return (
     <div className="ProductPage">
+      <Helmet>
+        <title>{product.name}</title>
+      </Helmet>
       <Row>
         <Col md={6}>
           <img

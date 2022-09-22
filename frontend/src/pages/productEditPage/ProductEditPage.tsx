@@ -1,4 +1,5 @@
 import { Button, Container, Form, ListGroup } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import "./productEditPage.scss";
 
@@ -7,6 +8,9 @@ const ProductEditPage = () => {
   const { productId } = params;
   return (
     <Container>
+      <Helmet>
+        <title>Edit Product</title>
+      </Helmet>
       <h1>Edit Product : {productId}</h1>
       <Form>
         <Form.Group className="mb-3" controlId="name">

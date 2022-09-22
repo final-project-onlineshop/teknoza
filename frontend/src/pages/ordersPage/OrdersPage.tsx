@@ -1,9 +1,13 @@
 import { Button, Container, Table } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import "./ordersPage.scss";
 
 const OrdersPage = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Orders</title>
+      </Helmet>
       <h1>Orders </h1>
       <Table striped bordered hover className="text-center">
         <thead>

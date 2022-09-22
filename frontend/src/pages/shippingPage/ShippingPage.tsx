@@ -1,11 +1,15 @@
 import { Button, Container, Form } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
 import "./shippingPage.scss";
 
 const ShippingPage = () => {
   return (
     <Container className="shipping-page">
-   <CheckoutSteps step1 step2/>
+      <Helmet>
+        <title>Shipping</title>
+      </Helmet>
+      <CheckoutSteps step1 step2 />
       <Form className="shipping-form">
         <h1>Shipping Adress</h1>
         <Form.Group className="mb-3" controlId="formFullName">
