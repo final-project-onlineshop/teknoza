@@ -26,6 +26,7 @@ import ProductEditPage from "./pages/productEditPage/ProductEditPage";
 
 import OrdersPage from "./pages/ordersPage/OrdersPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+import SearchPage from "./pages/searchPage/SearchPage";
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
                 <Route path="/home" element={<HomePage />} />
 
                 <Route path="/cart" element={<CartPage />} />
-
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
                 <Route path="/shipping" element={<ShippingPage />} />

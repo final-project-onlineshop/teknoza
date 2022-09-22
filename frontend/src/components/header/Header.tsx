@@ -9,6 +9,7 @@ import CartPage from "../../pages/cartPage/CartPage";
 import { Store } from "../../Store";
 
 import "./header.scss";
+import SearchBox from "../searchBox/SearchBox";
 
 const Header = () => {
   const { state } = useContext(Store);
@@ -31,12 +32,7 @@ const Header = () => {
           </Navbar.Brand>
 
           <div className="search-box">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="searchInput"
-            />
+            <SearchBox />
 
             <Navbar.Toggle aria-controls="main-navbar-nav" />
           </div>
