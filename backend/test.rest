@@ -7,7 +7,10 @@ GET {{API_URL}}/api/products
 ### PRODUCTID ROUTE +++
 GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 
-### PRODUCT SEARCH ROUTE +++
+### PRODUCT SEARCH ROUTE ---
+GET {{API_URL}}/api/products/search?page=1&query=laptop&category=all&price=all&rating=all&order=newest
+
+### PRODUCT SEARCH ROUTE ---
 GET {{API_URL}}/api/products/search?page=1&query=laptop&category=all&price=all&rating=all&order=newest
 
 ### CATEGORIES ROUTE +++
