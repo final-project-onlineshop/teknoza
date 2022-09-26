@@ -4,7 +4,7 @@
 GET {{API_URL}}/api/products
 
 ### PRODUCTID ROUTE
-GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
+GET {{API_URL}}/api/products/633168748f709dfaf13531e6
 
 ### CATEGORIES ROUTE
 GET {{API_URL}}/api/products/categories
