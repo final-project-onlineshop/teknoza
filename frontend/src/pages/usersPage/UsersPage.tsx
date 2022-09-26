@@ -1,9 +1,13 @@
 import { Container, Table } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import "./usersPage.scss";
 
 const UsersPage = () => {
   return (
     <Container className="users-page">
+      <Helmet>
+        <title>Users</title>
+      </Helmet>
       <h1>Users</h1>
       <Table className="text-center">
         <thead>

@@ -1,10 +1,14 @@
 import { Button, Container, Form } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
 import "./paymentPage.scss";
 
 const PaymentPage = () => {
   return (
     <Container className="payment-page">
+      <Helmet>
+        <title>Payment</title>
+      </Helmet>
       <CheckoutSteps step1 step2 step3 />
       <div className="payment-form">
         <Form >

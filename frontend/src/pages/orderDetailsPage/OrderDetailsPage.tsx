@@ -1,12 +1,11 @@
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
+import { useParams } from "react-router-dom";
+import MessageBox from "../../components/messageBox/MessageBox";
 import ProductInCart from "../../components/productInCart/ProductInCart";
-import "./placeOrderPage.scss";
-//TODO:delete after testing
-const productsInCart = [
+import "./orderDetailsPage.scss";
+const productsInOrder = [
   {
     name: "HP Curved Monitor",
     slug: "hp-curved-monitor",
@@ -23,48 +22,51 @@ const productsInCart = [
   },
 ];
 
-const PlaceOrderPage = () => {
+const OrderDetailsPage = () => {
+  const { orderId } = useParams();
   return (
-    <Container className="placeOrderPage">
+    <Container>
       <Helmet>
-        <title>Preview Order</title>
+        <title>Order Details : {orderId}</title>
       </Helmet>
-      <CheckoutSteps step1 step2 step3 step4 />
-      <h1 className="my-3">Preview Order</h1>
+      <h1>Order Details : {orderId}</h1>
       <Row>
-        <Col md={8} className="order-details">
-          <Card className="shipping-details mb-3">
+        <Col md={8}>
+          <Card className="mb-3">
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
-                <b>Name: </b> Max Müllermann <br />
-                <b>Address: </b> Berlin <br />
+                <b>Name: </b> Max Mustermann
+                <br />
+                <b>Adress: </b>Frankfurter Straße, 54 101010 Berlin <br />
               </Card.Text>
-              <Link to="/shipping">Edit</Link>
+              <MessageBox variant="success">
+                Delivered at 21.01.2022 .
+              </MessageBox>
             </Card.Body>
           </Card>
-          <Card className="payment-details mb-3">
+          <Card className="mb-3">
             <Card.Body>
               <Card.Title>Payment</Card.Title>
               <Card.Text>
-                <b>Method: </b> PayPal <br />
+                <b>Method: </b> Paypal
+                <br />
               </Card.Text>
-              <Link to="/payment">Edit</Link>
+              <MessageBox variant="danger">Not paid !</MessageBox>
             </Card.Body>
           </Card>
           <Card className="productsInOrder mb-3">
             <Card.Body>
               <Card.Title>Items</Card.Title>
               <Card.Text>
-                {productsInCart.map((product, index) => {
-                  return <ProductInCart product={product} uneditable />;
+                {productsInOrder.map((product, index) => {
+                  return <ProductInCart product={product} uneditable />; //TODO: after new component change this one, it has dom nesting warning
                 })}
               </Card.Text>
-              <Link to="/shopping-cart">Edit</Link>
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} className="order-summary">
+        <Col md={4}>
           <Card>
             <Card.Body>
               <Card.Title>Order Summary</Card.Title>
@@ -72,19 +74,19 @@ const PlaceOrderPage = () => {
                 <ListGroup.Item>
                   <Row>
                     <Col>Items</Col>
-                    <Col>$ 88.00</Col>
+                    <Col>$ 330.00</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Shipping</Col>
-                    <Col>$ 6.00</Col>
+                    <Col>$ 36.00</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Tax</Col>
-                    <Col>$ 6.00</Col>
+                    <Col>$ 14.00</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -93,15 +95,13 @@ const PlaceOrderPage = () => {
                       <b>Order Total</b>
                     </Col>
                     <Col>
-                      <b>$ 100.00</b>
+                      <b>$ 380.00</b>
                     </Col>
                   </Row>
                 </ListGroup.Item>
               </ListGroup>
               <ListGroup.Item>
-                <div className="d-grid">
-                  <Button>Place Order</Button>
-                </div>
+                <h2>PAYPAL</h2>
               </ListGroup.Item>
             </Card.Body>
           </Card>
@@ -111,4 +111,4 @@ const PlaceOrderPage = () => {
   );
 };
 
-export default PlaceOrderPage;
+export default OrderDetailsPage;

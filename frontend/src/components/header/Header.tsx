@@ -9,6 +9,7 @@ import CartPage from "../../pages/cartPage/CartPage";
 import { Store } from "../../Store";
 
 import "./header.scss";
+import SearchBox from "../searchBox/SearchBox";
 
 const Header = () => {
   const { state } = useContext(Store);
@@ -31,18 +32,13 @@ const Header = () => {
           </Navbar.Brand>
 
           <div className="search-box">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="searchInput"
-            />
+            <SearchBox />
 
             <Navbar.Toggle aria-controls="main-navbar-nav" />
           </div>
           <Navbar.Collapse id="main-navbar-nav">
             <Nav className="me-auto ms-auto nav-links">
-              <Nav.Link as={NavLink} to="/shopping-cart">
+              <Nav.Link as={NavLink} to="/cart">
                 Shopping Cart
                 <i className="fa-solid fa-cart-shopping"></i>
                 {cart.cartItems.length > 0 && (
@@ -88,7 +84,7 @@ const Header = () => {
 
                 <NavDropdown.Item as={NavLink} to="/users">
                   Users
-                </NavDropdown.Item>                
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

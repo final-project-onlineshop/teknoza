@@ -1,30 +1,52 @@
 @API_URL = http://localhost:3484
 
-### PRODUCTS ROUTE
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzMxNTRiMTlhZmIwYzQxODM2ZjEzNGQiLCJuYW1lIjoiQmVraXIiLCJlbWFpbCI6ImJrckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiJDJhJDEwJHdEM1lqSkUvSXNjQk9JMU4zQk9GWS5WN01SU3Ftc09CcEdJWmtockdtVW1xWlh4T2NRb2dHIiwiaWF0IjoxNjY0MTc5MDM1LCJleHAiOjE2NjY3NzEwMzV9.Q92kTl1erE9vnXKixQMtV7MVRAf3qRxZBf-Jvq5GWQ8
+### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
 
-### PRODUCTID ROUTE
-GET {{API_URL}}/api/products/633168748f709dfaf13531e6
+### PRODUCTID ROUTE +++
+GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 
-### CATEGORIES ROUTE
+### PRODUCT SEARCH ROUTE +++
+GET {{API_URL}}/api/products/search?page=1&query=laptop&category=all&price=all&rating=all&order=newest
+
+### CATEGORIES ROUTE +++
 GET {{API_URL}}/api/products/categories
 
-### CATEGORIES ROUTE
+### CATEGORIES ROUTE +++
 GET {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
 
-### CATEGORIES ROUTE
+### CATEGORIES ROUTE +++
 GET {{API_URL}}/api/products/slug/epson-printer
 
-### CATEGORIES ROUTE
+### CATEGORIES ROUTE +++
 GET {{API_URL}}/api/users/63280ae9ac92d3452f5e1625
 
-### CATEGORIES ROUTE
+### CATEGORIES ROUTE +++
 GET {{API_URL}}/api/products/slug/2
 
-### SEED ROUTE
+### SEED ROUTE +++
 GET {{API_URL}}/api/seed
 
-### SIGNIN ROUTE
+### SIGNIN ROUTE +++
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
+    "email":"bkr@example.com",
+    "password": "123456"
+}
+
+### SIGNIN ROUTE +++
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
+    "email":"svd@example.com",
+    "password": "123456"
+}
+
+### SIGNIN ROUTE +++
 POST {{API_URL}}/api/users/signin
 Content-type:application/json
 
@@ -33,20 +55,22 @@ Content-type:application/json
     "password": "123456"
 }
 
-### SIGNUP ROUTE
+### SIGNUP ROUTE ---
 POST {{API_URL}}/api/users/signup
+
 Content-type:application/json
 
 {
     "email":"eee@example.com",
-    "password": "123456",
+    "password": "b234asd",
     "name":"aaa",
-    "isAdmin":false,
+    "isAdmin":false
 }
 
-### CATEGORIES ROUTE
+### POST NEW PRODUCT ROUTE +++
 POST {{API_URL}}/api/products
 Content-type:application/json
+Authorization : {{TOKEN}}
 
 {
     
@@ -55,28 +79,42 @@ Content-type:application/json
     "category": "Monitors",
     "image": "/images/monitor1.jpg",
     "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
-    "price": 150,
-    "countInStock": 10,
-    "brand": "HP",
-    "rating": 3.5,
-    "numReviews": 43,
+    "price": 120,
+    "countInStock": 14,
+    "brand": "LG",
+    "rating": 4,
+    "numReviews": 44,
     "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
     "description": "Eye-friendly Full HD Monitor"
   
 }
 
-### CATEGORIES ROUTE
-PUT {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+### UPDATE PRODUCT ROUTE +++
+PUT {{API_URL}}/api/products/633154e59afb0c41836f1350
 Content-type:application/json
+Authorization : {{TOKEN}}
 
 {
     
-
+    "name": "sony Curved Monitor",
+    "slug": "sony-curved-monitor",
+    "category": "Monitors",
+    "image": "/images/monitor1.jpg",
+    "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
+    "price": 120,
+    "countInStock": 14,
+    "brand": "LG",
+    "rating": 4,
+    "numReviews": 44,
+    "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
+    "description": "Eye-friendly Full HD Monitor"
   
 }
 
-### CATEGORIES ROUTE
-DELETE {{API_URL}}/api/products/63280ac3ac92d3452f5e161c
+### DELETE PRODUCT ROUTE +++
+DELETE {{API_URL}}/api/products/633154e59afb0c41836f1350
+Content-type:application/json
+Authorization : {{TOKEN}}
 
 
 

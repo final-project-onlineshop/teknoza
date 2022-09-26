@@ -1,11 +1,15 @@
 import { Button, Container, Table } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import "./orderHistoryPage.scss";
 
 const OrderHistoryPage = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Order History</title>
+      </Helmet>
       <h1>Order History</h1>
-      <Table striped bordered hover className="text-center" >
+      <Table striped bordered hover className="text-center">
         <thead>
           <tr>
             <th>ID</th>
@@ -16,7 +20,7 @@ const OrderHistoryPage = () => {
             <th>ACTIONS</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           <tr>
             <td>6322fd58f8048198f4a65815</td>
             <td>2022-09-15</td>
