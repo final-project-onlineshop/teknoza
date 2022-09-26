@@ -11,7 +11,7 @@ GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 GET {{API_URL}}/api/products/search?page=1&query=laptop&category=all&price=all&rating=all&order=newest
 
 ### PRODUCT SEARCH ROUTE ---
-GET {{API_URL}}/api/products/search?page=1&query=laptop&category=all&price=all&rating=all&order=newest
+GET {{API_URL}}/api/products/search?page=1&query=laptop&category=all&price=all
 
 ### CATEGORIES ROUTE +++
 GET {{API_URL}}/api/products/categories
