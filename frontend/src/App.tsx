@@ -29,11 +29,14 @@ import ProfilePage from "./pages/profilePage/ProfilePage";
 
 import SearchPage from "./pages/searchPage/SearchPage";
 
-
 import OrderDetailsPage from "./pages/orderDetailsPage/OrderDetailsPage";
-
+import { useContext } from "react";
+import { Store } from "./Store";
 
 function App() {
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
   return (
     <BrowserRouter>
       <div className="App">
