@@ -16,7 +16,6 @@ const Header = () => {
   const { cart, userInfo } = state;
 
   const logoutHandler = () => {
-   
     ctxDispatch({ type: "USER_LOGOUT" });
     localStorage.removeItem("userInfo");
   };
@@ -82,21 +81,21 @@ const Header = () => {
                   </NavDropdown>
                   {userInfo.isAdmin && (
                     <NavDropdown title="Admin" id="basic-nav-dropdown">
-                      <NavDropdown.Item as={NavLink} to="/dashboard">
+                      <NavDropdown.Item as={NavLink} to="/admin/dashboard">
                         Dashboard
                       </NavDropdown.Item>
                       <NavDropdown.Item as={NavLink} to="/profile">
                         Profile
                       </NavDropdown.Item>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item as={NavLink} to="/products">
+                      <NavDropdown.Item as={NavLink} to="/admin/products">
                         Products
                       </NavDropdown.Item>
-                      <NavDropdown.Item as={NavLink} to="/orders">
+                      <NavDropdown.Item as={NavLink} to="/admin/orders">
                         Orders
                       </NavDropdown.Item>
 
-                      <NavDropdown.Item as={NavLink} to="/users">
+                      <NavDropdown.Item as={NavLink} to="/admin/users">
                         Users
                       </NavDropdown.Item>
                     </NavDropdown>
