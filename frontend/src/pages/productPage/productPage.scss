@@ -1,14 +1,22 @@
-.ProductPage{
-
+.ProductPage {
     
-    .img-large{
-        max-width: 100%;
+    
+    .item {    
+        height: 20rem;
+
+            .img-large {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;         
+            }     
     }
 
-    .btn-primary{
+    .btn-primary {
         background-color: #eda66e;
         border: solid 1px black;
         color: black;
     }
 
+  
+    
 }

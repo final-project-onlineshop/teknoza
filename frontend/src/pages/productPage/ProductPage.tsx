@@ -11,6 +11,7 @@ import {
   ListGroup,
   ListGroupItem,
   Row,
+  Carousel,
 } from "react-bootstrap";
 import Rating from "../../components/rating/Rating";
 import { Helmet } from "react-helmet-async";
@@ -42,6 +43,7 @@ const ProductPage = () => {
   const params = useParams();
   const productId = params._id;
   // const [product, setProduct] = useState([]);
+  const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,8 +73,9 @@ const ProductPage = () => {
 
     console.log(cart.cartItems.length);
   };
+
   return (
-    <Container className="ProductPage">
+    <Container className="ProductPage mt-3">
       <Helmet>
         <title>{product.name}</title>
       </Helmet>
@@ -82,24 +85,46 @@ const ProductPage = () => {
         <p>ERROR!</p>
       ) : (
         <Row>
-          <Col md={6}>
+          <Col md={5} className="col">
             <img
-              src={product.thumbnail}
-              alt={product.name}
               className="img-large"
+              src={selectedImage || product.thumbnail}
+              alt={product.name}
             />
           </Col>
-          <Col md={3}>
+          <Col md={4}>
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <Helmet>
                   <title>{product.name}</title>
                 </Helmet>
+                <h1>{product.name}</h1>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Rating reviews={product.reviews} />
+                <Rating
+                  reviews={product.reviews}
+                  numReviews={product.numReviews}
+                />
               </ListGroup.Item>
-              <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+              <ListGroup.Item>
+                <Row xs={1} md={2} className="g-2">
+                  {[product.thumbnail, ...product.images].map((x) => (
+                    <Col key={x}>
+                      <Card>
+                        <Button
+                          className="thumbnail"
+                          type="button"
+                          variant="light"
+                          onClick={() => setSelectedImage(x)}
+                        >
+                          <Card.Img variant="top" src={x} alt="product" />
+                        </Button>
+                      </Card>
+                    </Col>
+                  ))}
+                </Row>
+              </ListGroup.Item>
+
               <ListGroup.Item>
                 Description:
                 <p>{product.description}</p>
