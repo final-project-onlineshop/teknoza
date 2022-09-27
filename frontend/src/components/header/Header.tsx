@@ -12,8 +12,13 @@ import "./header.scss";
 import SearchBox from "../searchBox/SearchBox";
 
 const Header = () => {
-  const { state } = useContext(Store);
-  const { cart } = state;
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
+  const logoutHandler = () => {
+    ctxDispatch({ type: "USER_LOGOUT" });
+    localStorage.removeItem("userInfo");
+  };
 
   return (
     <header>
@@ -47,45 +52,65 @@ const Header = () => {
                   </Badge>
                 )}
               </Nav.Link>
+              {userInfo ? (
+                <>
+                  <NavDropdown
+                    title={
+                      <>
+                        <i className="fa-solid fa-user"></i>
+                        {" " + userInfo.name}
+                      </>
+                    }
+                    id="basic-nav-dropdown"
+                  >
+                    <NavDropdown.Item></NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">
+                      Account
+                    </NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to="/orderHistory">
+                      Orders
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item
+                      as={NavLink}
+                      to="/"
+                      onClick={logoutHandler}
+                    >
+                      Logout
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  {userInfo.isAdmin && (
+                    <NavDropdown title="Admin" id="basic-nav-dropdown">
+                      <NavDropdown.Item as={NavLink} to="/admin/dashboard">
+                        Dashboard
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={NavLink} to="/profile">
+                        Profile
+                      </NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item as={NavLink} to="/admin/products">
+                        Products
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={NavLink} to="/admin/orders">
+                        Orders
+                      </NavDropdown.Item>
 
-              <Nav.Link as={NavLink} to="/register">
-                Register
-              </Nav.Link>
-
-              <Nav.Link as={NavLink} to="/login">
-                Login
-              </Nav.Link>
-
-              <NavDropdown
-                title={<i className="fa-solid fa-user"></i>}
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">Account</NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/orderHistory">
-                  Orders
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Login</NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Admin" id="basic-nav-dropdown">
-                <NavDropdown.Item as={NavLink} to="/dashboard">
-                  Dashboard
-                </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/profile">
-                  Profile
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={NavLink} to="/products">
-                  Products
-                </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/orders">
-                  Orders
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={NavLink} to="/users">
-                  Users
-                </NavDropdown.Item>
-              </NavDropdown>
+                      <NavDropdown.Item as={NavLink} to="/admin/users">
+                        Users
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  )}
+                </>
+              ) : (
+                <>
+                  <Nav.Link as={NavLink} to="/register">
+                    Register
+                  </Nav.Link>
+                  <Nav.Link as={NavLink} to="/login">
+                    Login
+                  </Nav.Link>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

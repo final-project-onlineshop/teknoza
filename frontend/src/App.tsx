@@ -29,11 +29,16 @@ import ProfilePage from "./pages/profilePage/ProfilePage";
 
 import SearchPage from "./pages/searchPage/SearchPage";
 
-
 import OrderDetailsPage from "./pages/orderDetailsPage/OrderDetailsPage";
-
+import { useContext } from "react";
+import { Store } from "./Store";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
+import AdminRoute from "./components/adminRoute/AdminRoute";
 
 function App() {
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -50,27 +55,97 @@ function App() {
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/register" element={<RegisterPage />} />
-
-                <Route path="/shipping" element={<ShippingPage />} />
-
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/payment" element={<PaymentPage />} />
-                <Route path="/placeOrder" element={<PlaceOrderPage />} />
-                <Route path="/orderHistory" element={<OrderHistoryPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
-                <Route path="/products" element={<ProductsPage />} />
+
+                <Route
+                  path="/payment"
+                  element={
+                    <ProtectedRoute>
+                      <PaymentPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/placeOrder"
+                  element={
+                    <ProtectedRoute>
+                      <PlaceOrderPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/orderHistory"
+                  element={
+                    <ProtectedRoute>
+                      <OrderHistoryPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/admin/dashboard"
+                  element={
+                    <AdminRoute>
+                      <DashboardPage />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/products"
+                  element={
+                    <AdminRoute>
+                      <ProductsPage />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/shipping"
+                  element={
+                    <ProtectedRoute>
+                      <ShippingPage />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route
                   path="/order-details/:orderId"
-                  element={<OrderDetailsPage />}
+                  element={
+                    <ProtectedRoute>
+                      <OrderDetailsPage />
+                    </ProtectedRoute>
+                  }
                 />
 
-                <Route path="/users" element={<UsersPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
                 <Route
-                  path="/productEdit/:productId"
-                  element={<ProductEditPage />}
+                  path="/admin/users"
+                  element={
+                    <AdminRoute>
+                      <UsersPage />
+                    </AdminRoute>
+                  }
                 />
-                <Route path="/orders" element={<OrdersPage />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoute>
+                      <ProfilePage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="admin/productEdit/:productId"
+                  element={
+                    <AdminRoute>
+                      <ProductEditPage />
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/orders"
+                  element={
+                    <AdminRoute>
+                      <OrdersPage />
+                    </AdminRoute>
+                  }
+                />
 
                 <Route path="/product/:_id" element={<ProductPage />} />
                 <Route path="/" element={<Navigate to="/home" replace />} />

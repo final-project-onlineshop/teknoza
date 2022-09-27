@@ -59,7 +59,7 @@ const RegisterPage = () => {
         email: values.email,
         password: values.password,
       });
-      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
+      ctxDispatch({ type: 'USER_LOGIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/login');
     } catch (err) {

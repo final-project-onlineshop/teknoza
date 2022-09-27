@@ -49,9 +49,9 @@ const LoginPage = () => {
         email: values.email,
         password: values.password,
       });
-      ctxDispatch({ type: "USER_SIGNIN", payload: data });
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate(redirect || "/");
+      ctxDispatch({ type: 'USER_LOGIN', payload: data });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      navigate(redirect || '/');
     } catch (err) {
       toast.error(err.message);
     }
