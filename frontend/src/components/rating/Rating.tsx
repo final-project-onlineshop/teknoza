@@ -1,8 +1,17 @@
 import React from "react";
 import "./rating.scss";
+const getRating = (reviews) => {
+  let sum = 0;
+  reviews.map((review) => {
+    sum += review.rating;
+  });
+  return sum / reviews.length;
+};
 
 const Rating = (props: any) => {
-  const { rating, numReviews, caption } = props;
+  const { reviews, caption } = props;
+  const rating = getRating(reviews);
+  const numReviews = reviews.length;
   return (
     <div>
       <div className="rating">
