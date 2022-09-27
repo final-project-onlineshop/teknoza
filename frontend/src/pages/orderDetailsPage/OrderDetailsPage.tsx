@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
+import OrderSummary from "../../components/orderSummary/OrderSummary";
 import ProductInCart from "../../components/productInCart/ProductInCart";
 import "./orderDetailsPage.scss";
 const productsInOrder = [
@@ -67,44 +68,7 @@ const OrderDetailsPage = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card>
-            <Card.Body>
-              <Card.Title>Order Summary</Card.Title>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Items</Col>
-                    <Col>$ 330.00</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Shipping</Col>
-                    <Col>$ 36.00</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Tax</Col>
-                    <Col>$ 14.00</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>
-                      <b>Order Total</b>
-                    </Col>
-                    <Col>
-                      <b>$ 380.00</b>
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-              </ListGroup>
-              <ListGroup.Item>
-                <h2>PAYPAL</h2>
-              </ListGroup.Item>
-            </Card.Body>
-          </Card>
+          <OrderSummary page="order-details"/>
         </Col>
       </Row>
     </Container>
