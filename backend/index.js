@@ -32,6 +32,7 @@ const port = config.PORT || 3484;
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
@@ -43,7 +44,11 @@ app.use(
 
 app.set("trust proxy", 1);
 
-app.use(cookieParser());
+// app.get("/api/keys/paypal", (req, res) => {
+//   res.send(config.PAYPAL_CLIENT_ID || "sb");
+// });
+
+// app.use(cookieParser());
 
 // app.use(
 //   session({
@@ -57,9 +62,6 @@ app.use(cookieParser());
 //     },
 //   })
 // );
-
-app.use(express.urlencoded({ extended: true }));
-// app.use(cors());
 
 //test
 app.use("/api/seed", seedRouter);
