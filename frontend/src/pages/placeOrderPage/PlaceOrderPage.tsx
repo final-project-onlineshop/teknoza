@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
+import OrderSummary from "../../components/orderSummary/OrderSummary";
 import ProductInCart from "../../components/productInCart/ProductInCart";
 import "./placeOrderPage.scss";
 //TODO:delete after testing
@@ -65,46 +66,7 @@ const PlaceOrderPage = () => {
           </Card>
         </Col>
         <Col md={4} className="order-summary">
-          <Card>
-            <Card.Body>
-              <Card.Title>Order Summary</Card.Title>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Items</Col>
-                    <Col>$ 88.00</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Shipping</Col>
-                    <Col>$ 6.00</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Tax</Col>
-                    <Col>$ 6.00</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>
-                      <b>Order Total</b>
-                    </Col>
-                    <Col>
-                      <b>$ 100.00</b>
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-              </ListGroup>
-              <ListGroup.Item>
-                <div className="d-grid">
-                  <Button>Place Order</Button>
-                </div>
-              </ListGroup.Item>
-            </Card.Body>
-          </Card>
+          <OrderSummary page="placeOrder" />
         </Col>
       </Row>
     </Container>
