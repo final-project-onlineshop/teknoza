@@ -52,9 +52,9 @@ const RegisterPage = () => {
     validationSchema: validations
   });
 
-  const submitForm =  (values) => {
+  const submitForm = async (values) => {
       try {
-      const { data } =  axios.post(`${BASE_API_URL}/users/signup`, {
+      const { data } = await axios.post(`${BASE_API_URL}/users/signup`, {
         name: values.name,
         email: values.email,
         password: values.password,

@@ -43,9 +43,9 @@ const LoginPage = () => {
     validationSchema: validations
   });
 
-  const submitForm = (values) => {
+  const submitForm = async(values) => {
     try {
-      const { data } = axios.post(`${BASE_API_URL}/users/signin`, {
+      const { data } = await axios.post(`${BASE_API_URL}/users/signin`, {
         email: values.email,
         password: values.password,
       });
