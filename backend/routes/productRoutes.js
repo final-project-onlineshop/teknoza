@@ -19,14 +19,16 @@ productRouter.post(
     const newProduct = new Product({
       name: req.body.name || "sample name " + Date.now(),
       slug: req.body.slug || "sample-name-" + Date.now(),
-      image: req.body.image || "/images/p1.jpg",
+      thumbnail: req.body.thumbnail || "sample thumbnail ",
+      images: req.body.images || "/images/p1.jpg",
       price: req.body.price || 0,
       category: req.body.category || "sample category",
       brand: req.body.brand || "sample brand",
-      countInStock: req.body.coutInStock || 0,
-      rating: req.body.rating || 0,
-      numReviews: req.body.nunReviews || 0,
+      stock: req.body.stock || 0,
+      reviews: req.body.reviews || [],
+      // numReviews: req.body.numReviews || 0,
       description: req.body.desciption || "sample description",
+      discountPercentage: req.body.discountPercentage || 0,
     });
     const product = await newProduct.save();
     res.send({ message: "Product Created", product });
@@ -44,12 +46,16 @@ productRouter.put(
       product.name = req.body.name;
       product.slug = req.body.slug;
       product.price = req.body.price;
-      product.image = req.body.image;
       product.images = req.body.images;
+      product.thumbnail = req.body.thumbnail;
       product.category = req.body.category;
       product.brand = req.body.brand;
-      product.countInStock = req.body.countInStock;
+      product.stock = req.body.stock;
       product.description = req.body.description;
+      product.discountPercentage = req.body.discountPercentage;
+      // product.numReviews = req.body.numReviews;
+      product.reviews = req.body.reviews;
+
       await product.save();
       res.send({ message: "Product Updated" });
     } else {

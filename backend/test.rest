@@ -1,6 +1,6 @@
 @API_URL = http://localhost:3484
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzMxYTRkMzA2ODI4NTVlNmViMWJkZTYiLCJuYW1lIjoiQmVraXIiLCJlbWFpbCI6ImJrckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiJDJhJDEwJGJZVUJXSVp6aFdOekY5UUpKTC5Ia2VMNzA3UklHdkJGbC9POFE3VFlmYkVVV0NpR1FBNjVhIiwiaWF0IjoxNjY0MzYwNjYyLCJleHAiOjE2NjY5NTI2NjJ9.XderA6RsQh7UhmD2-vDbpnQduMQeKwZ9umYxE_CNAsM
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM1M2I5ZDc4NTBmY2IzODE3OTRmNGMiLCJuYW1lIjoiQmVraXIiLCJlbWFpbCI6ImJrckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiJDJhJDEwJGpycVhFcjc1THdUT05oRUp4WVMxWGVHRlhYdWYxMmp5VEM1eUNYb3o5c2t5WC9GNkYvcDZpIiwiaWF0IjoxNjY0NDMzMDk1LCJleHAiOjE2NjcwMjUwOTV9.1ZXZ8WeHDigV-Ky8neTQEElzCh8x587V23HXtdCpB1o
 
 ### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
@@ -29,7 +29,7 @@ GET {{API_URL}}/api/products/slug/epson-printer
 GET {{API_URL}}/api/products/slug/2
 
 ### SEED ROUTE +++
-############### DANGER ###################
+############### ATTENTION - DO NOT USE ###################
 GET {{API_URL}}/api/seed
 
 #########################################
@@ -117,18 +117,13 @@ Authorization : {{TOKEN}}
 
 {
     
-    "name": "sony Curved Monitor",
-    "slug": "sony-curved-monitor",
-    "category": "Monitors",
-    "image": "/images/monitor1.jpg",
-    "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
-    "price": 120,
-    "countInStock": 14,
-    "brand": "LG",
-    "rating": 4,
-    "numReviews": 44,
-    "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
-    "description": "Eye-friendly Full HD Monitor"
+
+    "name": "iPhone 11",
+    "slug": "iphone-11",
+    "brand": "Apple",
+    "category": "smartphones",
+    "description": "An apple mobile which is nothing like apple",
+
   
 }
 
