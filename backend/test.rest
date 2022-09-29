@@ -1,7 +1,6 @@
 @API_URL = http://localhost:3484
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM1M2I5ZDc4NTBmY2IzODE3OTRmNGMiLCJuYW1lIjoiQmVraXIiLCJlbWFpbCI6ImJrckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiJDJhJDEwJGpycVhFcjc1THdUT05oRUp4WVMxWGVHRlhYdWYxMmp5VEM1eUNYb3o5c2t5WC9GNkYvcDZpIiwiaWF0IjoxNjY0NDMzMDk1LCJleHAiOjE2NjcwMjUwOTV9.1ZXZ8WeHDigV-Ky8neTQEElzCh8x587V23HXtdCpB1o
-
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM1M2I5ZDc4NTBmY2IzODE3OTRmNGQiLCJuYW1lIjoiVGVycnkgTWVkaHVyc3QiLCJlbWFpbCI6ImF0dW55MEBzb2h1LmNvbSIsImlzQWRtaW4iOmZhbHNlLCJwYXNzd29yZCI6IiQyYSQxMCRqQTVjRmxVNjR0QUJvV1ZtY0N0SkJldllNME1IU2NmZmhESmQyYW4vaVlDYlRKdUZmeXY2eSIsImlhdCI6MTY2NDQzNDA0NywiZXhwIjoxNjY3MDI2MDQ3fQ.PmyktsRKVCUqmst_YKKOu6W7gXHE0VXu6TkCs0bWK0E
 ### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
 
@@ -13,7 +12,7 @@ GET {{API_URL}}/api/products/categories
 GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 
 ### PRODUCTID ROUTE +++
-GET {{API_URL}}/api/products/6331a4d20682855e6eb1bbab
+GET {{API_URL}}/api/products/63353b9d7850fcb381794d11
 
 ### PRODUCT SEARCH ROUTE +++
 GET {{API_URL}}/api/products/search?query=laptop&category=all&price=all&rating=all&order=newest
@@ -33,6 +32,15 @@ GET {{API_URL}}/api/products/slug/2
 GET {{API_URL}}/api/seed
 
 #########################################
+
+### SIGNIN ROUTE +++
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
+    "email":"atuny0@sohu.com",
+    "password": "9uQFF1Lh"
+}
 
 ### SIGNIN ROUTE +++
 POST {{API_URL}}/api/users/signin
