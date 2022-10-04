@@ -1,17 +1,18 @@
 import { useContext } from "react";
-import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
+import OrderSummary from "../../components/orderSummary/OrderSummary";
 import ProductInCart from "../../components/productInCart/ProductInCart";
 import { Store } from "../../Store";
 import "./cartPage.scss";
 
 const CartPage = () => {
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  
 
   const { cartItems } = state.cart;
+  const checkoutHandler = () => {};
 
   return (
     <Container className="cart-screen">
@@ -33,9 +34,37 @@ const CartPage = () => {
             </ListGroup>
           )}
         </Col>
-        <Col md={4}></Col>
+        <Col md={4}>
+          <Card>
+            <Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <h3>{`Subtotal ( ${cartItems.reduce(
+                    (countOfItems, item) => countOfItems + item.quantity,
+                    0
+                  )} items)  : $ ${cartItems.reduce(
+                    (sumOfPrices, item) =>
+                      sumOfPrices + item.price * item.quantity,0
+                  )}`}</h3>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <div className="d-grid">
+                    <Button
+                      type="button"
+                      variant="primary"
+                      onClick={checkoutHandler}
+                      disabled={cartItems.length === 0}
+                    >
+                      Proceed to Checkout
+                    </Button>
+                  </div>
+                </ListGroup.Item>
+              </ListGroup>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
-      <div className="cart-body">
+      {/* <div className="cart-body">
         <div className="products-in-cart"></div>
         <div className="cart-details-box">
           <div className="subtotal">
@@ -45,7 +74,7 @@ const CartPage = () => {
             <Button>Proceed to Checkout</Button>
           </div>
         </div>
-      </div>
+      </div> */}
     </Container>
   );
 };

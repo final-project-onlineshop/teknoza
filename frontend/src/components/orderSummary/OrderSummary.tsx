@@ -48,6 +48,13 @@ const OrderSummary = (props) => {
             </div>
           </ListGroup.Item>
         )}
+        {page==="cartPage" && (
+          <ListGroup.Item>
+            <div className="d-grid">
+              <Button>Proceed to Checkout</Button>
+            </div>
+          </ListGroup.Item>
+        )}
       </Card.Body>
     </Card>
   );
