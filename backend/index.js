@@ -3,6 +3,8 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 
+//database on mongodb updated : 4 Ocober 2022, 11:25
+
 // import session from "express-session";
 import cookieParser from "cookie-parser";
 

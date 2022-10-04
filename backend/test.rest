@@ -1,7 +1,6 @@
 @API_URL = http://localhost:3484
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzMxYTRkMzA2ODI4NTVlNmViMWJkZTYiLCJuYW1lIjoiQmVraXIiLCJlbWFpbCI6ImJrckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiJDJhJDEwJGJZVUJXSVp6aFdOekY5UUpKTC5Ia2VMNzA3UklHdkJGbC9POFE3VFlmYkVVV0NpR1FBNjVhIiwiaWF0IjoxNjY0MzYwNjYyLCJleHAiOjE2NjY5NTI2NjJ9.XderA6RsQh7UhmD2-vDbpnQduMQeKwZ9umYxE_CNAsM
-
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM1M2I5ZDc4NTBmY2IzODE3OTRmNGQiLCJuYW1lIjoiVGVycnkgTWVkaHVyc3QiLCJlbWFpbCI6ImF0dW55MEBzb2h1LmNvbSIsImlzQWRtaW4iOmZhbHNlLCJwYXNzd29yZCI6IiQyYSQxMCRqQTVjRmxVNjR0QUJvV1ZtY0N0SkJldllNME1IU2NmZmhESmQyYW4vaVlDYlRKdUZmeXY2eSIsImlhdCI6MTY2NDQzNDA0NywiZXhwIjoxNjY3MDI2MDQ3fQ.PmyktsRKVCUqmst_YKKOu6W7gXHE0VXu6TkCs0bWK0E
 ### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
 
@@ -13,7 +12,7 @@ GET {{API_URL}}/api/products/categories
 GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 
 ### PRODUCTID ROUTE +++
-GET {{API_URL}}/api/products/6331a4d20682855e6eb1bbab
+GET {{API_URL}}/api/products/63353b9d7850fcb381794d11
 
 ### PRODUCT SEARCH ROUTE +++
 GET {{API_URL}}/api/products/search?query=laptop&category=all&price=all&rating=all&order=newest
@@ -29,10 +28,19 @@ GET {{API_URL}}/api/products/slug/epson-printer
 GET {{API_URL}}/api/products/slug/2
 
 ### SEED ROUTE +++
-############### DANGER ###################
+############### ATTENTION - DO NOT USE ###################
 GET {{API_URL}}/api/seed
 
 #########################################
+
+### SIGNIN ROUTE +++
+POST {{API_URL}}/api/users/signin
+Content-type:application/json
+
+{
+    "email":"atuny0@sohu.com",
+    "password": "9uQFF1Lh"
+}
 
 ### SIGNIN ROUTE +++
 POST {{API_URL}}/api/users/signin
@@ -117,18 +125,13 @@ Authorization : {{TOKEN}}
 
 {
     
-    "name": "sony Curved Monitor",
-    "slug": "sony-curved-monitor",
-    "category": "Monitors",
-    "image": "/images/monitor1.jpg",
-    "images": ["/images/monitor1.jpg", "/images/monitor2.jpg"],
-    "price": 120,
-    "countInStock": 14,
-    "brand": "LG",
-    "rating": 4,
-    "numReviews": 44,
-    "reviews": [{ "name": "Ömer", "comment": "sehr cool..", "rating": 4.5 }],
-    "description": "Eye-friendly Full HD Monitor"
+
+    "name": "iPhone 11",
+    "slug": "iphone-11",
+    "brand": "Apple",
+    "category": "smartphones",
+    "description": "An apple mobile which is nothing like apple",
+
   
 }
 
