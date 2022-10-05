@@ -36,9 +36,6 @@ import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import AdminRoute from "./components/adminRoute/AdminRoute";
 
 function App() {
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
-
   return (
     <BrowserRouter>
       <div className="App">

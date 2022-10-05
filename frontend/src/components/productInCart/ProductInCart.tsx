@@ -1,11 +1,78 @@
-
+import axios from "axios";
+import { useContext } from "react";
+import { Button, Col, ListGroup, NavItem, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Store } from "../../Store";
 import "./productInCart.scss";
+const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
+
 const ProductInCart = (props) => {
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const { product } = props;
+  const { cartSum } = state.cart;
+
+  const updateCartHandler = async (product, difference) => {
+    const newQuantity = product.quantity + difference;
+
+    const { data } = await axios.get(`${BASE_API_URL}/products/${product._id}`);
+    if (data.stock < newQuantity) {
+      window.alert("Sorry. Product is out of stock");
+      return;
+    }
+    console.log("updateCartHandler calisti", product);
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...product, quantity: newQuantity },
+    });
+  };
+  const removeItemHandler = (product) => {
+    ctxDispatch({ type: "CART_REMOVE_ITEM", payload: product });
+  };
+
   return (
-    <div className="productInCart">
-      {/* TODO: implement Bootstrap-ListGroup */}
-      <img src={`/images/products/${product.slug}.jpg`} />
+    <ListGroup.Item key={product._id} className="productInCart">
+      <Row className="align-items-center">
+        <Col md={4} className="image-box">
+          <img
+            src={product.thumbnail}
+            alt={product.name}
+            className="img-fluid rounded img-thumbnail"
+          />
+          <Link to={`/product/${product._id}`}>{product.name}</Link>
+        </Col>
+        <Col md={3}>
+          <Button
+            onClick={() => {
+              updateCartHandler(product, -1);
+            }}
+            variant="light"
+            disabled={product.quantity === 1}
+          >
+            <i className="fa-solid fa-square-minus"></i>
+          </Button>
+          <span>{product.quantity}</span>
+          <Button
+            onClick={() => {
+              updateCartHandler(product, 1);
+            }}
+            variant="light"
+            disabled={product.quantity === product.stock}
+          >
+            <i className="fa-solid fa-square-plus"></i>
+          </Button>
+        </Col>
+        <Col md={3}>$ {product.price}</Col>
+        <Col md={2}>
+          <Button
+            onClick={() => {
+              removeItemHandler(product);
+            }}
+          >
+            <i className="fa-solid fa-trash"></i>
+          </Button>
+        </Col>
+      </Row>
+      {/* <img src={product.thumbnail} />
       <a href={`/products/${product.slug}`}>{product.name}</a>
       <div className="quantity-settings">
         {!props.uneditable && <i className="fa-solid fa-square-minus"></i>}
@@ -13,8 +80,8 @@ const ProductInCart = (props) => {
         {!props.uneditable && <i className="fa-solid fa-square-plus"></i>}
       </div>
       <span>${product.price}</span>
-      {!props.uneditable && <i className="fa-solid fa-trash"></i>}
-    </div>
+      {!props.uneditable && <i className="fa-solid fa-trash"></i>} */}
+    </ListGroup.Item>
   );
 };
 

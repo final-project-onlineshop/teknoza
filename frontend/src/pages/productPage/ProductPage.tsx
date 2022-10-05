@@ -1,5 +1,5 @@
 import "./productPage.scss";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import {
@@ -41,6 +41,7 @@ const ProductPage = () => {
   });
 
   const params = useParams();
+  const navigate = useNavigate();
   const productId = params._id;
   // const [product, setProduct] = useState([]);
   const [selectedImage, setSelectedImage] = useState("");
@@ -59,21 +60,32 @@ const ProductPage = () => {
       }
     };
     fetchData();
+
     // setProduct(dataFromApi.data);
-    // // console.log(dataFromApi);
-  }, []);
+  }, [productId]);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart } = state;
 
-  const addToCartHandler = () => {
+  const addToCartHandler = async () => {
+    
+    const existItem = cart.cartItems.find(
+      (cartItem) => cartItem._id === product._id
+    );
+    
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`${BASE_API_URL}/products/${productId}`);
+    if (data.stock < quantity) {
+      window.alert("Sorry, product is out of stock.");
+      return;
+    }
     ctxDispatch({
       type: "CART_ADD_ITEM",
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantity },
     });
-
-    console.log(cart.cartItems.length);
+    
+    navigate("/cart");
   };
-
   return (
     <Container className="ProductPage mt-3">
       <Helmet>
