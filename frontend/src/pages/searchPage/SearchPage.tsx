@@ -32,46 +32,44 @@ const reducer = (state, action) => {
   }
 };
 
-
 const prices = [
-    {
-      name: '$1 to $50',
-      value: '1-50',
-    },
-    {
-      name: '$51 to $200',
-      value: '51-200',
-    },
-    {
-      name: '$201 to $1000',
-      value: '201-1000',
-    },
-  ];
-  
-  export const ratings = [
-    {
-      name: '4stars & up',
-      rating: 4,
-    },
-  
-    {
-      name: '3stars & up',
-      rating: 3,
-    },
-  
-    {
-      name: '2stars & up',
-      rating: 2,
-    },
-  
-    {
-      name: '1stars & up',
-      rating: 1,
-    },
-  ];
-  
+  {
+    name: "$1 to $50",
+    value: "1-50",
+  },
+  {
+    name: "$51 to $200",
+    value: "51-200",
+  },
+  {
+    name: "$201 to $1000",
+    value: "201-1000",
+  },
+];
 
-  export default function SearchPage() {
+export const ratings = [
+  {
+    name: "4stars & up",
+    rating: 4,
+  },
+
+  {
+    name: "3stars & up",
+    rating: 3,
+  },
+
+  {
+    name: "2stars & up",
+    rating: 2,
+  },
+
+  {
+    name: "1stars & up",
+    rating: 1,
+  },
+];
+
+export default function SearchPage() {
   const navigate = useNavigate();
   const { search } = useLocation();
   const sp = new URLSearchParams(search); // /search?category=laptop
@@ -93,11 +91,11 @@ const prices = [
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const {data} = await axios.get(
-          `${BASE_API_URL}/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
+        const { data } = await axios.get(
+          `${BASE_API_URL}/products/search?query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
         );
+        console.log(99, data);
         dispatch({ type: "FETCH_SUCCESS", payload: data });
-        
       } catch (err) {
         dispatch({
           type: "FETCH_FAIL",
@@ -109,7 +107,6 @@ const prices = [
   }, [category, error, order, page, price, query, rating]);
 
   const [categories, setCategories] = useState([]);
-
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -145,8 +142,8 @@ const prices = [
             <ul>
               <li>
                 <Link
-                  className={'all' === category ? 'text-bold' : ''}
-                  to={getFilterUrl({ category: 'all' })}
+                  className={"all" === category ? "text-bold" : ""}
+                  to={getFilterUrl({ category: "all" })}
                 >
                   Any
                 </Link>
@@ -154,7 +151,7 @@ const prices = [
               {categories.map((c) => (
                 <li key={c}>
                   <Link
-                    className={c === category ? 'text-bold' : ''}
+                    className={c === category ? "text-bold" : ""}
                     to={getFilterUrl({ category: c })}
                   >
                     {c}
@@ -168,8 +165,8 @@ const prices = [
             <ul>
               <li>
                 <Link
-                  className={'all' === price ? 'text-bold' : ''}
-                  to={getFilterUrl({ price: 'all' })}
+                  className={"all" === price ? "text-bold" : ""}
+                  to={getFilterUrl({ price: "all" })}
                 >
                   Any
                 </Link>
@@ -178,7 +175,7 @@ const prices = [
                 <li key={p.value}>
                   <Link
                     to={getFilterUrl({ price: p.value })}
-                    className={p.value === price ? 'text-bold' : ''}
+                    className={p.value === price ? "text-bold" : ""}
                   >
                     {p.name}
                   </Link>
@@ -193,18 +190,18 @@ const prices = [
                 <li key={r.name}>
                   <Link
                     to={getFilterUrl({ rating: r.rating })}
-                    className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
+                    className={`${r.rating}` === `${rating}` ? "text-bold" : ""}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={" & up"} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
               <li>
                 <Link
-                  to={getFilterUrl({ rating: 'all' })}
-                  className={rating === 'all' ? 'text-bold' : ''}
+                  to={getFilterUrl({ rating: "all" })}
+                  className={rating === "all" ? "text-bold" : ""}
                 >
-                  <Rating caption={' & up'} rating={0}></Rating>
+                  <Rating caption={' & up'} rating={0}></Rating> 
                 </Link>
               </li>
             </ul>
@@ -220,18 +217,18 @@ const prices = [
               <Row className="justify-content-between mb-3">
                 <Col md={6}>
                   <div>
-                    {countProducts === 0 ? 'No' : countProducts} Results
-                    {query !== 'all' && ' : ' + query}
-                    {category !== 'all' && ' : ' + category}
-                    {price !== 'all' && ' : Price ' + price}
-                    {rating !== 'all' && ' : Rating ' + rating + ' & up'}
-                    {query !== 'all' ||
-                    category !== 'all' ||
-                    rating !== 'all' ||
-                    price !== 'all' ? (
+                    {countProducts === 0 ? "No" : countProducts} Results
+                    {query !== "all" && " : " + query}
+                    {category !== "all" && " : " + category}
+                    {price !== "all" && " : Price " + price}
+                    {rating !== "all" && " : Rating " + rating + " & up"}
+                    {query !== "all" ||
+                    category !== "all" ||
+                    rating !== "all" ||
+                    price !== "all" ? (
                       <Button
                         variant="light"
-                        onClick={() => navigate('/search')}
+                        onClick={() => navigate("/search")}
                       >
                         <i className="fa-solid fa-circle-xmark"></i>
                       </Button>
@@ -239,7 +236,7 @@ const prices = [
                   </div>
                 </Col>
                 <Col className="text-end">
-                  Sort by{' '}
+                  Sort by{" "}
                   <select
                     value={order}
                     onChange={(e) => {
@@ -273,7 +270,7 @@ const prices = [
                     to={getFilterUrl({ page: x + 1 })}
                   >
                     <Button
-                      className={Number(page) === x + 1 ? 'text-bold' : ''}
+                      className={Number(page) === x + 1 ? "text-bold" : ""}
                       variant="light"
                     >
                       {x + 1}
@@ -287,5 +284,4 @@ const prices = [
       </Row>
     </div>
   );
-};
-
+}
