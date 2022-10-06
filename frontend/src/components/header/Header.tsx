@@ -14,6 +14,12 @@ import SearchBox from "../searchBox/SearchBox";
 const Header = () => {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
+  const getItemCountInCart = () => {
+    return cart.cartItems.reduce(
+      (countItemsInCart, item) => countItemsInCart + item.quantity,
+      0
+    );
+  };
 
   const logoutHandler = () => {
     ctxDispatch({ type: "USER_LOGOUT" });
@@ -48,7 +54,7 @@ const Header = () => {
                 <i className="fa-solid fa-cart-shopping"></i>
                 {cart.cartItems.length > 0 && (
                   <Badge pill bg="danger">
-                    {cart.cartItems.length}
+                    {getItemCountInCart()}
                   </Badge>
                 )}
               </Nav.Link>
