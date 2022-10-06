@@ -32,10 +32,10 @@ const ShippingPage = () => {
           <Form.Label>Country</Form.Label>
           <Form.Control type="text" placeholder="Country" />
         </Form.Group>
-        <Form.Group className="mb-3 form-location-box" controlId="formLocation">
+        {/* <Form.Group className="mb-3 form-location-box" controlId="formLocation">
           <Form.Label>No Location</Form.Label>
           <Button variant="secondary">Choose Location On Map</Button>
-        </Form.Group>
+        </Form.Group> */}
         <Button variant="primary" type="submit">
           Continue
         </Button>
