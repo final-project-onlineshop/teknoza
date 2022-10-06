@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
@@ -8,9 +8,10 @@ import "./paymentPage.scss";
 
 const PaymentPage = () => {
   const navigate = useNavigate();
-  const { state, dispatch: ctxDispatch } = useReducer(Store);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+
   const {
-    cart: { paymentName: paymentNameFromContext },
+    cart: { shippingAddress, paymentName: paymentNameFromContext },
   } = state;
   const [paymentName, setPaymentName] = useState(
     paymentNameFromContext || "PayPal"
@@ -24,6 +25,11 @@ const PaymentPage = () => {
     localStorage.setItem("paymentName", paymentName);
     navigate("/placeorder");
   };
+  useEffect(() => {
+    if (!shippingAddress.address) {
+      navigate("/shipping");
+    }
+  }, [shippingAddress, navigate]);
   return (
     <Container className="payment-page">
       <Helmet>
@@ -35,15 +41,25 @@ const PaymentPage = () => {
           <h1>Payment Method</h1>
           <Form.Check
             type="radio"
-            id="paypal"
-            label="Paypal"
+            id="PayPal"
+            label="PayPal"
+            value="PayPal"
             name="paymentMethod"
+            checked={paymentName === "PayPal"}
+            onChange={(e) => {
+              setPaymentName(e.target.value);
+            }}
           />
           <Form.Check
             type="radio"
-            id="stripe"
+            id="Stripe"
             label="Stripe"
             name="paymentMethod"
+            value="Stripe"
+            checked={paymentName === "Stripe"}
+            onChange={(e) => {
+              setPaymentName(e.target.value);
+            }}
           />
           <Button variant="primary" type="submit" className="continue-button">
             Continue
