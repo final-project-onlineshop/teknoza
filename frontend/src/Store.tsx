@@ -11,6 +11,9 @@ const initialState = {
     paymentName: localStorage.getItem("paymentName")
       ? JSON.parse(localStorage.getItem("paymentName"))
       : "",
+    shippingAddress: localStorage.getItem("shippingAddress")
+      ? JSON.parse(localStorage.getItem("shippingAddress"))
+      : {},
   },
   userInfo: localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
@@ -52,6 +55,11 @@ function reducer(state, action) {
     }
     case "SAVE_PAYMENT_METHOD": {
       return { ...state, cart: { ...state.cart, paymentName: action.payload } };
+    case "SAVE_SHIPPING_ADDRESS": {
+      return {
+        ...state,
+        cart: { ...state.cart, shippingAddress: action.payload },
+      };
     }
 
     case "USER_LOGIN":
