@@ -2,16 +2,22 @@ import React from "react";
 import "./rating.scss";
 const getRating = (reviews) => {
   let sum = 0;
-  reviews.map((review) => {
-    sum += review.rating;
-  });
-  return sum / reviews.length;
+  if (reviews !== undefined) {
+    reviews.map((review) => {
+      sum += review.rating;
+    });
+    return sum / reviews.length;
+  }
+  return 0;
 };
 
 const Rating = (props: any) => {
   const { reviews, caption } = props;
-  const rating = getRating(reviews);
-  const numReviews = reviews.length;
+  const rating = props.rating || getRating(reviews);
+  let numReviews = 0;
+  if (reviews !== undefined) {
+    numReviews = reviews.length;
+  }
   return (
     <div>
       <div className="rating">
