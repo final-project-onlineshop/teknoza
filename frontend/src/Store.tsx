@@ -36,7 +36,6 @@ function reducer(state, action) {
         : [...state.cart.cartItems, newItem];
 
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      console.log("cartSum : ", state.cart.cartSum, newItem.price);
 
       return {
         ...state,

@@ -19,7 +19,6 @@ const ProductInCart = (props) => {
       window.alert("Sorry. Product is out of stock");
       return;
     }
-    console.log("updateCartHandler calisti", product);
     ctxDispatch({
       type: "CART_ADD_ITEM",
       payload: { ...product, quantity: newQuantity },
@@ -72,15 +71,7 @@ const ProductInCart = (props) => {
           </Button>
         </Col>
       </Row>
-      {/* <img src={product.thumbnail} />
-      <a href={`/products/${product.slug}`}>{product.name}</a>
-      <div className="quantity-settings">
-        {!props.uneditable && <i className="fa-solid fa-square-minus"></i>}
-        <b>{product.countInCart}</b>
-        {!props.uneditable && <i className="fa-solid fa-square-plus"></i>}
-      </div>
-      <span>${product.price}</span>
-      {!props.uneditable && <i className="fa-solid fa-trash"></i>} */}
+    
     </ListGroup.Item>
   );
 };
