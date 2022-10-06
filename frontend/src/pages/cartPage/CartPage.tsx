@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
 import OrderSummary from "../../components/orderSummary/OrderSummary";
 import ProductInCart from "../../components/productInCart/ProductInCart";
@@ -10,9 +10,12 @@ import "./cartPage.scss";
 
 const CartPage = () => {
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const navigate = useNavigate();
 
   const { cartItems } = state.cart;
-  const checkoutHandler = () => {};
+  const checkoutHandler = () => {
+    navigate("/login?redirect=/shipping");
+  };
 
   return (
     <Container className="cart-screen">
@@ -44,7 +47,8 @@ const CartPage = () => {
                     0
                   )} items)  : $ ${cartItems.reduce(
                     (sumOfPrices, item) =>
-                      sumOfPrices + item.price * item.quantity,0
+                      sumOfPrices + item.price * item.quantity,
+                    0
                   )}`}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
