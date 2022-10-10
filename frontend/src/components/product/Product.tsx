@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, Button, Container, Stack } from "react-bootstrap";
 import Rating from "../rating/Rating";
 import "./product.scss";
+import AddToCartButton from "../addToCartButton/AddToCartButton";
+
 
 const Product = (props) => {
   const params = useParams();
@@ -30,7 +32,7 @@ const Product = (props) => {
             <strong>{`${product.price} €`}</strong>
           </Card.Text>
 
-          <Button className="btn-primary">Add to cart</Button>
+          <AddToCartButton product={product} />
         </Card.Body>
       </Card>
     </div>

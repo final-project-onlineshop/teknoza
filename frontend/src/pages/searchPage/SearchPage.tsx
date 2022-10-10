@@ -94,7 +94,6 @@ export default function SearchPage() {
         const { data } = await axios.get(
           `${BASE_API_URL}/products/search?query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
         );
-        console.log(99, data);
         dispatch({ type: "FETCH_SUCCESS", payload: data });
       } catch (err) {
         dispatch({

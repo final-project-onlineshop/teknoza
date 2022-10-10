@@ -1,6 +1,6 @@
 import "./productPage.scss";
-import { useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import {
   Badge,
@@ -9,13 +9,12 @@ import {
   Col,
   Container,
   ListGroup,
-  ListGroupItem,
   Row,
-  Carousel,
 } from "react-bootstrap";
 import Rating from "../../components/rating/Rating";
 import { Helmet } from "react-helmet-async";
-import { Store } from "../../Store";
+
+import AddToCartButton from "../../components/addToCartButton/AddToCartButton";
 
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -41,9 +40,8 @@ const ProductPage = () => {
   });
 
   const params = useParams();
-  const navigate = useNavigate();
+
   const productId = params._id;
-  // const [product, setProduct] = useState([]);
   const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
@@ -64,28 +62,6 @@ const ProductPage = () => {
     // setProduct(dataFromApi.data);
   }, [productId]);
 
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart } = state;
-
-  const addToCartHandler = async () => {
-    
-    const existItem = cart.cartItems.find(
-      (cartItem) => cartItem._id === product._id
-    );
-    
-    const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`${BASE_API_URL}/products/${productId}`);
-    if (data.stock < quantity) {
-      window.alert("Sorry, product is out of stock.");
-      return;
-    }
-    ctxDispatch({
-      type: "CART_ADD_ITEM",
-      payload: { ...product, quantity },
-    });
-    
-    navigate("/cart");
-  };
   return (
     <Container className="ProductPage mt-3">
       <Helmet>
@@ -169,9 +145,7 @@ const ProductPage = () => {
                   {product.stock > 0 && (
                     <ListGroup.Item>
                       <div className="d-grid">
-                        <Button onClick={addToCartHandler} variant="primary">
-                          Add to Cart
-                        </Button>
+                        <AddToCartButton product={product} />
                       </div>
                     </ListGroup.Item>
                   )}
