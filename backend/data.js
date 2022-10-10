@@ -57,6 +57,7 @@ const data = {
             "Irure nostrud eiusmod non ea. Et aliquip duis nostrud enim eiusmod culpa sunt irure exercitation. Reprehenderit et mollit pariatur ipsum minim pariatur.\nSint et aute sint incididunt nisi irure ullamco nulla aute labore.",
         },
       ],
+      averageRating: 0,
       description: "An apple mobile which is nothing like apple",
       discountPercentage: 12.96,
     },
@@ -94,6 +95,7 @@ const data = {
             "Irure nostrud eiusmod non ea. Et aliquip duis nostrud enim eiusmod culpa sunt irure exercitation. Reprehenderit et mollit pariatur ipsum minim pariatur.\nSint et aute sint incididunt nisi irure ullamco nulla aute labore.",
         },
       ],
+      averageRating: 0,
       description:
         "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
       discountPercentage: 17.94,
@@ -127,6 +129,7 @@ const data = {
             "Irure nostrud eiusmod non ea. Et aliquip duis nostrud enim eiusmod culpa sunt irure exercitation. Reprehenderit et mollit pariatur ipsum minim pariatur.\nSint et aute sint incididunt nisi irure ullamco nulla aute labore.",
         },
       ],
+      averageRating: 0,
       description:
         "Samsung's new variant which goes beyond Galaxy to the Universe",
       discountPercentage: 15.46,
