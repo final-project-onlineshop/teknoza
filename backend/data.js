@@ -698,6 +698,7 @@ const data = {
             "Anim magna eu irure amet consequat amet elit. Nisi tempor tempor elit consequat aliquip nulla mollit sint nulla elit ullamco cupidatat. Duis ut incididunt anim laboris anim consectetur ipsum anim ad minim id culpa sint nulla eu. Ad mollit adipisicing nulla mollit irure nostrud fugiat fugiat dolor enim cupidatat.\nElit occaecat magna ad ullamco in id id occaecat proident velit.",
         },
       ],
+      averageRating: 0,
       description: "An apple mobile which is nothing like apple",
       discountPercentage: 12.96,
     },
@@ -759,6 +760,7 @@ const data = {
             "Reprehenderit eu mollit qui. Dolor duis labore dolor magna magna aute in officia labore. Sint velit aliquip fugiat in ipsum reprehenderit. Exercitation consequat occaecat ipsum laboris quis ipsum cillum excepteur sint esse qui consectetur proident ipsum.\nPariatur adipisicing anim reprehenderit qui cupidatat eiusmod qui adipisicing cupidatat minim nostrud mollit. Cillum ullamco aliqua officia tempor adipisicing veniam dolore. Proident sunt adipisicing et ut laborum.",
         },
       ],
+      averageRating: 0,
       description:
         "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
       discountPercentage: 17.94,
@@ -792,6 +794,7 @@ const data = {
             "Amet ea nulla occaecat sit eiusmod nostrud laboris ad.\nEu minim ut veniam pariatur aute mollit tempor occaecat. Proident nulla commodo est.",
         },
       ],
+      averageRating: 0,
       description:
         "Samsung's new variant which goes beyond Galaxy to the Universe",
       discountPercentage: 15.46,
@@ -831,6 +834,7 @@ const data = {
             "Aute aliqua adipisicing amet minim aliqua minim ipsum occaecat. Mollit officia ut non eiusmod cillum magna consequat do ad eiusmod aute dolore commodo.\nAliqua nulla reprehenderit reprehenderit quis non Lorem irure culpa deserunt ea incididunt consequat exercitation. Do magna dolore deserunt tempor anim amet non magna adipisicing et veniam eu dolore consequat. In magna ipsum cupidatat quis.",
         },
       ],
+      averageRating: 0,
       description: "OPPO F19 is officially announced on April 2021.",
       discountPercentage: 17.91,
     },
@@ -897,6 +901,7 @@ const data = {
             "Nostrud elit qui irure ea laboris excepteur non ex consequat do aliquip reprehenderit nisi. Eu ipsum deserunt occaecat.\nEst esse reprehenderit officia. Fugiat excepteur eu tempor qui nostrud enim ex anim.",
         },
       ],
+      averageRating: 0,
       description:
         "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
       discountPercentage: 10.58,
@@ -959,6 +964,7 @@ const data = {
             "Do ea duis voluptate ea. Fugiat laborum sit incididunt id eiusmod veniam cupidatat dolor aliqua minim cupidatat minim. Aliqua eiusmod id proident ullamco sint ipsum exercitation minim ea deserunt.\nAliquip veniam consequat Lorem excepteur duis velit exercitation. Sunt magna anim quis est excepteur. Cupidatat mollit exercitation tempor do proident qui ea cupidatat Lorem enim eu nostrud do deserunt.",
         },
       ],
+      averageRating: 0,
       description:
         "MacBook Pro 2021 with mini-LED display may launch between September, November",
       discountPercentage: 11.02,
@@ -1033,6 +1039,7 @@ const data = {
             "Sunt reprehenderit velit aliquip minim non proident aliquip excepteur cupidatat. Dolor consectetur culpa pariatur consequat esse officia esse adipisicing duis quis reprehenderit velit irure ipsum quis.\nId aliquip irure sunt. Anim sint minim eu pariatur eu. Labore ex magna tempor ipsum est ullamco ea nostrud. Lorem aliqua culpa reprehenderit esse sint.",
         },
       ],
+      averageRating: 0,
       description:
         "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
       discountPercentage: 4.15,
@@ -1102,6 +1109,7 @@ const data = {
             "Nisi voluptate Lorem nisi ipsum Lorem quis proident excepteur duis eu voluptate culpa veniam laborum. Officia nulla voluptate nulla ad consequat. Cupidatat elit laborum eu aliqua commodo sit aliqua culpa. Anim culpa excepteur sunt occaecat eu dolore laboris.",
         },
       ],
+      averageRating: 0,
       description:
         "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
       discountPercentage: 10.23,
@@ -1141,6 +1149,7 @@ const data = {
             "Tempor exercitation est id exercitation ex minim. Qui fugiat sint ipsum dolore occaecat aliquip magna in amet eu ullamco non magna enim.\nDolor sint anim elit est magna incididunt et magna elit sint. Sit laboris culpa laborum ut esse id Lorem nisi esse anim reprehenderit duis.",
         },
       ],
+      averageRating: 0,
       description:
         "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
       discountPercentage: 11.83,
@@ -1160,6 +1169,7 @@ const data = {
       stock: 89,
       brand: "HP Pavilion",
       reviews: [],
+      averageRating: 0,
       description:
         "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
       discountPercentage: 6.18,
@@ -1232,6 +1242,7 @@ const data = {
             "Incididunt exercitation sint occaecat ea aliqua ut sit est id magna tempor nisi consequat consectetur non. Cupidatat elit nostrud sunt sunt in ipsum nostrud nostrud laboris.",
         },
       ],
+      averageRating: 0,
       description:
         "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
       discountPercentage: 8.4,
@@ -1312,6 +1323,7 @@ const data = {
           comment: "Voluptate fugiat dolore reprehenderit duis cupidatat.",
         },
       ],
+      averageRating: 0,
       description: "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
       discountPercentage: 15.66,
     },
@@ -1344,6 +1356,7 @@ const data = {
             "Officia tempor deserunt pariatur aliquip ipsum laboris reprehenderit exercitation voluptate nostrud eiusmod ex ea id minim. Veniam minim commodo anim et tempor eiusmod enim proident ad cupidatat velit veniam ex exercitation. Nulla pariatur do nostrud sint deserunt. Tempor ut voluptate fugiat sit ipsum id reprehenderit veniam.\nEx exercitation Lorem aute minim pariatur minim labore velit. Consequat sunt laboris minim nulla ad non veniam voluptate voluptate cupidatat enim.",
         },
       ],
+      averageRating: 0,
       description:
         "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
       discountPercentage: 8.14,
@@ -1375,6 +1388,7 @@ const data = {
           comment: "Enim veniam esse dolore.",
         },
       ],
+      averageRating: 0,
       description:
         "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
       discountPercentage: 15.6,
@@ -1420,6 +1434,7 @@ const data = {
             "Lorem ut culpa culpa fugiat nisi minim culpa amet mollit nisi ut sunt ea.\nNulla et minim ad. Elit minim aute laborum sit laboris consequat tempor do pariatur laboris. Aute labore ea culpa magna proident mollit esse sint velit ex.",
         },
       ],
+      averageRating: 0,
       description:
         "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
       discountPercentage: 10.99,
@@ -1465,6 +1480,7 @@ const data = {
             "Enim excepteur commodo aliquip duis cillum cupidatat sit amet id irure.",
         },
       ],
+      averageRating: 0,
       description:
         "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
       discountPercentage: 13.31,
@@ -1509,6 +1525,7 @@ const data = {
             "Id reprehenderit incididunt id sint consectetur veniam cupidatat consequat ea adipisicing laboris occaecat officia dolor. Eiusmod dolor ipsum qui elit irure culpa enim esse elit esse excepteur et et magna.\nAdipisicing nisi incididunt velit nostrud laborum velit laboris adipisicing id nostrud ad. Aliquip nisi voluptate dolore nisi sunt ullamco qui mollit ullamco. Lorem exercitation aliquip occaecat nostrud sit dolore sit eiusmod irure et ut in cupidatat deserunt. Cupidatat sunt sit ex nisi dolore sit et minim id pariatur est magna do.",
         },
       ],
+      averageRating: 0,
       description:
         "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
       discountPercentage: 4.09,
@@ -1578,6 +1595,7 @@ const data = {
             "Aute non reprehenderit nostrud amet deserunt cillum quis labore proident voluptate proident. Sit dolore elit fugiat dolore labore id ea pariatur occaecat laborum irure incididunt. Excepteur enim tempor in sint sit culpa commodo pariatur minim irure aliqua ullamco sit.\nAliquip anim qui excepteur ut do ex reprehenderit commodo labore aute esse sit consectetur occaecat occaecat. Ex nisi cillum ipsum officia aliquip.",
         },
       ],
+      averageRating: 0,
       description:
         "Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
       discountPercentage: 13.1,
@@ -1604,6 +1622,7 @@ const data = {
             "Ut ea amet consequat cillum incididunt nostrud eiusmod sint id nulla eu dolor. Irure elit velit laboris enim et incididunt ea incididunt.\nProident sunt qui occaecat incididunt nisi qui ut laborum fugiat occaecat. Ullamco veniam amet sunt elit elit cillum occaecat nisi eu nisi cillum anim sint laboris laboris. Minim est est aliqua labore et cillum proident ut laboris nulla anim nulla.",
         },
       ],
+      averageRating: 0,
       description:
         "Product name: rorec collagen hyaluronic acid white face serum riceNet weight: 15 m",
       discountPercentage: 10.68,
@@ -1666,6 +1685,7 @@ const data = {
             "Mollit consectetur irure sint velit consequat sint deserunt ut cupidatat et.",
         },
       ],
+      averageRating: 0,
       description:
         "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
       discountPercentage: 16.99,
@@ -1709,6 +1729,7 @@ const data = {
             "Incididunt cupidatat proident irure sunt. Non mollit ex labore proident dolor irure sint. In labore laboris id labore ex mollit fugiat. Ut aliquip Lorem ex ex nisi enim do proident pariatur in laborum.",
         },
       ],
+      averageRating: 0,
       description: "Fine quality Branded Product Keep in a cool and dry place",
       discountPercentage: 4.81,
     },
@@ -1780,6 +1801,7 @@ const data = {
             "Sunt veniam ad Lorem dolor laboris non nulla tempor. Qui et consequat mollit et proident veniam nisi ut aute labore veniam nostrud elit non esse.\nPariatur esse consectetur nisi nisi. Labore laboris consectetur ea aliquip quis ullamco. Reprehenderit Lorem excepteur officia nulla sunt minim incididunt.",
         },
       ],
+      averageRating: 0,
       description: "Product details of Bake Parlor Big Elbow Macaroni - 400 gm",
       discountPercentage: 15.58,
     },
@@ -1806,6 +1828,7 @@ const data = {
             "Non sunt aliquip quis magna cillum irure pariatur. Eu sit enim ea exercitation voluptate consequat.\nSunt pariatur anim qui. Dolore ullamco labore magna ut tempor eu tempor fugiat ullamco et nulla. Eu culpa esse enim cupidatat proident ea nulla officia. Consequat veniam nostrud adipisicing nostrud sint minim.",
         },
       ],
+      averageRating: 0,
       description:
         "Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item",
       discountPercentage: 8.04,
@@ -1857,6 +1880,7 @@ const data = {
             "Anim sit veniam Lorem pariatur dolor cupidatat officia culpa dolore dolor cupidatat.\nReprehenderit cillum ea ad magna amet amet. Non anim nisi tempor minim aliqua velit.",
         },
       ],
+      averageRating: 0,
       description:
         "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
       discountPercentage: 16.8,
@@ -1877,6 +1901,7 @@ const data = {
       stock: 47,
       brand: "Dry Rose",
       reviews: [],
+      averageRating: 0,
       description:
         "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
       discountPercentage: 13.58,
@@ -1941,6 +1966,7 @@ const data = {
             "Reprehenderit veniam adipisicing dolore magna excepteur fugiat proident et magna sunt elit minim eu deserunt.\nEiusmod deserunt est Lorem tempor aliquip exercitation officia adipisicing esse non esse. Ut mollit magna sint. Quis magna et dolor officia occaecat aute enim officia magna cupidatat cillum mollit in elit. Quis non dolor ullamco sunt officia ex consequat culpa quis mollit.",
         },
       ],
+      averageRating: 0,
       description:
         "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
       discountPercentage: 17.86,
@@ -1961,6 +1987,7 @@ const data = {
       stock: 17,
       brand: "Flying Wooden",
       reviews: [],
+      averageRating: 0,
       description:
         "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
       discountPercentage: 15.58,
@@ -2042,6 +2069,7 @@ const data = {
             "Occaecat voluptate fugiat nisi irure tempor non aliqua ut ea laboris ipsum duis dolore veniam. Reprehenderit occaecat ipsum occaecat labore enim sunt non eiusmod nostrud. Ut eiusmod labore ullamco consequat eiusmod eu dolore esse ea proident elit occaecat cupidatat.",
         },
       ],
+      averageRating: 0,
       description:
         "3D led lamp sticker Wall sticker 3d wall art light on/off button  cell operated (included)",
       discountPercentage: 16.49,
@@ -2099,6 +2127,7 @@ const data = {
             "Ullamco enim ut in ex sit est officia aliquip mollit magna. Fugiat labore eu est dolor aliqua.",
         },
       ],
+      averageRating: 0,
       description:
         "Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate",
       discountPercentage: 15.34,
@@ -2167,6 +2196,7 @@ const data = {
             "Id minim ipsum amet excepteur amet nulla culpa magna. Reprehenderit veniam aliqua eiusmod excepteur proident nostrud qui mollit deserunt est elit. Dolor duis eiusmod exercitation aliqua ad sint consectetur voluptate reprehenderit quis nostrud Lorem eu elit.\nAdipisicing cillum cillum ad in pariatur tempor culpa laboris deserunt aute amet laborum Lorem. Aute minim officia irure tempor enim. In sint velit incididunt commodo. Et culpa esse sint adipisicing nostrud commodo aliquip exercitation minim ex anim.",
         },
       ],
+      averageRating: 0,
       description:
         "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
       discountPercentage: 2.92,
@@ -2212,6 +2242,7 @@ const data = {
             "Occaecat ullamco proident esse occaecat minim nulla sit. Ullamco aliquip cupidatat est reprehenderit anim.",
         },
       ],
+      averageRating: 0,
       description:
         "Mornadi Velvet Bed Base with Headboard Slats Support Classic Style Bedroom Furniture Bed Set",
       discountPercentage: 17,
@@ -2289,6 +2320,7 @@ const data = {
             "Eu ipsum in nostrud minim et proident consectetur minim ex sit. Eu ad aute eiusmod cillum amet velit.",
         },
       ],
+      averageRating: 0,
       description:
         "Ratttan Outdoor furniture Set Waterproof  Rattan Sofa for Coffe Cafe",
       discountPercentage: 15.59,
@@ -2322,6 +2354,7 @@ const data = {
             "Ullamco sint qui voluptate esse cillum deserunt aliqua fugiat reprehenderit qui sint magna.\nNon minim aliquip consequat esse commodo id sint non sunt elit dolor labore non.",
         },
       ],
+      averageRating: 0,
       description:
         "3 Tier Corner Shelves | 3 PCs Wall Mount Kitchen Shelf | Floating Bedroom Shelf",
       discountPercentage: 17,
@@ -2355,6 +2388,7 @@ const data = {
             "Consectetur cillum aute reprehenderit quis laborum et occaecat mollit velit et id est elit nisi ut. Fugiat eiusmod fugiat ullamco ipsum quis minim. Do do tempor esse ipsum tempor excepteur ad.\nCillum non velit elit minim.",
         },
       ],
+      averageRating: 0,
       description:
         "Very good quality plastic table for multi purpose now in reasonable price",
       discountPercentage: 4,
@@ -2375,6 +2409,7 @@ const data = {
       stock: 68,
       brand: "AmnaMart",
       reviews: [],
+      averageRating: 0,
       description:
         "Material: Stainless Steel and Fabric  Item Size: 110 cm x 45 cm x 175 cm Package Contents: 1 Storage Wardrobe",
       discountPercentage: 7.98,
@@ -2432,6 +2467,7 @@ const data = {
             "Esse occaecat ad et reprehenderit dolor aliqua. Incididunt dolore minim duis deserunt sit aliqua consequat commodo qui dolor exercitation dolore sit.",
         },
       ],
+      averageRating: 0,
       description:
         "Cotton Solid Color Professional Wear Sleeve Shirt Womens Work Blouses Wholesale Clothing Casual Plain Custom Top OEM Customized",
       discountPercentage: 10.89,
@@ -2471,6 +2507,7 @@ const data = {
             "Deserunt in cupidatat ullamco cupidatat culpa dolore dolore aliquip cupidatat fugiat ex deserunt tempor. Voluptate nisi tempor labore aliqua aliquip ut reprehenderit. Eu occaecat Lorem Lorem exercitation.",
         },
       ],
+      averageRating: 0,
       description:
         "PACK OF 3 CAMISOLES ,VERY COMFORTABLE SOFT COTTON STUFF, COMFORTABLE IN ALL FOUR SEASONS",
       discountPercentage: 12.05,
@@ -2490,6 +2527,7 @@ const data = {
       stock: 20,
       brand: "Soft Cotton",
       reviews: [],
+      averageRating: 0,
       description: "sublimation plain kids tank tops wholesale",
       discountPercentage: 11.12,
     },
@@ -2557,6 +2595,7 @@ const data = {
             "Id laborum proident duis. Qui Lorem sint consectetur veniam nisi aute et elit sit quis aute eiusmod. Cupidatat laborum tempor esse ut aute nisi irure proident qui dolor nisi. Sit proident in et laboris amet elit est.",
         },
       ],
+      averageRating: 0,
       description:
         "2021 Custom Winter Fall Zebra Knit Crop Top Women Sweaters Wool Mohair Cos Customize Crew Neck Women' S Crop Top Sweater",
       discountPercentage: 17.2,
@@ -2629,6 +2668,7 @@ const data = {
             "Officia cupidatat duis aliquip voluptate id aliqua Lorem tempor veniam magna aliquip ex. Minim in laborum pariatur irure ad ad quis commodo. Pariatur do voluptate mollit eiusmod. Dolore labore nisi amet ut Lorem nostrud ad eu reprehenderit.\nDo enim enim occaecat incididunt occaecat fugiat. Mollit do minim non pariatur incididunt. Et non cupidatat cillum consectetur enim ut cupidatat ad. Dolore veniam exercitation aute occaecat velit eu commodo ullamco adipisicing aute cillum elit id enim ad.",
         },
       ],
+      averageRating: 0,
       description:
         "women winter clothes thick fleece hoodie top with sweat pantjogger women sweatsuit set joggers pants two piece pants set",
       discountPercentage: 13.39,
@@ -2680,6 +2720,7 @@ const data = {
             "Proident consectetur sunt nisi nostrud exercitation fugiat exercitation occaecat sint irure laborum. Aliquip qui non aliquip enim.\nCommodo aute cillum non fugiat ad sunt consequat eu.",
         },
       ],
+      averageRating: 0,
       description: "NIGHT SUIT RED MICKY MOUSE..  For Girls. Fantastic Suits.",
       discountPercentage: 15.05,
     },
@@ -2712,6 +2753,7 @@ const data = {
             "Duis reprehenderit ex aute minim est et elit do. Laborum id occaecat quis anim Lorem incididunt consectetur et sunt aliquip. Tempor ut eu pariatur in mollit et irure cillum aliqua aute cillum in sit. Excepteur ipsum excepteur consectetur elit ea dolor deserunt dolor non.\nEx veniam in dolor labore. Consequat consectetur et do magna mollit magna cillum consequat voluptate consectetur ea dolor nulla esse. Ea cillum consequat commodo et officia nostrud consequat deserunt irure nisi aliquip veniam cillum excepteur occaecat.",
         },
       ],
+      averageRating: 0,
       description:
         "FABRIC: LILEIN CHEST: 21 LENGHT: 37 TROUSER: (38) :ARABIC LILEIN",
       discountPercentage: 15.37,
@@ -2739,6 +2781,7 @@ const data = {
             "Adipisicing nisi sint commodo fugiat culpa dolor eiusmod ea tempor tempor. Cupidatat occaecat mollit exercitation laborum voluptate.\nNostrud velit occaecat ad ullamco ex laboris irure aliquip laborum reprehenderit ad occaecat laboris. Nisi commodo ullamco aute adipisicing incididunt magna elit irure sunt exercitation quis dolore.",
         },
       ],
+      averageRating: 0,
       description:
         "Ghazi fabric long frock gold printed ready to wear stitched collection (G992)",
       discountPercentage: 15.55,
@@ -2796,6 +2839,7 @@ const data = {
             "Sunt sit dolore veniam laboris. Minim exercitation ut sit commodo dolore anim tempor officia quis elit laborum cupidatat excepteur pariatur. Excepteur voluptate officia nulla id esse tempor laboris sunt.",
         },
       ],
+      averageRating: 0,
       description:
         "This classy shirt for women gives you a gorgeous look on everyday wear and specially for semi-casual wears.",
       discountPercentage: 16.88,
@@ -2823,6 +2867,7 @@ const data = {
             "Enim nisi nulla reprehenderit nostrud in culpa laboris ullamco occaecat culpa sint.",
         },
       ],
+      averageRating: 0,
       description:
         "Ready to wear, Unique design according to modern standard fashion, Best fitting ,Imported stuff",
       discountPercentage: 5.07,
@@ -2898,6 +2943,7 @@ const data = {
             "Nostrud est excepteur tempor minim sunt deserunt incididunt dolor culpa velit laborum proident cupidatat. Deserunt eu ex qui et commodo mollit do aliquip anim. Non ea anim nisi culpa anim laboris.\nCulpa reprehenderit ullamco est. Nulla cupidatat pariatur pariatur qui sit id nostrud eu elit magna qui. Ad in dolor esse dolor magna consequat.",
         },
       ],
+      averageRating: 0,
       description:
         "Close: Lace, Style with bottom: Increased inside, Sole Material: Rubber",
       discountPercentage: 16.96,
@@ -2941,6 +2987,7 @@ const data = {
             "Lorem ad anim culpa dolor sunt. Incididunt officia esse nulla id tempor cillum elit quis est pariatur enim laboris incididunt reprehenderit.\nElit Lorem ea sunt enim quis consectetur eu minim consectetur Lorem elit in cupidatat dolore amet. Veniam officia laborum nostrud eu.",
         },
       ],
+      averageRating: 0,
       description:
         "Synthetic Leather Casual Sneaker shoes for Women/girls Sneakers For Women",
       discountPercentage: 10.37,
@@ -2998,6 +3045,7 @@ const data = {
             "Laborum pariatur Lorem aliqua sint ullamco proident commodo mollit.\nReprehenderit do deserunt deserunt labore elit commodo aliquip id fugiat magna cillum.",
         },
       ],
+      averageRating: 0,
       description:
         "Features: Flip-flops, Mid Heel, Comfortable, Striped Heel, Antiskid, Striped",
       discountPercentage: 10.83,
@@ -3024,6 +3072,7 @@ const data = {
             "Est qui eu deserunt cillum nostrud ipsum. Deserunt anim ad enim. Incididunt aute nostrud qui aute consectetur fugiat laboris. Incididunt dolor ea Lorem quis fugiat ad et incididunt.\nTempor culpa laborum voluptate. Exercitation magna ex nostrud consequat ipsum dolore reprehenderit eu ut nulla consectetur Lorem. Sint in eiusmod labore id velit ut commodo laboris nostrud laborum irure.",
         },
       ],
+      averageRating: 0,
       description:
         "Womens Chappals & Shoe Ladies Metallic Tong Thong Sandal Flat Summer 2020 Maasai Sandals",
       discountPercentage: 2.62,
@@ -3097,6 +3146,7 @@ const data = {
             "Aliqua esse adipisicing voluptate amet velit aliquip laboris dolore irure laboris excepteur in. Do anim culpa qui proident consequat. Est duis incididunt elit pariatur nostrud ullamco.\nAdipisicing veniam eiusmod nostrud sunt voluptate consectetur culpa exercitation do voluptate aliqua. Et nisi nostrud in eu irure proident irure nulla quis Lorem exercitation.",
         },
       ],
+      averageRating: 0,
       description:
         "2020 New Arrivals Genuine Leather Fashion Trend Platform Summer Women Shoes",
       discountPercentage: 16.87,
@@ -3129,6 +3179,7 @@ const data = {
             "Officia esse incididunt id consectetur minim esse sunt fugiat. Nulla enim reprehenderit incididunt.",
         },
       ],
+      averageRating: 0,
       description:
         "Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands",
       discountPercentage: 12.76,
@@ -3186,6 +3237,7 @@ const data = {
             "Non occaecat sunt consectetur. Anim aute pariatur laborum et consequat. Officia id est dolor laboris aliquip eu exercitation officia do.",
         },
       ],
+      averageRating: 0,
       description:
         "quality and professional print - It doesn't just look high quality, it is high quality.",
       discountPercentage: 14.72,
@@ -3249,6 +3301,7 @@ const data = {
             "Commodo dolor non minim fugiat reprehenderit quis ut enim eu amet incididunt. Tempor eu fugiat incididunt do sit dolor exercitation quis. Amet aliquip pariatur labore sunt commodo laboris velit laboris aliqua officia anim.\nLaboris enim ea mollit aute sint consectetur adipisicing voluptate in veniam sit reprehenderit pariatur nisi. Irure sit ullamco consectetur laboris excepteur laboris mollit sint aute nulla excepteur. Anim consectetur occaecat irure nisi aute minim excepteur non in pariatur anim. Aliquip cillum ullamco elit veniam eu sint irure aliqua est aliquip reprehenderit fugiat quis labore.",
         },
       ],
+      averageRating: 0,
       description: "Brand: vintage Apparel ,Export quality",
       discountPercentage: 7.54,
     },
@@ -3305,6 +3358,7 @@ const data = {
             "Eu ex eiusmod commodo incididunt Lorem Lorem magna cupidatat commodo commodo eu.\nId laboris reprehenderit aute eiusmod fugiat. Excepteur aliquip pariatur quis magna consectetur ullamco nostrud nostrud duis officia sunt cillum.",
         },
       ],
+      averageRating: 0,
       description:
         "Product Description Features: 100% Ultra soft Polyester Jersey. Vibrant & colorful printing on front. Feels soft as cotton without ever cracking",
       discountPercentage: 16.44,
@@ -3350,6 +3404,7 @@ const data = {
             "Sunt laborum incididunt esse sint adipisicing in eiusmod veniam sunt. Anim Lorem pariatur magna.\nUllamco aliqua sit culpa ex consequat minim occaecat pariatur do ipsum labore non amet quis non. Tempor do qui quis excepteur deserunt aliquip pariatur elit cillum voluptate anim incididunt ea. Adipisicing esse ipsum elit. Voluptate mollit minim ullamco dolore velit sunt consectetur enim.",
         },
       ],
+      averageRating: 0,
       description: "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
       discountPercentage: 15.97,
     },
@@ -3370,6 +3425,7 @@ const data = {
       stock: 6,
       brand: "Sneakers",
       reviews: [],
+      averageRating: 0,
       description:
         "Gender: Men , Colors: Same as DisplayedCondition: 100% Brand New",
       discountPercentage: 12.57,
@@ -3433,6 +3489,7 @@ const data = {
             "Reprehenderit amet minim ullamco laboris. Occaecat proident do incididunt aute ut sint cupidatat ullamco dolor mollit minim nostrud culpa.\nAd proident minim laborum amet reprehenderit officia commodo eiusmod in. Consectetur mollit eiusmod nostrud voluptate eiusmod nisi elit cupidatat.",
         },
       ],
+      averageRating: 0,
       description:
         "Men Shoes - Loafers for men - Rubber Shoes - Nylon Shoes - Shoes for men - Moccassion - Pure Nylon (Rubber) Expot Quality.",
       discountPercentage: 10.91,
@@ -3460,6 +3517,7 @@ const data = {
             "Deserunt sit dolore laboris quis deserunt dolore velit irure deserunt pariatur esse velit ex. Laborum irure est nulla commodo commodo labore.",
         },
       ],
+      averageRating: 0,
       description:
         "Pattern Type: Solid, Material: PU, Toe Shape: Pointed Toe ,Outsole Material: Rubber",
       discountPercentage: 12,
@@ -3529,6 +3587,7 @@ const data = {
             "Occaecat veniam anim non sit sint officia minim non cillum tempor adipisicing.\nConsectetur id non magna.",
         },
       ],
+      averageRating: 0,
       description:
         "Comfortable stretch cloth, lightweight body; ,rubber sole, anti-skid wear;",
       discountPercentage: 8.71,
@@ -3585,6 +3644,7 @@ const data = {
             "Aliqua ad occaecat aliquip. Est qui dolore exercitation fugiat amet magna magna ipsum nulla.",
         },
       ],
+      averageRating: 0,
       description:
         "High Quality ,Stylish design ,Comfortable wear ,FAshion ,Durable",
       discountPercentage: 7.55,
@@ -3628,6 +3688,7 @@ const data = {
             "Excepteur officia laboris labore enim aliquip. Incididunt occaecat do velit nulla aliqua sint est laborum culpa sunt do nulla velit est. Labore non nisi velit eiusmod officia laborum sunt.\nCupidatat commodo cupidatat officia ex sit culpa. Sint elit commodo officia irure eu eiusmod cillum commodo quis mollit id duis in. Consequat minim proident magna ut nulla ullamco aliquip Lorem exercitation eiusmod. Quis quis laborum in dolor elit ipsum do ex Lorem consequat eiusmod ea sint velit.",
         },
       ],
+      averageRating: 0,
       description: "Style:Sport ,Clasp:Buckles ,Water Resistance Depth:3Bar",
       discountPercentage: 7.14,
     },
@@ -3644,6 +3705,7 @@ const data = {
       stock: 95,
       brand: "SKMEI 9117",
       reviews: [],
+      averageRating: 0,
       description:
         "Watch Crown With Environmental IPS Bronze Electroplating; Display system of 12 hours",
       discountPercentage: 3.15,
@@ -3688,6 +3750,7 @@ const data = {
             "Et ex anim do labore aute consequat sint duis ea deserunt ipsum tempor dolor cillum mollit. Sint eu occaecat mollit velit nulla anim adipisicing enim reprehenderit cillum minim eu.\nSint tempor cillum id pariatur ullamco quis. Laborum exercitation quis eu ad mollit cupidatat ea labore in consectetur in irure do consequat. Exercitation exercitation aliqua consectetur mollit incididunt laborum veniam. Id adipisicing officia laboris mollit consectetur minim est officia id id nulla laboris nisi.",
         },
       ],
+      averageRating: 0,
       description:
         "Men Silver Chain Royal Blue Premium Watch Latest Analog Watch",
       discountPercentage: 2.56,
@@ -3738,6 +3801,7 @@ const data = {
             "Fugiat id sit sunt magna enim. Voluptate voluptate labore nostrud incididunt reprehenderit et. Minim occaecat dolore culpa qui ea do ea officia ut reprehenderit minim cupidatat reprehenderit.\nIrure incididunt ex nulla sit do exercitation. Nostrud dolore cillum id est ex exercitation et et aliqua deserunt ex. Sunt enim commodo est sint veniam ut ipsum mollit sunt magna qui in qui in.",
         },
       ],
+      averageRating: 0,
       description:
         "Leather Strap Skeleton Watch for Men - Stylish and Latest Design",
       discountPercentage: 10.2,
@@ -3771,6 +3835,7 @@ const data = {
             "Voluptate anim magna occaecat laborum voluptate do consequat consectetur ullamco ex exercitation laborum voluptate. Nisi ipsum ea reprehenderit ea.",
         },
       ],
+      averageRating: 0,
       description:
         "Stylish Watch For Man (Luxury) Classy Men's Stainless Steel Wrist Watch - Box Packed",
       discountPercentage: 17.79,
@@ -3791,6 +3856,7 @@ const data = {
       stock: 24,
       brand: "Eastern Watches",
       reviews: [],
+      averageRating: 0,
       description: "Elegant design, Stylish ,Unique & Trendy,Comfortable wear",
       discountPercentage: 3.23,
     },
@@ -3864,6 +3930,7 @@ const data = {
             "Elit cillum do dolor officia in mollit sint nisi exercitation veniam nostrud minim. Sit duis exercitation dolore eiusmod laboris tempor in elit pariatur velit.\nAmet adipisicing aliquip qui dolor occaecat excepteur est consectetur nulla aute qui nisi. Non est esse voluptate cupidatat in. Elit qui adipisicing pariatur nostrud fugiat amet. Irure occaecat exercitation laboris sunt dolore cillum consequat aliquip do.",
         },
       ],
+      averageRating: 0,
       description:
         "Buy this awesome  The product is originally manufactured by the company and it's a top selling product with a very reasonable",
       discountPercentage: 16.69,
@@ -3893,6 +3960,7 @@ const data = {
             "Consequat ad minim labore laborum. Qui eiusmod do tempor proident ut minim nostrud laborum laboris ex dolore consectetur. Amet quis sit nisi nostrud fugiat consectetur dolore.\nLaboris mollit labore commodo ipsum adipisicing consequat. Ex commodo consequat nulla deserunt occaecat culpa consequat veniam minim minim id duis. Do pariatur excepteur deserunt non in enim.",
         },
       ],
+      averageRating: 0,
       description:
         "Stylish Luxury Digital Watch For Girls / Women - Led Smart Ladies Watches For Girls",
       discountPercentage: 9.03,
@@ -3973,6 +4041,7 @@ const data = {
             "Incididunt voluptate labore sint eiusmod Lorem ea officia non ipsum commodo cupidatat quis. Ipsum nostrud elit aliqua et pariatur esse exercitation do id consectetur officia. Do non sit nisi fugiat Lorem incididunt deserunt ut veniam eu excepteur ullamco.",
         },
       ],
+      averageRating: 0,
       description:
         "Product details of Golden Watch Pearls Bracelet Watch For Girls - Golden Chain Ladies Bracelate Watch for Women",
       discountPercentage: 17.55,
@@ -4021,6 +4090,7 @@ const data = {
             "Voluptate aute cupidatat cillum magna.\nNon laboris nisi exercitation nostrud laboris consectetur ipsum proident. Non cupidatat eiusmod amet minim excepteur exercitation incididunt veniam incididunt voluptate est. Nisi laboris nulla exercitation voluptate Lorem minim occaecat.",
         },
       ],
+      averageRating: 0,
       description:
         "Fashion Skmei 1830 Shell Dial Stainless Steel Women Wrist Watch Lady Bracelet Watch Quartz Watches Ladies",
       discountPercentage: 8.98,
@@ -4059,6 +4129,7 @@ const data = {
             "Occaecat consectetur officia in sit laboris reprehenderit nostrud tempor aliqua veniam anim occaecat. Quis ut dolore proident duis cillum magna quis excepteur laboris laborum non exercitation voluptate nisi. Veniam Lorem do officia. Nulla duis veniam aliquip ut laborum.\nMollit veniam cupidatat occaecat commodo duis qui excepteur duis.",
         },
       ],
+      averageRating: 0,
       description:
         "LouisWill Women Shoulder Bags Long Clutches Cross Body Bags Phone Bags PU Leather Hand Bags Large Capacity Card Holders Zipper Coin Purses Fashion Crossbody Bags for Girls Ladies",
       discountPercentage: 14.65,
@@ -4103,6 +4174,7 @@ const data = {
             "Cupidatat ullamco elit dolor ipsum dolore. Magna quis do amet consequat incididunt non tempor nulla nisi.",
         },
       ],
+      averageRating: 0,
       description:
         "This fashion is designed to add a charming effect to your casual outfit. This Bag is made of synthetic leather.",
       discountPercentage: 17.5,
@@ -4129,6 +4201,7 @@ const data = {
             "Id aute id reprehenderit tempor Lorem ea ex non ullamco ut laborum labore ipsum qui.",
         },
       ],
+      averageRating: 0,
       description:
         "This fashion is designed to add a charming effect to your casual outfit. This Bag is made of synthetic leather.",
       discountPercentage: 10.39,
@@ -4168,6 +4241,7 @@ const data = {
             "Qui laboris id non incididunt pariatur fugiat do minim est qui mollit anim. Exercitation irure in reprehenderit aliquip cupidatat. Cupidatat cupidatat est velit sint excepteur ea minim.",
         },
       ],
+      averageRating: 0,
       description:
         "It features an attractive design that makes it a must have accessory in your collection. We sell different kind of bags for boys, kids, women, girls and also for unisex.",
       discountPercentage: 11.19,
@@ -4211,6 +4285,7 @@ const data = {
             "Ea cupidatat labore esse anim. Sint fugiat commodo labore laboris cillum labore pariatur reprehenderit.\nDolor ipsum enim ullamco deserunt ex aliqua voluptate dolore adipisicing consequat velit nulla eiusmod.",
         },
       ],
+      averageRating: 0,
       description:
         "Seven Pocket Women Bag Handbags Lady Shoulder Crossbody Bag Female Purse Seven Pocket Bag",
       discountPercentage: 14.87,
@@ -4272,6 +4347,7 @@ const data = {
             "Aliquip cillum do labore excepteur reprehenderit sint non ullamco excepteur irure. Quis sit qui adipisicing veniam nostrud officia anim aliqua consequat exercitation laboris amet enim duis adipisicing. Et esse Lorem dolore excepteur consequat occaecat ipsum. Laboris nulla Lorem labore.",
         },
       ],
+      averageRating: 0,
       description:
         "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
       discountPercentage: 13.57,
@@ -4298,6 +4374,7 @@ const data = {
             "Do qui culpa dolor deserunt dolor dolore qui.\nExcepteur mollit fugiat exercitation aliquip amet cillum ad ea aliqua. In consequat ad dolor reprehenderit id quis enim excepteur elit deserunt irure eiusmod cillum cupidatat do. Enim aliquip excepteur magna magna aliquip excepteur labore qui laborum.",
         },
       ],
+      averageRating: 0,
       description:
         "Brand: The Greetings Flower Colour: RedRing Colour: GoldenSize: Adjustable",
       discountPercentage: 3.22,
@@ -4373,6 +4450,7 @@ const data = {
             "Id laboris culpa et labore. Adipisicing dolore culpa aute labore.",
         },
       ],
+      averageRating: 0,
       description:
         "Fashion Jewellery 3Pcs Adjustable Pearl Rhinestone Korean Style Open Rings For Women",
       discountPercentage: 8.02,
@@ -4387,6 +4465,7 @@ const data = {
       stock: 16,
       brand: "Fashion Jewellery",
       reviews: [],
+      averageRating: 0,
       description:
         "Elegant Female Pearl Earrings Set Zircon Pearl Earings Women Party Accessories 9 Pairs/Set",
       discountPercentage: 12.8,
@@ -4450,6 +4529,7 @@ const data = {
             "Eiusmod commodo in voluptate id ut aliquip sit occaecat consequat proident labore. Nulla excepteur proident Lorem cupidatat aute amet id.\nOccaecat in consequat aliquip sint occaecat voluptate sunt est pariatur consequat veniam dolor culpa.",
         },
       ],
+      averageRating: 0,
       description:
         "Pair Of Ear Cuff Butterfly Long Chain Pin Tassel Earrings - Silver ( Long Life Quality Product)",
       discountPercentage: 17.75,
@@ -4518,6 +4598,7 @@ const data = {
             "Tempor magna enim culpa incididunt sunt deserunt culpa labore sunt consequat consectetur commodo ullamco consectetur. In enim ea voluptate pariatur proident cupidatat aute esse Lorem ullamco aliqua reprehenderit culpa duis irure. Cillum incididunt consequat irure quis cillum qui cupidatat dolor sit mollit pariatur reprehenderit. Ex nisi pariatur id Lorem cillum.\nOfficia excepteur ex esse. Ad fugiat consequat ea. Incididunt culpa reprehenderit do ea aute esse esse laboris occaecat ipsum.",
         },
       ],
+      averageRating: 0,
       description:
         "A pair of sunglasses can protect your eyes from being hurt. For car driving, vacation travel, outdoor activities, social gatherings,",
       discountPercentage: 10.1,
@@ -4598,6 +4679,7 @@ const data = {
             "Fugiat amet velit consequat nisi esse irure sint. Nostrud sit qui occaecat occaecat tempor veniam dolore consectetur ea amet eiusmod commodo. Consequat in veniam magna Lorem ex nisi pariatur veniam id irure.",
         },
       ],
+      averageRating: 0,
       description:
         "Orignal Metal Kabir Singh design 2020 Sunglasses Men Brand Designer Sun Glasses Kabir Singh Square Sunglass",
       discountPercentage: 15.6,
@@ -4654,6 +4736,7 @@ const data = {
             "Aute non minim id ea qui est cupidatat minim proident Lorem laborum consectetur. Aliquip id elit sit nostrud excepteur nulla ut aliquip qui consequat deserunt cillum minim ea consectetur.\nIncididunt esse ipsum id quis ipsum dolore proident. Duis consectetur labore culpa reprehenderit sunt minim quis ex et minim ut in reprehenderit sint.",
         },
       ],
+      averageRating: 0,
       description:
         "Wiley X Night Vision Yellow Glasses for Riders - Night Vision Anti Fog Driving Glasses - Free Night Glass Cover - Shield Eyes From Dust and Virus- For Night Sport Matches",
       discountPercentage: 6.33,
@@ -4726,6 +4809,7 @@ const data = {
             "Enim amet qui fugiat est sit. Cillum consectetur aliquip enim laborum ut consequat duis veniam ad.",
         },
       ],
+      averageRating: 0,
       description:
         "Fashion Oversized Square Sunglasses Retro Gradient Big Frame Sunglasses For Women One Piece Gafas Shade Mirror Clear Lens 17059",
       discountPercentage: 13.89,
@@ -4780,6 +4864,7 @@ const data = {
             "Quis sint duis duis dolor ut deserunt aliquip sunt consequat occaecat nisi exercitation.",
         },
       ],
+      averageRating: 0,
       description:
         "LouisWill Men Sunglasses Polarized Sunglasses UV400 Sunglasses Day Night Dual Use Safety Driving Night Vision Eyewear AL-MG Frame Sun Glasses with Free Box for Drivers",
       discountPercentage: 11.27,
@@ -4819,6 +4904,7 @@ const data = {
             "Ut tempor est culpa ipsum cupidatat non aliqua esse ullamco exercitation adipisicing culpa.\nDeserunt labore qui quis ex ea aliqua excepteur laboris consequat consectetur in voluptate et. Id veniam do sint enim ex adipisicing duis elit mollit mollit ex tempor occaecat sunt commodo.",
         },
       ],
+      averageRating: 0,
       description:
         "Bluetooth Aux Bluetooth Car Aux Car Bluetooth Transmitter Aux Audio Receiver Handfree Car Bluetooth Music Receiver Universal 3.5mm Streaming A2DP Wireless Auto AUX Audio Adapter With Mic For Phone MP3",
       discountPercentage: 10.56,
@@ -4888,6 +4974,7 @@ const data = {
             "Nisi duis sit veniam aute sit deserunt laborum aute nostrud ea aliquip nulla ut excepteur elit. Minim sint exercitation consectetur Lorem.",
         },
       ],
+      averageRating: 0,
       description:
         "Both Heat and Cool Purpose, Temperature control range; -50 to +110, Temperature measurement accuracy; 0.1, Control accuracy; 0.1",
       discountPercentage: 11.3,
@@ -4908,6 +4995,7 @@ const data = {
       stock: 42,
       brand: "TC Reusable",
       reviews: [],
+      averageRating: 0,
       description:
         "TC Reusable Silicone Magic Washing Gloves with Scrubber, Cleaning Brush Scrubber Gloves Heat Resistant Pair for Cleaning of Kitchen, Dishes, Vegetables and Fruits, Bathroom, Car Wash, Pet Care and Multipurpose",
       discountPercentage: 3.19,
@@ -4977,6 +5065,7 @@ const data = {
             "In mollit voluptate laborum dolor et fugiat aliquip culpa velit commodo est sit adipisicing. Duis anim mollit irure deserunt in qui ad amet cupidatat excepteur ut. Aliquip pariatur quis fugiat esse non nisi dolor labore adipisicing laborum nisi sint cupidatat laborum tempor.\nVelit id nostrud excepteur. Veniam veniam labore et eu nisi fugiat laboris ea fugiat ad non aute ut ullamco labore.",
         },
       ],
+      averageRating: 0,
       description:
         "best Quality CHarger , Highly Recommended to all best Quality CHarger , Highly Recommended to all",
       discountPercentage: 17.53,
@@ -5004,6 +5093,7 @@ const data = {
             "In Lorem eu ad consectetur nostrud officia laborum fugiat ea nostrud. Nisi in anim minim mollit. Ad occaecat cillum officia ad do. Amet consequat aute sunt anim ut culpa deserunt nulla reprehenderit.\nId est sunt eu. Ea aliqua eu enim laborum amet quis aute aliqua. Irure irure exercitation aliqua. Laboris aute do magna pariatur qui voluptate.",
         },
       ],
+      averageRating: 0,
       description:
         "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
       discountPercentage: 11.08,
@@ -5061,6 +5151,7 @@ const data = {
             "Occaecat incididunt culpa excepteur consequat non. Quis proident nulla nostrud deserunt in enim nostrud cillum enim consectetur in officia.\nVelit occaecat ad ullamco tempor occaecat occaecat est enim.",
         },
       ],
+      averageRating: 0,
       description:
         "Engine Type:Wet sump, Single Cylinder, Four Stroke, Two Valves, Air Cooled with SOHC (Single Over Head Cam) Chain Drive Bore & Stroke:47.0 x 49.5 MM",
       discountPercentage: 13.63,
@@ -5135,6 +5226,7 @@ const data = {
             "Veniam dolore elit esse fugiat sunt ad eiusmod anim minim sunt do duis.",
         },
       ],
+      averageRating: 0,
       description:
         "HOT SALE IN EUROPE electric racing motorcycle electric motorcycle for sale adult electric motorcycles",
       discountPercentage: 14.4,
@@ -5187,6 +5279,7 @@ const data = {
       stock: 109,
       brand: "JIEPOLLY",
       reviews: [],
+      averageRating: 0,
       description:
         "new arrivals Fashion motocross goggles motorcycle motocross racing motorcycle",
       discountPercentage: 3.85,
@@ -5232,6 +5325,7 @@ const data = {
             "Proident ad eiusmod et aliqua fugiat.\nOfficia occaecat aute eu esse occaecat. Laboris tempor proident cupidatat tempor laboris ea enim officia ullamco. Excepteur velit consectetur ex occaecat ea exercitation pariatur dolor ut culpa excepteur do cupidatat. Nostrud labore sit adipisicing elit do Lorem veniam ut fugiat nisi excepteur.",
         },
       ],
+      averageRating: 0,
       description:
         "Wholesale cargo lashing Belt Tie Down end Ratchet strap customized strap 25mm motorcycle 1500kgs with rubber handle",
       discountPercentage: 17.67,
@@ -5283,6 +5377,7 @@ const data = {
             "Duis et pariatur nulla Lorem Lorem. Officia incididunt veniam adipisicing cupidatat proident consectetur pariatur exercitation irure tempor commodo exercitation in. Nisi aliqua nulla amet non ut id proident excepteur commodo proident eu dolor ullamco id enim.",
         },
       ],
+      averageRating: 0,
       description:
         "Wholesale slim hanging decorative kid room lighting ceiling kitchen chandeliers pendant light modern",
       discountPercentage: 14.89,
@@ -5330,6 +5425,7 @@ const data = {
             "Amet dolor eu duis amet mollit est nisi.\nOccaecat ut ut labore magna ipsum deserunt sunt voluptate dolor fugiat do minim. Ex consectetur ipsum do.",
         },
       ],
+      averageRating: 0,
       description:
         "3 lights lndenpant kitchen islang dining room pendant rice paper chandelier contemporary led pendant light modern chandelier",
       discountPercentage: 5.92,
@@ -5387,6 +5483,7 @@ const data = {
             "Incididunt sint ea proident. Enim eiusmod tempor aliqua cillum exercitation dolore cupidatat dolore aute ea. Labore laborum magna in. Enim ad ullamco id.",
         },
       ],
+      averageRating: 0,
       description:
         "American Vintage Wood Pendant Light Farmhouse Antique Hanging Lamp Lampara Colgante",
       discountPercentage: 8.84,
@@ -5406,6 +5503,7 @@ const data = {
       stock: 133,
       brand: "YIOSI",
       reviews: [],
+      averageRating: 0,
       description: "Crystal chandelier maria theresa for 12 light",
       discountPercentage: 16,
     },
