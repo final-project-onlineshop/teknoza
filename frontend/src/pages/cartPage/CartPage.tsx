@@ -3,7 +3,6 @@ import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
-import OrderSummary from "../../components/orderSummary/OrderSummary";
 import ProductInCart from "../../components/productInCart/ProductInCart";
 import { Store } from "../../Store";
 import "./cartPage.scss";

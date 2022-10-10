@@ -4,7 +4,14 @@ export const Store = createContext();
 
 const initialState = {
   cart: {
-    cartSum: 0,
+    cartSum: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems")).reduce(
+          (sumOfCart, item) => {
+            return (sumOfCart += item.price * item.quantity);
+          },
+          0
+        )
+      : 0,
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
@@ -51,6 +58,9 @@ function reducer(state, action) {
       });
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    case "CART_CLEAR":{
+      return {...state, cart:{...state.cart,cartItems:[]}};
     }
     case "SAVE_PAYMENT_METHOD": {
       return { ...state, cart: { ...state.cart, paymentName: action.payload } };

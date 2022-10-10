@@ -1,6 +1,6 @@
 @API_URL = http://localhost:3484
 
-@TOKEN = aaa
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQzZWI5NWU1MWQzMTU3MTUwNDIxYmEiLCJuYW1lIjoiU2hlbGRvbiBRdWlnbGV5IiwiZW1haWwiOiJoYmluZ2xleTFAcGxhbGEub3IuanAiLCJpc0FkbWluIjpmYWxzZSwicGFzc3dvcmQiOiIkMmEkMTAkdDdpcTFrYUduVGFqajNkSW1vZkxSdUhDdEVvRVBxLm5oVjFQZmZBYTdRNzVlblM3QzVKR1ciLCJpYXQiOjE2NjU0MzExNjcsImV4cCI6MTY2ODAyMzE2N30.S7JA2C8OTWSG7dA8XWXQzOqQsQmcm3pFPUowDBqd-ro
 ### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
 
@@ -45,8 +45,8 @@ POST {{API_URL}}/api/users/signin
 Content-type:application/json
 
 {
-    "email":"atuny0@sohu.com",
-    "password": "9uQFF1Lh"
+    "email":"hbingley1@plala.or.jp",
+    "password": "gf5498fsglö?++df3489!!fds23"
 }
 
 ### SIGNIN ROUTE +++
@@ -129,8 +129,3 @@ Authorization : {{TOKEN}}
 DELETE {{API_URL}}/api/products/633154e59afb0c41836f1350
 Content-type:application/json
 Authorization : {{TOKEN}}
-
-
-
-
-

@@ -1,10 +1,11 @@
+import { useContext } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
-import OrderSummary from "../../components/orderSummary/OrderSummary";
 import ProductInCart from "../../components/productInCart/ProductInCart";
+import { Store } from "../../Store";
 import "./orderDetailsPage.scss";
 const productsInOrder = [
   {
@@ -22,9 +23,12 @@ const productsInOrder = [
     countInCart: 1,
   },
 ];
-
 const OrderDetailsPage = () => {
+  const { state } = useContext(Store);
+  const { userinfo } = state;
+
   const { orderId } = useParams();
+  const navigate = useNavigate();
   return (
     <Container>
       <Helmet>
@@ -68,7 +72,45 @@ const OrderDetailsPage = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <OrderSummary page="order-details"/>
+          <Card>
+            <Card.Body>
+              <Card.Title>Order Summary</Card.Title>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Items</Col>
+                    <Col>$ {"sumOfItems"}</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Shipping</Col>
+                    <Col>$ {"shippingPrice"}</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Tax</Col>
+                    <Col>$ {"tax"}</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>
+                      <b>Order Total</b>
+                    </Col>
+                    <Col>
+                      <b>$ {"orderTotal"}</b>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              </ListGroup>
+
+              <ListGroup.Item>
+                <h2>PAYPAL</h2>
+              </ListGroup.Item>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>

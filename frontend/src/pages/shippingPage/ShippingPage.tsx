@@ -18,7 +18,7 @@ const ShippingPage = () => {
       navigate("/login?redirect=/shipping");
     }
   }, [userInfo, navigate]);
-  const [name, setName] = useState(shippingAddress.name || "");
+  const [fullName, setName] = useState(shippingAddress.fullName || "");
   const [address, setAddress] = useState(shippingAddress.address || "");
   const [city, setCity] = useState(shippingAddress.city || "");
   const [country, setCountry] = useState(shippingAddress.country || "");
@@ -30,7 +30,7 @@ const ShippingPage = () => {
     ctxDispatch({
       type: "SAVE_SHIPPING_ADDRESS",
       payload: {
-        name,
+        fullName,
         address,
         city,
         postalCode,
@@ -39,7 +39,7 @@ const ShippingPage = () => {
     });
     localStorage.setItem(
       "shippingAddress",
-      JSON.stringify({ name, address, city, postalCode, country })
+      JSON.stringify({ fullName, address, city, postalCode, country })
     );
     navigate("/payment");
   };
@@ -55,9 +55,9 @@ const ShippingPage = () => {
           <Form.Label>Full Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your full name"
+            placeholder="Your fullname"
             required={true}
-            value={name}
+            value={fullName}
             onChange={(e) => {
               setName(e.target.value);
             }}
