@@ -26,7 +26,6 @@ productRouter.post(
       brand: req.body.brand || "sample brand",
       stock: req.body.stock || 0,
       reviews: req.body.reviews || [],
-      // numReviews: req.body.numReviews || 0,
       description: req.body.desciption || "sample description",
       discountPercentage: req.body.discountPercentage || 0,
     });
@@ -53,7 +52,6 @@ productRouter.put(
       product.stock = req.body.stock;
       product.description = req.body.description;
       product.discountPercentage = req.body.discountPercentage;
-      // product.numReviews = req.body.numReviews;
       product.reviews = req.body.reviews;
 
       await product.save();
@@ -98,16 +96,15 @@ productRouter.post(
         comment: req.body.comment,
       };
       product.reviews.push(review);
-      product.numReviews = product.reviews.length;
-      product.rating =
+
+      product.averageRating =
         product.reviews.reduce((a, c) => c.rating + a, 0) /
         product.reviews.length;
       const updatedProduct = await product.save();
       res.status(201).send({
         message: "Review Created",
         review: updatedProduct.reviews[updatedProduct.reviews.length - 1],
-        numReviews: product.numReviews,
-        rating: product.rating,
+        averageRating: product.averageRating,
       });
     } else {
       res.status(404).send({ message: "Product Not Found" });
