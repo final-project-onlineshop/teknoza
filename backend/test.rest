@@ -15,10 +15,14 @@ GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 GET {{API_URL}}/api/products/63353b9d7850fcb381794d11
 
 ### PRODUCT SEARCH ROUTE +++
-GET {{API_URL}}/api/products/search?query=laptop&category=all&price=all&rating=all&order=newest
+GET {{API_URL}}/api/products/search?query=all&category=all&price=all&pageSize=6&page=2
 
 ### PRODUCT SEARCH ROUTE +++
-GET {{API_URL}}/api/products/search?query=all&category=all&price=all
+GET {{API_URL}}/api/products/search?query=iphone&category=all&price=all
+
+
+### PRODUCT SEARCH ROUTE +++
+GET {{API_URL}}/api/products/search?query=all&category=all&price=all&pageSize=6
 
 ### PRODUCT SLUG ROUTE +++
 GET {{API_URL}}/api/products/slug/epson-printer
