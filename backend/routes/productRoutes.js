@@ -145,7 +145,7 @@ productRouter.get(
     // const brand = query.brand || "";
     const category = query.category || "";
     const price = query.price || "";
-    const averageRating = query.averageRating || "";
+    const averageRating = query.rating || "";
     const order = query.order || "";
     const searchQuery = query.query || "";
 

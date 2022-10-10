@@ -15,7 +15,8 @@ GET {{API_URL}}/api/products/63280ac3ar92d3452f5e161c
 GET {{API_URL}}/api/products/63353b9d7850fcb381794d11
 
 ### PRODUCT SEARCH ROUTE +++
-GET {{API_URL}}/api/products/search?query=all&category=all&price=all&pageSize=6&page=2
+GET {{API_URL}}/api/products/search?category=all&query=all&price=all&rating=all&order=newest&page=29
+
 
 ### PRODUCT SEARCH ROUTE +++
 GET {{API_URL}}/api/products/search?query=iphone&category=all&price=all
