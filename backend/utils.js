@@ -18,11 +18,6 @@ export const generateToken = (user) => {
   );
 };
 
-export const calculateRating = (reviews) => {
-  const rating = reviews.reduce((a, sum) => a.rating + sum, 0) / reviews.length;
-  return rating;
-};
-
 export const isAuth = (req, res, next) => {
   const authorization = req.headers.authorization;
   if (authorization) {
