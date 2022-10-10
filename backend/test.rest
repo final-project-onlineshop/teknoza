@@ -1,6 +1,6 @@
 @API_URL = http://localhost:3484
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM1M2I5ZDc4NTBmY2IzODE3OTRmNGQiLCJuYW1lIjoiVGVycnkgTWVkaHVyc3QiLCJlbWFpbCI6ImF0dW55MEBzb2h1LmNvbSIsImlzQWRtaW4iOmZhbHNlLCJwYXNzd29yZCI6IiQyYSQxMCRqQTVjRmxVNjR0QUJvV1ZtY0N0SkJldllNME1IU2NmZmhESmQyYW4vaVlDYlRKdUZmeXY2eSIsImlhdCI6MTY2NDQzNDA0NywiZXhwIjoxNjY3MDI2MDQ3fQ.PmyktsRKVCUqmst_YKKOu6W7gXHE0VXu6TkCs0bWK0E
+@TOKEN = aaa
 ### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
 
@@ -17,6 +17,8 @@ GET {{API_URL}}/api/products/63353b9d7850fcb381794d11
 ### PRODUCT SEARCH ROUTE +++
 GET {{API_URL}}/api/products/search?category=all&query=all&price=all&rating=all&order=newest&page=29
 
+### PRODUCT SEARCH ROUTE +++
+GET {{API_URL}}/api/products/search?category=furniture&query=all&price=all&rating=all&order=newest&page=1
 
 ### PRODUCT SEARCH ROUTE +++
 GET {{API_URL}}/api/products/search?query=iphone&category=all&price=all
@@ -52,27 +54,10 @@ POST {{API_URL}}/api/users/signin
 Content-type:application/json
 
 {
-    "email":"bkr@example.com",
+    "email":"aaa@example.com",
     "password": "123456"
 }
 
-### SIGNIN ROUTE +++
-POST {{API_URL}}/api/users/signin
-Content-type:application/json
-
-{
-    "email":"svd@example.com",
-    "password": "123456"
-}
-
-### SIGNIN ROUTE +++
-POST {{API_URL}}/api/users/signin
-Content-type:application/json
-
-{
-    "email":"ömer@example.com",
-    "password": "123456"
-}
 
 ### SIGNUP ROUTE ---
 POST {{API_URL}}/api/users/signup
