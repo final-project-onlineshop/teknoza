@@ -145,10 +145,10 @@ productRouter.get(
     const { query } = req;
     const pageSize = query.pageSize || PAGE_SIZE;
     const page = query.page || 1;
-    const brand = query.brand || "";
-    const category = query.page || "";
+    // const brand = query.brand || "";
+    const category = query.category || "";
     const price = query.price || "";
-    const rating = query.rating || "";
+    const averageRating = query.averageRating || "";
     const order = query.order || "";
     const searchQuery = query.query || "";
 
@@ -163,11 +163,15 @@ productRouter.get(
         : {};
 
     const categoryFilter = category && category !== "all" ? { category } : {};
+    // const brandFilter =
+    //   brand && brand !== "all"
+    //     ? { brand: { $regex: brand, $options: "i" } }
+    //     : {};
     const ratingFilter =
-      rating && rating !== "all"
+      averageRating && averageRating !== "all"
         ? {
-            rating: {
-              $gte: Number(rating),
+            averageRating: {
+              $gte: Number(averageRating),
             },
           }
         : {};
@@ -191,7 +195,7 @@ productRouter.get(
         : order === "highest"
         ? { price: -1 }
         : order === "toprated"
-        ? { rating: -1 }
+        ? { averageRating: -1 }
         : order === "newest"
         ? { createdAt: -1 }
         : { _id: -1 };
