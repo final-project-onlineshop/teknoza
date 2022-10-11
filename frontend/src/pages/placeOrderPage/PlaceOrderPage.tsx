@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
 import ProductInCart from "../../components/productInCart/ProductInCart";
 import { Store } from "../../Store";
+import { getError } from "../../utils.js";
+
 import "./placeOrderPage.scss";
 const reducer = (state, action) => {
   switch (action.type) {
@@ -34,11 +36,7 @@ const PlaceOrderPage = () => {
   const round2 = (num) => {
     return Math.round(num * 100 + Number.EPSILON) / 100;
   };
-  const getError = (error) => {
-    return error.reponse && error.response.data.message
-      ? error.response.data.message
-      : error.message;
-  };
+
   const placeOrderHandler = async () => {
     try {
       dispatch({ type: "CREATE_REQUEST" });
@@ -67,9 +65,8 @@ const PlaceOrderPage = () => {
   cart.sumOfItems = round2(cart.cartSum);
   cart.tax = round2(cart.sumOfItems * 0.19);
 
+  cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 25);
 
-   cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 25);
-  
   cart.orderTotal = cart.sumOfItems + cart.tax + cart.shippingPrice;
 
   return (
