@@ -24,6 +24,7 @@ const Header = () => {
   const logoutHandler = () => {
     ctxDispatch({ type: "USER_LOGOUT" });
     localStorage.removeItem("userInfo");
+    window.location.href = '/login'
   };
 
   return (
@@ -70,11 +71,11 @@ const Header = () => {
                     id="basic-nav-dropdown"
                   >
                     <NavDropdown.Item></NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">
-                      Account
+                    <NavDropdown.Item as={NavLink} to="/profile">
+                      User Profile
                     </NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to="/orderHistory">
-                      Orders
+                      Order History
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item
@@ -90,9 +91,7 @@ const Header = () => {
                       <NavDropdown.Item as={NavLink} to="/admin/dashboard">
                         Dashboard
                       </NavDropdown.Item>
-                      <NavDropdown.Item as={NavLink} to="/profile">
-                        Profile
-                      </NavDropdown.Item>
+                      
                       <NavDropdown.Divider />
                       <NavDropdown.Item as={NavLink} to="/admin/products">
                         Products
