@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
 import ProductInCart from "../../components/productInCart/ProductInCart";
 import { Store } from "../../Store";
+import {getError} from '../../utils.js'
+
 import "./orderDetailsPage.scss";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
@@ -28,11 +30,7 @@ import LoadingBox from "../../components/loadingBox/LoadingBox";
 //   },
 // ];
 
-const getError = (error) => {
-  return error.reponse && error.response.data.message
-    ? error.response.data.message
-    : error.message;
-};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
