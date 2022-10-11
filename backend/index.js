@@ -46,9 +46,9 @@ app.use(
 
 app.set("trust proxy", 1);
 
-// app.get("/api/keys/paypal", (req, res) => {
-//   res.send(config.PAYPAL_CLIENT_ID || "sb");
-// });
+app.get("/api/keys/paypal", (req, res) => {
+  res.send(config.PAYPAL_CLIENT_ID || "sb");
+});
 
 // app.use(cookieParser());
 
