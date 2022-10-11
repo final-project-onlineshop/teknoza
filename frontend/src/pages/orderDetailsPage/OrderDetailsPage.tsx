@@ -247,7 +247,7 @@ const OrderDetailsPage = () => {
                   {order.orderItems.map((product, index) => {
                     return (
                       <ProductInCart product={product} uneditable key={index} />
-                    ); //TODO: after new component change this one, it has dom nesting warning
+                    );
                   })}
                 </ListGroup>
               </Card.Body>
