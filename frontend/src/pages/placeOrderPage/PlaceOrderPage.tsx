@@ -65,9 +65,11 @@ const PlaceOrderPage = () => {
     }
   };
   cart.sumOfItems = round2(cart.cartSum);
-  cart.tax = round2(cart.sumOfItems * 0.19);
+  // cart.tax = round2(cart.sumOfItems * 0.19);
+  cart.tax = 0; //TODO: remove after test
 
-  cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 25);
+  // cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 25);
+  cart.shippingPrice = 0; //TODO: remove after test
   cart.orderTotal = cart.sumOfItems + cart.tax + cart.shippingPrice;
 
   return (
