@@ -5,30 +5,20 @@ import { Container } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-
 import CartPage from "./pages/cartPage/CartPage";
-
 import RegisterPage from "./pages/registerPage/RegisterPage";
-
 import ShippingPage from "./pages/shippingPage/ShippingPage";
-
 import LoginPage from "./pages/loginPage/LoginPage";
 import PaymentPage from "./pages/paymentPage/PaymentPage";
 import PlaceOrderPage from "./pages/placeOrderPage/PlaceOrderPage";
 import OrderHistoryPage from "./pages/orderHistoryPage/OrderHistoryPage";
 import DashboardPage from "./pages/dashboardPage/DashboardPage";
-
 import ProductsPage from "./pages/productsPage/ProductsPage";
-
 import UsersPage from "./pages/usersPage/UsersPage";
-
 import ProductEditPage from "./pages/productEditPage/ProductEditPage";
-
 import OrdersPage from "./pages/ordersPage/OrdersPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
-
 import SearchPage from "./pages/searchPage/SearchPage";
-
 import OrderDetailsPage from "./pages/orderDetailsPage/OrderDetailsPage";
 import { useContext } from "react";
 import { Store } from "./Store";
