@@ -10,4 +10,5 @@ export const config = {
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
   FRONTEND_BASE_URL: process.env.FRONTEND_BASE_URL,
   SESSION_SECRET: process.env.SESSION_SECRET,
+  PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
 };
