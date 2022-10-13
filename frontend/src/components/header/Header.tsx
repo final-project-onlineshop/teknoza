@@ -123,23 +123,23 @@ const Header = () => {
       <div className="sub-nav-frame">
         <Container>
           <Nav className="justify-content-between sub-nav">
-            <Nav.Link href="/home/:all-products">All Products</Nav.Link>
+            <Nav.Link href="/search?category=all">All Products</Nav.Link>
 
             <Nav.Link href="/home/:sales">
               <i className="fa-solid fa-bullhorn"></i> Sales
             </Nav.Link>
 
-            <Nav.Link href="/home/:mobile-phones">
+            <Nav.Link href="/search?category=smartphones">
               <i className="fa-solid fa-mobile-screen-button"></i> Mobile Phone
             </Nav.Link>
-            <Nav.Link href="/home/:computers">
+            <Nav.Link href="/search?category=laptops">
               <i className="fa-solid fa-computer"></i> Computer
             </Nav.Link>
-            <Nav.Link href="/home/:tvs">
-              <i className="fa-solid fa-tv"></i> TV
+            <Nav.Link href="/search?category=automotive">
+              <i className="fa-solid fa-car"></i> Automotive
             </Nav.Link>
-            <Nav.Link href="/home/:appliances">
-              <i className="fa-solid fa-blender"></i> Appliances
+            <Nav.Link href="/search?category=furniture">
+              <i className="fa-solid fa-couch"></i> Furniture
             </Nav.Link>
           </Nav>
         </Container>
