@@ -1,6 +1,7 @@
 @API_URL = http://localhost:3484
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQzZWI5NWU1MWQzMTU3MTUwNDIxYmEiLCJuYW1lIjoiU2hlbGRvbiBRdWlnbGV5IiwiZW1haWwiOiJoYmluZ2xleTFAcGxhbGEub3IuanAiLCJpc0FkbWluIjpmYWxzZSwicGFzc3dvcmQiOiIkMmEkMTAkdDdpcTFrYUduVGFqajNkSW1vZkxSdUhDdEVvRVBxLm5oVjFQZmZBYTdRNzVlblM3QzVKR1ciLCJpYXQiOjE2NjU0MzExNjcsImV4cCI6MTY2ODAyMzE2N30.S7JA2C8OTWSG7dA8XWXQzOqQsQmcm3pFPUowDBqd-ro
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQzZWI5NWU1MWQzMTU3MTUwNDIxYjgiLCJuYW1lIjoiQmVraXIiLCJlbWFpbCI6ImJrckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiJDJhJDEwJHFLNDhvV2pSTUlhMWNzWTM0RWlLcmVyNU1EaTY4QUZUVG1uVWlXWXpvOTRVcDJjN1hkVnEyIiwiaWF0IjoxNjY1NjQ4MTczLCJleHAiOjE2NjgyNDAxNzN9.a3H7IClTTUkMVIDcbexz-tXOVccwThvmnDJMAzJ8AHs
+
 ### PRODUCTS ROUTE +++
 GET {{API_URL}}/api/products
 
@@ -74,7 +75,7 @@ Content-type:application/json
 ### POST NEW PRODUCT ROUTE +++
 POST {{API_URL}}/api/products
 Content-type:application/json
-Authorization : {{TOKEN}}
+Authorization : Bearer {{TOKEN}}
 
 {
     
@@ -111,7 +112,8 @@ Authorization : {{TOKEN}}
 ### UPDATE PRODUCT ROUTE +++
 PUT {{API_URL}}/api/products/633154e59afb0c41836f1350
 Content-type:application/json
-Authorization : {{TOKEN}}
+Authorization : Bearer {{TOKEN}}
+
 
 {
     
@@ -128,4 +130,5 @@ Authorization : {{TOKEN}}
 ### DELETE PRODUCT ROUTE +++
 DELETE {{API_URL}}/api/products/633154e59afb0c41836f1350
 Content-type:application/json
-Authorization : {{TOKEN}}
+Authorization : Bearer {{TOKEN}}
+
