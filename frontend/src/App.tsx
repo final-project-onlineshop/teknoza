@@ -24,6 +24,7 @@ import { useContext } from "react";
 import { Store } from "./Store";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import AdminRoute from "./components/adminRoute/AdminRoute";
+import UserEditPage from "./pages/userEditPage/UserEditPage";
 
 function App() {
   return (
@@ -106,6 +107,14 @@ function App() {
                   element={
                     <AdminRoute>
                       <UsersPage />
+                    </AdminRoute>
+                  }
+                />
+                 <Route
+                  path="/admin/user/:userId"
+                  element={
+                    <AdminRoute>
+                      <UserEditPage />
                     </AdminRoute>
                   }
                 />
