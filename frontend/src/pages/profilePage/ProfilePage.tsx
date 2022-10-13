@@ -38,7 +38,6 @@ export default function ProfilePage() {
     e.preventDefault();
 
     try {
-      console.log('hi');
       
       const { data } = await axios.put(
         `${BASE_API_URL}/users/profile`,
