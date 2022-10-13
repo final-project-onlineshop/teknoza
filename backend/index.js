@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: config.FRONTEND_BASE_URL,
-    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+    methods: ["POST", "PUT", "GET", "DELETE", "OPTIONS", "HEAD"],
     credentials: true,
   })
 );
