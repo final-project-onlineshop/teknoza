@@ -65,7 +65,7 @@ const PlaceOrderPage = () => {
   cart.sumOfItems = round2(cart.cartSum);
   cart.tax = round2(cart.sumOfItems * 0.19);
 
-  cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 25);
+  cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 5);
 
   cart.orderTotal = cart.sumOfItems + cart.tax + cart.shippingPrice;
 
