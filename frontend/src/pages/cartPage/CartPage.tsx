@@ -23,7 +23,7 @@ const CartPage = () => {
       </Helmet>
       <h1>Shopping Cart</h1>
       <Row>
-        <Col md={8} className="products-in-cart">
+        <Col md={9} className="products-in-cart">
           {cartItems.length === 0 ? (
             <MessageBox>
               Cart is empty. <Link to="/">Go Shopping</Link>
@@ -36,19 +36,30 @@ const CartPage = () => {
             </ListGroup>
           )}
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <Card>
             <Card.Body>
-              <ListGroup variant="flush">
+              <ListGroup variant="flush" className="d-flex flex-column justify-content-center align-items-center">
                 <ListGroup.Item>
-                  <h3>{`Subtotal ( ${cartItems.reduce(
-                    (countOfItems, item) => countOfItems + item.quantity,
-                    0
-                  )} items)  : $ ${cartItems.reduce(
-                    (sumOfPrices, item) =>
-                      sumOfPrices + item.price * item.quantity,
-                    0
-                  )}`}</h3>
+                  <h4 className="text-center d-flex flex-column justify-content-center align-items-center">
+                    <p>Subtotal</p>
+                    <p className="fs-5">
+                      ({" "}
+                      {cartItems.reduce(
+                        (countOfItems, item) => countOfItems + item.quantity,
+                        0
+                      )}{" "}
+                      items )
+                    </p>
+                    <p>
+                      $
+                      {cartItems.reduce(
+                        (sumOfPrices, item) =>
+                          sumOfPrices + item.price * item.quantity,
+                        0
+                      )}
+                    </p>
+                  </h4>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <div className="d-grid">

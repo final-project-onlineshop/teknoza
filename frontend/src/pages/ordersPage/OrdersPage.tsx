@@ -83,7 +83,7 @@ const OrdersPage = () => {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <Table striped bordered hover className="text-center">
+        <Table striped bordered hover size="sm" className="text-center">
           <thead>
             <tr>
               <th>ID</th>
@@ -120,11 +120,12 @@ const OrdersPage = () => {
                     </Button>
                     <Button
                       type="button"
+                      className="btn-danger ms-1"
                       onClick={() => {
                         deletehandler(order);
                       }}
                     >
-                      Delete
+                     <i className="fa-solid fa-trash"></i>
                     </Button>
                   </td>
                 </tr>

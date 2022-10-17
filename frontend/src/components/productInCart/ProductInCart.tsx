@@ -30,18 +30,18 @@ const ProductInCart = (props) => {
 
   return (
     <ListGroup.Item key={product._id} className="productInCart">
-      <Row className="align-items-center">
-        <Col md={2} className="image-box">
+      <Row className="align-items-center text-center p-3 row-container">
+        <Col md={2} className="image-box ">
           <img
             src={product.thumbnail}
             alt={product.name}
             className="img-fluid rounded img-thumbnail"
           />
         </Col>
-        <Col md={2}>
+        <Col md={2} className="row-md">
           <Link to={`/product/${product._id}`}>{product.name}</Link>
         </Col>
-        <Col md={3}>
+        <Col md={3}  className="d-flex flex-row justify-content-center align-items-center ">
           {!uneditable && (
             <Button
               onClick={() => {
@@ -69,8 +69,8 @@ const ProductInCart = (props) => {
             </Button>
           )}
         </Col>
-        <Col md={3}>$ {product.price}</Col>
-        <Col md={2}>
+        <Col md={3} >$ {product.price} </Col>
+        <Col md={2} >
           {!uneditable && (
             <Button
               onClick={() => {
