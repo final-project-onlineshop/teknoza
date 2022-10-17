@@ -127,10 +127,11 @@ const Header = () => {
         <Container>
           <Nav className="justify-content-lg-between justify-content-center sub-nav">
             <Nav.Link href="/search?category=all">All Products</Nav.Link>
-
+{/*
            <Nav.Link href="/home/:sales">
               <i className="fa-solid fa-bullhorn"></i> Sales
             </Nav.Link>
+*/}
         
 
             <Nav.Link href="/search?category=smartphones">

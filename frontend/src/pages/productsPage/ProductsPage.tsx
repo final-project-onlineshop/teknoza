@@ -134,7 +134,7 @@ const ProductsPage = () => {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          <Table className="text-center my-3">
+          <Table className="text-center my-3 ">
             <thead>
               <th>ID</th>
               <th>NAME</th>
@@ -147,7 +147,7 @@ const ProductsPage = () => {
               {products.map((product, index) => {
                 return (
                   <tr key={index}>
-                    <td>{product._id}</td>
+                    <td >{product._id}</td>
                     <td>{product.name}</td>
                     <td>{product.price}</td>
                     <td>{product.category}</td>

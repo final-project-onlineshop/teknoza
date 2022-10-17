@@ -135,9 +135,9 @@ export default function SearchPage() {
         <title>Search Products</title>
       </Helmet>
       <Row>
-        <Col md={3}>
-          <h3>Department</h3>
+        <Col md={3} className="d-flex flex-column justify-content-center align-items-start ">
           <div>
+          <h3>Department</h3>
             <ul>
               <li>
                 <Link
