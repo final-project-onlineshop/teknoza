@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { createTransport } from "nodemailer";
+import nodemailer from "nodemailer";
 import { config } from "./config.js";
 
 export const generateToken = (user) => {
@@ -44,7 +44,7 @@ export const isAdmin = (req, res, next) => {
   }
 };
 
-export const orderMailer = createTransport({
+export const orderMailer = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: config.MAILER_ACCOUNT_NAME,

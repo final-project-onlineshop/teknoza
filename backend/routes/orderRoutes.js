@@ -143,23 +143,21 @@ orderRouter.put(
       };
 
       const updatedOrder = await order.save();
-      orderMailer()
-        .messages()
-        .send(
-          {
-            from: "Teknoza <tknz.teknoza@gmail.com>",
-            to: `${order.user.name} <${order.user.email}>`,
-            subject: `New order ${order._id}`,
-            html: payOrderEmailTemplate(order),
-          },
-          (error, body) => {
-            if (error) {
-              console.log(error);
-            } else {
-              console.log(body);
-            }
+      orderMailer.sendMail(
+        {
+          from: "Teknoza <tknz.teknoza@gmail.com>",
+          to: `${order.user.name} <${order.user.email}>`,
+          subject: `New order ${order._id}`,
+          html: payOrderEmailTemplate(order),
+        },
+        (error, body) => {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log(body);
           }
-        );
+        }
+      );
 
       res.send({ message: "Order Paid", order: updatedOrder });
     } else {
@@ -167,6 +165,34 @@ orderRouter.put(
     }
   })
 );
+
+// //ORDERMAILER TEST ROUTE
+
+// orderRouter.get(
+//   "/:id/sendmail",
+//   expressAsyncHandler(async (req, res) => {
+//     const order = await Order.findById(req.params.id);
+//     if (order) {
+//       orderMailer.sendMail(
+//         {
+//           from: "Teknoza <tknz.teknoza@gmail.com>",
+//           to: `${order.user.name} <${order.user.email}>`,
+//           subject: `New order ${order._id}`,
+//           html: payOrderEmailTemplate(order),
+//         },
+//         (error, body) => {
+//           if (error) {
+//             console.log(error);
+//           } else {
+//             console.log(body);
+//           }
+//         }
+//       );
+//     } else {
+//       res.status(404).send({ message: "Order Not Found" });
+//     }
+//   })
+// );
 
 orderRouter.delete(
   "/:id",
