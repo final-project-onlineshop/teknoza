@@ -24,35 +24,32 @@ const Header = () => {
   const logoutHandler = () => {
     ctxDispatch({ type: "USER_LOGOUT" });
     localStorage.removeItem("userInfo");
-    window.location.href = '/login'
+    window.location.href = "/login";
   };
 
   return (
-    <header>
-      <Navbar expand="lg" className="header-navbar">
-        <Container>
-          <Navbar.Brand href="/home">
-            <div className="navbar-brand">
+    <header >
+      <Navbar expand="lg" className="header-navbar ">
+        <Container className="flex-md-row flex-column">
+          <Navbar.Brand href="/home" >
+            <div className="navbar-brand me-auto">
               <img
                 src="/images/logo-teknoza.png"
                 alt="Logo"
                 height="50"
                 className="logoImage"
               />
-              <b>Electronics for everyone</b>
+              <b>Electronics and more</b>
             </div>
           </Navbar.Brand>
-
-          <div className="search-box">
-            <SearchBox />
-
-            <Navbar.Toggle aria-controls="main-navbar-nav" />
-          </div>
-          <Navbar.Collapse id="main-navbar-nav">
-            <Nav className="me-auto ms-auto nav-links">
-              <Nav.Link as={NavLink} to="/cart">
-                Shopping Cart
-                <i className="fa-solid fa-cart-shopping"></i>
+          <SearchBox />
+          <Navbar.Toggle aria-controls="main-navbar-nav"/>
+          <Navbar.Collapse id="main-navbar-nav" className="text-md-end text-sm-center ">            
+            <Nav className=" ms-auto nav-links d-flex flex-lg-row flex-md-column flex-row gap-4 gap-md-0">
+              <Nav.Link as={NavLink} to="/cart" >
+                Cart
+                
+                <i className="fa-solid fa-cart-shopping ms-1"></i>
                 {cart.cartItems.length > 0 && (
                   <Badge pill bg="danger">
                     {getItemCountInCart()}
@@ -61,11 +58,11 @@ const Header = () => {
               </Nav.Link>
               {userInfo ? (
                 <>
-                  <NavDropdown
+                  <NavDropdown  
                     title={
                       <>
+                        {userInfo.name + " "}
                         <i className="fa-solid fa-user"></i>
-                        {" " + userInfo.name}
                       </>
                     }
                     id="basic-nav-dropdown"
@@ -87,11 +84,17 @@ const Header = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                   {userInfo.isAdmin && (
-                    <NavDropdown title="Admin" id="basic-nav-dropdown">
+                    <NavDropdown 
+                    title={
+                      <>
+                        Admin
+                        <i className="fa-solid fa-user-lock me-1"></i>
+                      </>
+                    } id="basic-nav-dropdown">
                       <NavDropdown.Item as={NavLink} to="/admin/dashboard">
                         Dashboard
                       </NavDropdown.Item>
-                      
+
                       <NavDropdown.Divider />
                       <NavDropdown.Item as={NavLink} to="/admin/products">
                         Products
@@ -122,12 +125,13 @@ const Header = () => {
       </Navbar>
       <div className="sub-nav-frame">
         <Container>
-          <Nav className="justify-content-between sub-nav">
+          <Nav className="justify-content-lg-between justify-content-center sub-nav">
             <Nav.Link href="/search?category=all">All Products</Nav.Link>
 
-            <Nav.Link href="/home/:sales">
+           <Nav.Link href="/home/:sales">
               <i className="fa-solid fa-bullhorn"></i> Sales
             </Nav.Link>
+        
 
             <Nav.Link href="/search?category=smartphones">
               <i className="fa-solid fa-mobile-screen-button"></i> Mobile Phone
