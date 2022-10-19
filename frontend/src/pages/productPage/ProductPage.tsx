@@ -227,7 +227,7 @@ function ProductPage() {
             <ListGroup>
               {product.reviews.map((review) => (
                 <ListGroup.Item key={review._id}>
-                  <h5>{review.rating}</h5>
+                 
                   <strong>{review.name}</strong>
                   <Rating rating={review.rating} caption=" "></Rating>
                   <p>{review.createdAt.substring(0, 10)}</p>
