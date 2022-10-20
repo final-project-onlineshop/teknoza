@@ -25,12 +25,15 @@ import { Store } from "./Store";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import AdminRoute from "./components/adminRoute/AdminRoute";
 import UserEditPage from "./pages/userEditPage/UserEditPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <div className="d-flex flex-column site-container">
+      <ToastContainer position="bottom-center" limit={1} />
           <header>
             <Header />
           </header>
@@ -110,7 +113,7 @@ function App() {
                     </AdminRoute>
                   }
                 />
-                 <Route
+                <Route
                   path="/admin/user/:userId"
                   element={
                     <AdminRoute>
