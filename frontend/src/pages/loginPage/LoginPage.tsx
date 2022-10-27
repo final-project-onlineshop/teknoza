@@ -48,8 +48,7 @@ const LoginPage = () => {
         password: values.password,
       });
       loginUser(data);
-      // ctxDispatch({ type: "USER_LOGIN", payload: data });
-      // localStorage.setItem("userInfo", JSON.stringify(data));
+     
       navigate(redirect || "/");
     } catch (err) {
       toast.error(err.message);

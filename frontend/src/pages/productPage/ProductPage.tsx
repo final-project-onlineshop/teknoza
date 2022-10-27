@@ -78,7 +78,7 @@ function ProductPage() {
     };
     fetchData();
 
-    // setProduct(dataFromApi.data);
+   
   }, [productId]);
 
   const { getCartItems, getUserInfo } = useCart();
