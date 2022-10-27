@@ -7,28 +7,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
 import ProductInCart from "../../components/productInCart/ProductInCart";
-import { Store } from "../../Store";
 import {getError} from '../../utils.js'
 
 import "./orderDetailsPage.scss";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
-// const productsInOrder = [
-//   {
-//     name: "HP Curved Monitor",
-//     slug: "hp-curved-monitor",
-//     price: 150,
-//     countInStock: 10,
-//     countInCart: 2,
-//   },
-//   {
-//     name: "Microsoft Wireless Keyboard",
-//     slug: "microsoft-wireless-keyboard",
-//     price: 30,
-//     countInStock: 1,
-//     countInCart: 1,
-//   },
-// ];
+import { useCart } from "../../Store";
 
 
 const reducer = (state, action) => {
@@ -63,8 +47,9 @@ const reducer = (state, action) => {
 
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 const OrderDetailsPage = () => {
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+  
+const{getUserInfo}=useCart();
+const userInfo=getUserInfo();
 
   const { orderId } = useParams();
   const navigate = useNavigate();

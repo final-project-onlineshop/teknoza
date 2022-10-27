@@ -7,7 +7,8 @@ import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox.js";
 import MessageBox from "../../components/messageBox/MessageBox.js";
-import { Store } from "../../Store.js";
+import { CartItem } from "../../index.js";
+import { useCart } from "../../Store.js";
 import { getError } from "../../utils.js";
 import "./productsPage.scss";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
@@ -56,8 +57,9 @@ const ProductsPage = () => {
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
   const page = sp.get("page") || 1;
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+  
+  const{getUserInfo}=useCart();
+  const userInfo=getUserInfo();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -94,7 +96,7 @@ const ProductsPage = () => {
     }
   };
 
-  const deleteHandler = async (product) => {
+  const deleteHandler = async (product:CartItem) => {
     if (window.confirm("Are you sure to delete?")) {
       try {
         await axios.delete(`${BASE_API_URL}/products/${product._id}`, {
@@ -144,7 +146,7 @@ const ProductsPage = () => {
               <th colSpan={2}>ACTIONS</th>
             </thead>
             <tbody>
-              {products.map((product, index) => {
+              {products.map((product:CartItem, index:number) => {
                 return (
                   <tr key={index}>
                     <td >{product._id}</td>

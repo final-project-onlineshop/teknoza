@@ -4,11 +4,11 @@ import { Button, Container, Table } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { getError } from "../../utils.js";
-import { Store } from "../../Store";
 import "./ordersPage.scss";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox.js";
 import MessageBox from "../../components/messageBox/MessageBox.js";
+import { useCart } from "../../Store.js";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
 const reducer = (state, action) => {
@@ -35,8 +35,9 @@ const reducer = (state, action) => {
 
 const OrdersPage = () => {
   const navigate = useNavigate();
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+
+  const {getUserInfo}=useCart();
+  const userInfo=getUserInfo();
   const [{ loading, orders, error, loadingDelete, successDelete }, dispatch] =
     useReducer(reducer, { loading: true, error: "" });
 

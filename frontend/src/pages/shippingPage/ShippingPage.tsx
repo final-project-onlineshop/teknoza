@@ -3,16 +3,16 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
+
 import "./shippingPage.scss";
 
 const ShippingPage = () => {
   const navigate = useNavigate();
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const {
-    userInfo,
-    cart: { shippingAddress },
-  } = state;
+
+  const { getUserInfo, getShippingAddress,saveShippingAddress } = useCart();
+  const shippingAddress = getShippingAddress();
+  const userInfo = getUserInfo();
   useEffect(() => {
     if (!userInfo) {
       navigate("/login?redirect=/shipping");
@@ -27,20 +27,14 @@ const ShippingPage = () => {
   );
   const submitHandler = (e) => {
     e.preventDefault();
-    ctxDispatch({
-      type: "SAVE_SHIPPING_ADDRESS",
-      payload: {
-        fullName,
-        address,
-        city,
-        postalCode,
-        country,
-      },
-    });
-    localStorage.setItem(
-      "shippingAddress",
-      JSON.stringify({ fullName, address, city, postalCode, country })
-    );
+    saveShippingAddress({
+      fullName,
+      address,
+      city,
+      postalCode,
+      country,
+    })
+  
     navigate("/payment");
   };
   return (
@@ -111,10 +105,7 @@ const ShippingPage = () => {
             }}
           />
         </Form.Group>
-        {/* <Form.Group className="mb-3 form-location-box" controlId="formLocation">
-          <Form.Label>No Location</Form.Label>
-          <Button variant="secondary">Choose Location On Map</Button>
-        </Form.Group> */}
+       
         <Button variant="primary" type="submit">
           Continue
         </Button>

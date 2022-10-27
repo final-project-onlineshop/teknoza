@@ -1,67 +1,64 @@
 import "./registerPage.scss";
-import axios from 'axios';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
-import { useContext, useEffect, useState } from 'react';
-import { Store } from '../../Store';
-import { toast } from 'react-toastify';
-import { useFormik } from 'formik';
-import * as Yup from 'yup'
+import axios from "axios";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { Helmet } from "react-helmet-async";
+import { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useCart } from "../../Store";
 
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
 const validations = Yup.object().shape({
-  name: Yup.string()
-    .required('! Enter your name'),
+  name: Yup.string().required("! Enter your name"),
   email: Yup.string()
-      .email('! Wrong or Invalid email address')
-      .required('! Enter your email'),
+    .email("! Wrong or Invalid email address")
+    .required("! Enter your email"),
   password: Yup.string()
-      .min(6,'! Minimum 6 characters required')
-      .required('! Minimum 6 characters required'),
+    .min(6, "! Minimum 6 characters required")
+    .required("! Minimum 6 characters required"),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password')],'! Passwords must match')
-    .required('! Type your password again')
+    .oneOf([Yup.ref("password")], "! Passwords must match")
+    .required("! Type your password again"),
 });
 
-
 const RegisterPage = () => {
-
   const navigate = useNavigate();
   const { search } = useLocation();
-  const redirectInUrl = new URLSearchParams(search).get('redirect');
-  const redirect = redirectInUrl ? redirectInUrl : '/';
+  const redirectInUrl = new URLSearchParams(search).get("redirect");
+  const redirect = redirectInUrl ? redirectInUrl : "/";
 
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo } = state;
 
+  const { getUserInfo, loginUser } = useCart();
+  const userInfo = getUserInfo();
 
   const formik = useFormik({
     initialValues: {
-      name:'',
-      email: '',
-      password: '',
-      confirmPassword:''
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
     },
-    onSubmit: values => {
-      submitForm(values)
+    onSubmit: (values) => {
+      submitForm(values);
     },
-    validationSchema: validations
+    validationSchema: validations,
   });
 
   const submitForm = async (values) => {
-      try {
+    try {
       const { data } = await axios.post(`${BASE_API_URL}/users/signup`, {
         name: values.name,
         email: values.email,
         password: values.password,
       });
-      ctxDispatch({ type: 'USER_LOGIN', payload: data });
-      localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate(redirect || '/login');
+      loginUser(data);
+   
+      navigate(redirect || "/login");
     } catch (err) {
       toast.error(err.message);
     }
@@ -83,52 +80,63 @@ const RegisterPage = () => {
         <h1 className="my-3">Register</h1>
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
-          <Form.Control id="name"
+          <Form.Control
+            id="name"
             name="name"
             type="text"
             placeholder="Enter name"
             onChange={formik.handleChange}
-            value={formik.values.name} 
-            onBlur={formik.handleBlur} />
-            {formik.errors.name && formik.touched.name && <div className="formik-error">{formik.errors.name}</div>}
+            value={formik.values.name}
+            onBlur={formik.handleBlur}
+          />
+          {formik.errors.name && formik.touched.name && (
+            <div className="formik-error">{formik.errors.name}</div>
+          )}
         </Form.Group>
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
-          <Form.Control 
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Enter email"
-          onChange={formik.handleChange}
-          value={formik.values.email} 
-          onBlur={formik.handleBlur}
+          <Form.Control
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.email && formik.touched.email && <div className="formik-error">{formik.errors.email}</div>}
+          {formik.errors.email && formik.touched.email && (
+            <div className="formik-error">{formik.errors.email}</div>
+          )}
         </Form.Group>
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
-          <Form.Control 
-          id="password"
-          name="password"
-          placeholder="Password"
-          type="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur} />
-          {formik.errors.password && formik.touched.password && <div className="formik-error">{formik.errors.password}</div>}
-        </Form.Group>{" "}
-        <Form.Group className="mb-3" >
-          <Form.Label>Confirm password</Form.Label>
-          <Form.Control 
-          id="confirmPassword"
-          name="confirmPassword"
-          placeholder="Confirm password"
-          type="password"
-          value={formik.values.confirmPassword}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          <Form.Control
+            id="password"
+            name="password"
+            placeholder="Password"
+            type="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.confirmPassword && formik.touched.confirmPassword && <div className="formik-error">{formik.errors.confirmPassword}</div>}
+          {formik.errors.password && formik.touched.password && (
+            <div className="formik-error">{formik.errors.password}</div>
+          )}
+        </Form.Group>{" "}
+        <Form.Group className="mb-3">
+          <Form.Label>Confirm password</Form.Label>
+          <Form.Control
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm password"
+            type="password"
+            value={formik.values.confirmPassword}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.errors.confirmPassword && formik.touched.confirmPassword && (
+            <div className="formik-error">{formik.errors.confirmPassword}</div>
+          )}
         </Form.Group>
         <Button variant="primary" type="submit">
           Register

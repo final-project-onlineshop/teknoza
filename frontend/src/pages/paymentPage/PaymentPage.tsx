@@ -3,26 +3,23 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
 import "./paymentPage.scss";
 
 const PaymentPage = () => {
   const navigate = useNavigate();
-  const { state, dispatch: ctxDispatch } = useContext(Store);
 
-  const {
-    cart: { shippingAddress, paymentName: paymentNameFromContext },
-  } = state;
+ 
+  const { getPaymentMethod, savePaymentMethod, getShippingAddress } = useCart();
+  const paymentNameFromContext = getPaymentMethod();
+  const shippingAddress = getShippingAddress();
   const [paymentName, setPaymentName] = useState(
     paymentNameFromContext || "PayPal"
   );
   const submitHandler = (e) => {
     e.preventDefault();
-    ctxDispatch({
-      type: "SAVE_PAYMENT_METHOD",
-      payload: paymentName,
-    });
-    localStorage.setItem("paymentName", paymentName);
+
+    savePaymentMethod(paymentName);
     navigate("/placeorder");
   };
   useEffect(() => {
@@ -46,8 +43,8 @@ const PaymentPage = () => {
             value="PayPal"
             name="paymentMethod"
             checked={paymentName === "PayPal"}
-            onChange={(e) => {
-              setPaymentName(e.target.value);
+            onChange={() => {
+              setPaymentName("PayPal");
             }}
           />
           <Form.Check
@@ -57,8 +54,8 @@ const PaymentPage = () => {
             name="paymentMethod"
             value="Stripe"
             checked={paymentName === "Stripe"}
-            onChange={(e) => {
-              setPaymentName(e.target.value);
+            onChange={() => {
+              setPaymentName("Stripe");
             }}
           />
           <Button variant="primary" type="submit" className="continue-button">

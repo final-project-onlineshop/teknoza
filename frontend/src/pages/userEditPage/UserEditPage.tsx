@@ -2,28 +2,45 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import "./userEditPage.scss";
 import { Form, Button, Container } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { Store } from "../../Store";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { getError } from "../../utils.js";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
 import MessageBox from "../../components/messageBox/MessageBox";
+import { useCart } from "../../Store";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
-
-const reducer = (state, action) => {
+enum LoadingActionKind {
+  FETCH_REQUEST = "FETCH_REQUEST",
+  FETCH_SUCCESS = "FETCH_SUCCESS",
+  FETCH_FAIL = "FETCH_FAIL",
+  UPDATE_REQUEST = "UPDATE_REQUEST",
+  UPDATE_SUCCESS = "UPDATE_SUCCESS",
+  UPDATE_FAIL = "UPDATE_FAIL",
+}
+interface LoadingAction {
+  type: LoadingActionKind;
+  payload?: string;
+}
+interface LoadingState {
+  loading: boolean;
+  error?: string;
+  loadingUpdate?: boolean;
+}
+const reducer = (state: LoadingState, action: LoadingAction) => {
+  const { type, payload } = action;
   switch (action.type) {
-    case "FETCH_REQUEST":
+    case LoadingActionKind.FETCH_REQUEST:
       return { ...state, loading: true };
-    case "FETCH_SUCCESS":
+    case LoadingActionKind.FETCH_SUCCESS:
       return { ...state, loading: false };
-    case "FETCH_FAIL":
+    case LoadingActionKind.FETCH_FAIL:
       return { ...state, loading: false, error: action.payload };
-    case "UPDATE_REQUEST":
+    case LoadingActionKind.UPDATE_REQUEST:
       return { ...state, loadingUpdate: true };
-    case "UPDATE_SUCCESS":
+    case LoadingActionKind.UPDATE_SUCCESS:
       return { ...state, loadingUpdate: false };
-    case "UPDATE_FAIL":
+    case LoadingActionKind.UPDATE_FAIL:
       return { ...state, loadingUpdate: false };
 
     default:
@@ -37,8 +54,8 @@ const UserEditPage = () => {
     error: "",
   });
 
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+  const { getUserInfo } = useCart();
+  const userInfo = getUserInfo();
   const params = useParams();
   const { userId } = params;
   const navigate = useNavigate();
@@ -49,16 +66,19 @@ const UserEditPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        dispatch({ type: "FETCH_REQUEST" });
+        dispatch({ type: LoadingActionKind.FETCH_REQUEST });
         const { data } = await axios.get(`${BASE_API_URL}/users/${userId}`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         setName(data.name);
         setEmail(data.email);
         setIsAdmin(data.isAdmin);
-        dispatch({ type: "FETCH_SUCCESS" });
+        dispatch({ type: LoadingActionKind.FETCH_SUCCESS });
       } catch (error) {
-        dispatch({ type: "FETCH_FAIL", payload: getError(error) });
+        dispatch({
+          type: LoadingActionKind.FETCH_FAIL,
+          payload: getError(error),
+        });
       }
     };
     fetchData();
@@ -67,18 +87,18 @@ const UserEditPage = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     try {
-      dispatch({ type: "UPDATE_REQUEST" });
+      dispatch({ type: LoadingActionKind.UPDATE_REQUEST });
       await axios.put(
         `${BASE_API_URL}/users/${userId}`,
         { _id: userId, name, email, isAdmin },
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
       );
-      dispatch("UPDATE_SUCCESS");
+      dispatch({ type: LoadingActionKind.UPDATE_SUCCESS });
       toast.success("User updated successfully");
       navigate("/admin/users");
     } catch (error) {
       toast.error(getError(error));
-      dispatch({ type: "UPDATE_FAIL" });
+      dispatch({ type: LoadingActionKind.UPDATE_FAIL });
     }
   };
   return (
@@ -130,7 +150,6 @@ const UserEditPage = () => {
             <Button type="submit" disabled={loadingUpdate}>
               Update
             </Button>
-            
           </div>
         </Form>
       )}

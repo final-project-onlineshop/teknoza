@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
 import MessageBox from "../../components/messageBox/MessageBox";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
 import { getError } from "../../utils.js";
 import "./usersPage.scss";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
@@ -37,8 +37,10 @@ const UsersPage = () => {
   const navigate = useNavigate();
   const [{ loading, error, users, loadingDelete, successDelete }, dispatch] =
     useReducer(reducer, { loading: true, error: "" });
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+  
+
+  const { getUserInfo } = useCart();
+  const userInfo = getUserInfo();
 
   useEffect(() => {
     const fetchData = async () => {

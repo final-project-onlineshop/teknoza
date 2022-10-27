@@ -4,14 +4,14 @@ import { Helmet } from "react-helmet-async";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import MessageBox from "../../components/messageBox/MessageBox";
 import ProductInCart from "../../components/productInCart/ProductInCart";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
 import "./cartPage.scss";
 
 const CartPage = () => {
-  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { getCartItems } = useCart();
   const navigate = useNavigate();
 
-  const { cartItems } = state.cart;
+  const cartItems = getCartItems();
   const checkoutHandler = () => {
     navigate("/login?redirect=/shipping");
   };
@@ -39,7 +39,10 @@ const CartPage = () => {
         <Col md={3}>
           <Card>
             <Card.Body>
-              <ListGroup variant="flush" className="d-flex flex-column justify-content-center align-items-center">
+              <ListGroup
+                variant="flush"
+                className="d-flex flex-column justify-content-center align-items-center"
+              >
                 <ListGroup.Item>
                   <h4 className="text-center d-flex flex-column justify-content-center align-items-center">
                     <p>Subtotal</p>
@@ -78,17 +81,7 @@ const CartPage = () => {
           </Card>
         </Col>
       </Row>
-      {/* <div className="cart-body">
-        <div className="products-in-cart"></div>
-        <div className="cart-details-box">
-          <div className="subtotal">
-            <span>Subtotal (0 items) : $0 </span>
-          </div>
-          <div className="checkout-button">
-            <Button>Proceed to Checkout</Button>
-          </div>
-        </div>
-      </div> */}
+    
     </Container>
   );
 };

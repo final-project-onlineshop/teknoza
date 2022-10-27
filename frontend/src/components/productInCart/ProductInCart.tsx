@@ -2,16 +2,22 @@ import axios from "axios";
 import { useContext } from "react";
 import { Button, Col, ListGroup, NavItem, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Store } from "../../Store";
+import { CartItem } from "../..";
+import { useCart } from "../../Store";
 import "./productInCart.scss";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
+type PropsOfProductInCartPage = {
+  product: CartItem;
+  uneditable?: boolean;
+};
 
-const ProductInCart = (props) => {
-  const { state, dispatch: ctxDispatch } = useContext(Store);
+const ProductInCart = (props: PropsOfProductInCartPage) => {
+  const { getCartSum, addItemToCart, removeItemFromCart, updateItemQuantity } =
+    useCart();
   const { product, uneditable } = props;
-  const { cartSum } = state.cart;
+  const cartSum = getCartSum();
 
-  const updateCartHandler = async (product, difference) => {
+  const updateCartHandler = async (product: CartItem, difference: number) => {
     const newQuantity = product.quantity + difference;
 
     const { data } = await axios.get(`${BASE_API_URL}/products/${product._id}`);
@@ -19,13 +25,11 @@ const ProductInCart = (props) => {
       window.alert("Sorry. Product is out of stock");
       return;
     }
-    ctxDispatch({
-      type: "CART_ADD_ITEM",
-      payload: { ...product, quantity: newQuantity },
-    });
+
+    updateItemQuantity(product, newQuantity);
   };
-  const removeItemHandler = (product) => {
-    ctxDispatch({ type: "CART_REMOVE_ITEM", payload: product });
+  const removeItemHandler = (product: CartItem) => {
+    removeItemFromCart(product);
   };
 
   return (
@@ -41,7 +45,10 @@ const ProductInCart = (props) => {
         <Col md={2} className="row-md">
           <Link to={`/product/${product._id}`}>{product.name}</Link>
         </Col>
-        <Col md={3}  className="d-flex flex-row justify-content-center align-items-center ">
+        <Col
+          md={3}
+          className="d-flex flex-row justify-content-center align-items-center "
+        >
           {!uneditable && (
             <Button
               onClick={() => {
@@ -69,8 +76,8 @@ const ProductInCart = (props) => {
             </Button>
           )}
         </Col>
-        <Col md={3} >$ {product.price} </Col>
-        <Col md={2} >
+        <Col md={3}>$ {product.price} </Col>
+        <Col md={2}>
           {!uneditable && (
             <Button
               onClick={() => {

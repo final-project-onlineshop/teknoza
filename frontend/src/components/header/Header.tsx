@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import { NavLink } from "react-router-dom";
@@ -6,32 +5,36 @@ import { NavLink } from "react-router-dom";
 import Badge from "react-bootstrap/Badge";
 
 import CartPage from "../../pages/cartPage/CartPage";
-import { Store } from "../../Store";
 
 import "./header.scss";
 import SearchBox from "../searchBox/SearchBox";
+import { useCart } from "../../Store";
+import { CartItem } from "../..";
 
 const Header = () => {
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
+  const { getCartItems, getUserInfo, logoutUser } = useCart();
+  const cart = getCartItems();
+  const userInfo = getUserInfo();
+
   const getItemCountInCart = () => {
-    return cart.cartItems.reduce(
-      (countItemsInCart, item) => countItemsInCart + item.quantity,
+    return cart.reduce(
+      (countItemsInCart: number, item: CartItem) =>
+        countItemsInCart + (item.quantity?item.quantity:0),
       0
     );
   };
 
   const logoutHandler = () => {
-    ctxDispatch({ type: "USER_LOGOUT" });
+    logoutUser();
     localStorage.removeItem("userInfo");
     window.location.href = "/login";
   };
 
   return (
-    <header >
+    <header>
       <Navbar expand="lg" className="header-navbar ">
         <Container className="flex-md-row flex-column">
-          <Navbar.Brand href="/home" >
+          <Navbar.Brand href="/home">
             <div className="navbar-brand me-auto">
               <img
                 src="/images/logo-teknoza.png"
@@ -43,22 +46,24 @@ const Header = () => {
             </div>
           </Navbar.Brand>
           <SearchBox />
-          <Navbar.Toggle aria-controls="main-navbar-nav"/>
-          <Navbar.Collapse id="main-navbar-nav" className="text-md-end text-sm-center ">            
+          <Navbar.Toggle aria-controls="main-navbar-nav" />
+          <Navbar.Collapse
+            id="main-navbar-nav"
+            className="text-md-end text-sm-center "
+          >
             <Nav className=" ms-auto nav-links d-flex flex-lg-row flex-md-column flex-row gap-4 gap-md-0">
-              <Nav.Link as={NavLink} to="/cart" >
+              <Nav.Link as={NavLink} to="/cart">
                 Cart
-                
                 <i className="fa-solid fa-cart-shopping ms-1"></i>
-                {cart.cartItems.length > 0 && (
+                {cart.length > 0 && (
                   <Badge pill bg="danger">
                     {getItemCountInCart()}
                   </Badge>
                 )}
               </Nav.Link>
-              {userInfo ? (
+              {userInfo.token!=="" ? (
                 <>
-                  <NavDropdown  
+                  <NavDropdown
                     title={
                       <>
                         {userInfo.name + " "}
@@ -84,13 +89,15 @@ const Header = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                   {userInfo.isAdmin && (
-                    <NavDropdown 
-                    title={
-                      <>
-                        Admin
-                        <i className="fa-solid fa-user-lock me-1"></i>
-                      </>
-                    } id="basic-nav-dropdown">
+                    <NavDropdown
+                      title={
+                        <>
+                          Admin
+                          <i className="fa-solid fa-user-lock me-1"></i>
+                        </>
+                      }
+                      id="basic-nav-dropdown"
+                    >
                       <NavDropdown.Item as={NavLink} to="/admin/dashboard">
                         Dashboard
                       </NavDropdown.Item>
@@ -127,12 +134,11 @@ const Header = () => {
         <Container>
           <Nav className="justify-content-lg-between justify-content-center sub-nav">
             <Nav.Link href="/search?category=all">All Products</Nav.Link>
-{/*
+            {/*
            <Nav.Link href="/home/:sales">
               <i className="fa-solid fa-bullhorn"></i> Sales
             </Nav.Link>
 */}
-        
 
             <Nav.Link href="/search?category=smartphones">
               <i className="fa-solid fa-mobile-screen-button"></i> Mobile Phone

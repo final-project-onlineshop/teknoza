@@ -1,10 +1,10 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { Store } from "../../Store";
 import { toast } from "react-toastify";
 import axios from "axios";
 import "./profilePage.scss";
 import { useContext, useReducer, useState } from "react";
+import { useCart } from "../../Store";
 
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -23,8 +23,9 @@ const reducer = (state, action) => {
 };
 
 export default function ProfilePage() {
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo } = state;
+ 
+  const {getUserInfo,loginUser}=useCart();
+  const userInfo=getUserInfo();
   const [name, setName] = useState(userInfo.name);
   const [email, setEmail] = useState(userInfo.email);
   const [password, setPassword] = useState("");
@@ -53,8 +54,8 @@ export default function ProfilePage() {
       dispatch({
         type: 'UPDATE_SUCCESS',
       });
-      ctxDispatch({ type: "USER_LOGIN", payload: data });
-      localStorage.setItem("userInfo", JSON.stringify(data));
+
+      loginUser(data);
       toast.success("User updated successfully");
     } catch (err) {
       dispatch({

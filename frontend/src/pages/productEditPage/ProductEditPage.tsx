@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
 import MessageBox from "../../components/messageBox/MessageBox";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
 import { getError } from "../../utils.js";
 import "./productEditPage.scss";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
@@ -41,8 +41,10 @@ const ProductEditPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const { productId } = params;
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+ 
+
+  const {getUserInfo}=useCart()
+  const userInfo=getUserInfo();
   const [{ loading, error, loadingUpdate, loadingUpload }, dispatch] =
     useReducer(reducer, { loading: true, error: "" });
 
@@ -50,7 +52,7 @@ const ProductEditPage = () => {
   const [slug, setSlug] = useState("");
   const [price, setPrice] = useState("");
   const [thumbnail, setThumbnail] = useState("");
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState([""]);
   const [category, setCategory] = useState("");
   const [stock, setStock] = useState("");
   const [brand, setBrand] = useState("");
@@ -120,34 +122,9 @@ const ProductEditPage = () => {
     }
   };
 
-  //TODO: activate, after file upload system in backend
-  // const uploadFileHandler = async (event, forImages) => {
-  //   const file = event.target.files[0];
-  //   const bodyFormData = new FormData();
-  //   bodyFormData.append("file", file);
-  //   try {
-  //     dispatch({ type: "UPLOAD_REQUEST" });
-  //     const { data } = await axios.post(
-  //       `${BASE_API_URL}/upload`,
-  //       bodyFormData,
-  //       {
-  //         headers: {
-  //           "Content-Type": "multipart/form",
-  //           Authorization: `Bearer ${userInfo.token}`,
-  //         },
-  //       }
-  //     );
-  //     dispatch({ type: "UPLOAD_SUCCESS" });
-  //   } catch (error) {
-  //     dispatch({ type: "UPLOAD_FAIL" , payload:getError(error)});
-  //   }
-  // };
-  // const deleteFilehandler = async (fileName, f) => {
-  //   setImages(images.filter((image)=>{image!==fileName}));
-  //   toast.success('Image removed successfully. Click Update to applay it.');
-  // };
-  const updateImages = (indexOfImage, newImageLink) => {
-    const oldImages = [...images];
+  
+  const updateImages = (indexOfImage:number, newImageLink:string):string[] => {
+    const oldImages:string[] = [...images];
     oldImages[indexOfImage] = newImageLink;
     return oldImages;
   };

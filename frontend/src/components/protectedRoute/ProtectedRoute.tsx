@@ -1,10 +1,15 @@
-import { useContext } from "react";
+import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
+//import { Store } from "../../Store";
+type ProtectedRouteProps = {
+  children: ReactNode;
+};
 
-const ProtectedRoute = ({ children }) => {
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
+
+  const { getUserInfo } = useCart();
+  const userInfo = getUserInfo();
   return userInfo ? children : <Navigate to="/login" />;
 };
 

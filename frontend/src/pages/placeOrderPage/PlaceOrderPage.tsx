@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
 import ProductInCart from "../../components/productInCart/ProductInCart";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
 import { getError } from "../../utils.js";
 
 import "./placeOrderPage.scss";
@@ -30,9 +30,24 @@ const PlaceOrderPage = () => {
 
   const [{ loading }, dispatch] = useReducer(reducer, { loading: false });
 
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
-
+  const {
+    getCartItems,
+    getUserInfo,
+    getShippingAddress,
+    getPaymentMethod,
+    getCartSum,
+    getShippingPrice,
+    getTaxPrice,
+    clearCart,
+  } = useCart();
+  const cart = getCartItems();
+  const userInfo = getUserInfo();
+  const shippingAddress = getShippingAddress();
+  const paymentMethod = getPaymentMethod();
+  const itemsPrice = getCartSum();
+  const shippingPrice = getShippingPrice();
+  const taxPrice = getTaxPrice();
+  const totalPrice = itemsPrice + shippingPrice + taxPrice;
   const round2 = (num) => {
     return Math.round(num * 100 + Number.EPSILON) / 100;
   };
@@ -43,17 +58,17 @@ const PlaceOrderPage = () => {
       const { data } = await axios.post(
         `${BASE_API_URL}/orders`,
         {
-          orderItems: cart.cartItems,
-          shippingAddress: cart.shippingAddress,
-          paymentMethod: cart.paymentName,
-          itemsPrice: cart.sumOfItems,
-          shippingPrice: cart.shippingPrice,
-          taxPrice: cart.tax,
-          totalPrice: cart.orderTotal,
+          orderItems: cart,
+          shippingAddress: shippingAddress,
+          paymentMethod: paymentMethod,
+          itemsPrice: itemsPrice,
+          shippingPrice: shippingPrice,
+          taxPrice: taxPrice,
+          totalPrice: totalPrice,
         },
         { headers: { authorization: `Bearer ${userInfo.token}` } }
       );
-      ctxDispatch({ type: "CART_CLEAR" });
+      clearCart();
       dispatch({ type: "CREATE_SUCCESS" });
       localStorage.removeItem("cartItems");
       navigate(`/order-details/${data.order._id}`);
@@ -62,12 +77,6 @@ const PlaceOrderPage = () => {
       toast.error(getError(error));
     }
   };
-  cart.sumOfItems = round2(cart.cartSum);
-  cart.tax = round2(cart.sumOfItems * 0.19);
-
-  cart.shippingPrice = round2(cart.sumOfItems > 1000 ? 0 : 5);
-
-  cart.orderTotal = cart.sumOfItems + cart.tax + cart.shippingPrice;
 
   return (
     <Container className="placeOrderPage">
@@ -82,11 +91,10 @@ const PlaceOrderPage = () => {
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
-                <b>Name: </b> {cart.shippingAddress.name} <br />
-                <b>Address: </b> {cart.shippingAddress.address},<br />
-                {cart.shippingAddress.postalCode}, {cart.shippingAddress.city}{" "}
-                <br />
-                {cart.shippingAddress.country}
+                <b>Name: </b> {shippingAddress.fullName} <br />
+                <b>Address: </b> {shippingAddress.address},<br />
+                {shippingAddress.postalCode}, {shippingAddress.city} <br />
+                {shippingAddress.country}
               </Card.Text>
               <Link to="/shipping">Edit</Link>
             </Card.Body>
@@ -95,7 +103,7 @@ const PlaceOrderPage = () => {
             <Card.Body>
               <Card.Title>Payment</Card.Title>
               <Card.Text>
-                <b>Method: </b> {cart.paymentName} <br />
+                <b>Method: </b> {paymentMethod} <br />
               </Card.Text>
               <Link to="/payment">Edit</Link>
             </Card.Body>
@@ -104,7 +112,7 @@ const PlaceOrderPage = () => {
             <Card.Body>
               <Card.Title>Items</Card.Title>
               <Card.Text>
-                {cart.cartItems.map((product, index) => {
+                {cart.map((product, index) => {
                   return <ProductInCart product={product} uneditable />;
                 })}
               </Card.Text>
@@ -120,19 +128,19 @@ const PlaceOrderPage = () => {
                 <ListGroup.Item>
                   <Row>
                     <Col>Items</Col>
-                    <Col>$ {cart.sumOfItems}</Col>
+                    <Col>$ {itemsPrice}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Shipping</Col>
-                    <Col>$ {cart.shippingPrice}</Col>
+                    <Col>$ {shippingPrice}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Tax</Col>
-                    <Col>$ {cart.tax}</Col>
+                    <Col>$ {taxPrice}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -141,7 +149,7 @@ const PlaceOrderPage = () => {
                       <b>Order Total</b>
                     </Col>
                     <Col>
-                      <b>$ {cart.orderTotal}</b>
+                      <b>$ {totalPrice}</b>
                     </Col>
                   </Row>
                 </ListGroup.Item>

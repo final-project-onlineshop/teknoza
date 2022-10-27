@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
 import MessageBox from "../../components/messageBox/MessageBox";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
 import { getError } from "../../utils.js";
 import "./orderHistoryPage.scss";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
@@ -26,8 +26,9 @@ const reducer = (state, action) => {
 };
 
 const OrderHistoryPage = () => {
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+
+const{getUserInfo}=useCart();
+  const userInfo=getUserInfo();
   const navigate = useNavigate();
 
   const [{ loading, error, orders }, dispatch] = useReducer(reducer, {

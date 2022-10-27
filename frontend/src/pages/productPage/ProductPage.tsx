@@ -6,10 +6,9 @@ import Rating from "../../components/rating/Rating";
 import { Helmet } from "react-helmet-async";
 import AddToCartButton from "../../components/addToCartButton/AddToCartButton";
 import { toast } from "react-toastify";
-import { Store } from "../../Store";
 import LoadingBox from "../../components/loadingBox/LoadingBox";
 import MessageBox from "../../components/messageBox/MessageBox";
-import  {getError} from "../../utils";
+import { getError } from "../../utils";
 import {
   Badge,
   Button,
@@ -21,7 +20,8 @@ import {
   ListGroup,
   Row,
 } from "react-bootstrap";
-
+import { useCart } from "../../Store";
+import { Review } from "../..";
 
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -33,7 +33,7 @@ const reducer = (state, action) => {
       return { ...state, loadingCreateReview: true };
     case "CREATE_SUCCESS":
       return { ...state, loadingCreateReview: false };
-    case 'CREATE_FAIL':
+    case "CREATE_FAIL":
       return { ...state, loadingCreateReview: false };
     case "FETCH_REQUEST":
       return { ...state, loading: true };
@@ -56,7 +56,7 @@ function ProductPage() {
 
   const navigate = useNavigate();
   const params = useParams();
-  const productId = params._id; 
+  const productId = params._id;
 
   const [{ loading, error, product, loadingCreateReview }, dispatch] =
     useReducer(reducer, {
@@ -65,16 +65,12 @@ function ProductPage() {
       error: "",
     });
 
-
-
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
 
       try {
-        const result = await axios.get(
-          `${BASE_API_URL}/products/${productId}`
-        );
+        const result = await axios.get(`${BASE_API_URL}/products/${productId}`);
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
@@ -85,8 +81,9 @@ function ProductPage() {
     // setProduct(dataFromApi.data);
   }, [productId]);
 
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
+  const { getCartItems, getUserInfo } = useCart();
+  const cart = getCartItems();
+  const userInfo = getUserInfo();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -102,7 +99,6 @@ function ProductPage() {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         }
       );
-      //console.log(data);      
       dispatch({
         type: "CREATE_SUCCESS",
       });
@@ -115,10 +111,10 @@ function ProductPage() {
         top: reviewsRef.current.offsetTop,
       });
 
-      setComment('');
-      setRating(0)
+      setComment("");
+      setRating(0);
     } catch (error) {
-      toast.error( getError(err));
+      toast.error(getError(error));
       dispatch({ type: "CREATE_FAIL" });
     }
   };
@@ -151,9 +147,7 @@ function ProductPage() {
                   <h1>{product.name}</h1>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <Rating
-                    reviews={product.reviews}
-                  />
+                  <Rating reviews={product.reviews} />
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row xs={1} md={2} className="g-2">
@@ -225,7 +219,7 @@ function ProductPage() {
               )}
             </div>
             <ListGroup>
-              {product.reviews.map((review) => (
+              {product.reviews.map((review: Review) => (
                 <ListGroup.Item key={review._id}>
                   <h5>{review.rating}</h5>
                   <strong>{review.name}</strong>
@@ -289,6 +283,6 @@ function ProductPage() {
       )}
     </Container>
   );
-};
+}
 
 export default ProductPage;

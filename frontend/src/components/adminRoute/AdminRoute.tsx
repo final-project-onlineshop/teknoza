@@ -1,12 +1,15 @@
-import { Children, useContext } from "react";
+import { Children, ReactNode, useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { Store } from "../../Store";
+import { useCart } from "../../Store";
+type AdminRouteProps={
+  children:ReactNode
+}
+const AdminRoute = ({ children }:AdminRouteProps) => {
 
-const AdminRoute = ({ children }) => {
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+  const { getUserInfo } = useCart();
+  const userInfo = getUserInfo();
 
-  return userInfo && userInfo.isAdmin ? children : <Navigate to="../login" />;
+  return userInfo.isAdmin ? children : <Navigate to="../login" />;
 };
 
 export default AdminRoute;
