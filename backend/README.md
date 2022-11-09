@@ -4,6 +4,10 @@
 
 - Mongodb, Express, Nodejs
 
+## Link of Backend
+
+- [Deployed on Hetzner Server](https://teknoza-backend.bscebeci.de/api/products)
+
 # using nodemailer istead of mailgun
 
 - npm i nodemailer
